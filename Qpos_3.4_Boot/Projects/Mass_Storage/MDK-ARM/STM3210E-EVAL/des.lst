@@ -1,0 +1,2235 @@
+L 1 "..\src\des.c"
+N/*
+N *  FIPS-46-3 compliant Triple-DES implementation
+N *
+N *  Copyright (C) 2006-2014, Brainspark B.V.
+N *
+N *  This file is part of PolarSSL (http://www.polarssl.org)
+N *  Lead Maintainer: Paul Bakker <polarssl_maintainer at polarssl.org>
+N *
+N *  All rights reserved.
+N *
+N *  This program is free software; you can redistribute it and/or modify
+N *  it under the terms of the GNU General Public License as published by
+N *  the Free Software Foundation; either version 2 of the License, or
+N *  (at your option) any later version.
+N *
+N *  This program is distributed in the hope that it will be useful,
+N *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+N *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+N *  GNU General Public License for more details.
+N *
+N *  You should have received a copy of the GNU General Public License along
+N *  with this program; if not, write to the Free Software Foundation, Inc.,
+N *  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+N */
+N/*
+N *  DES, on which TDES is based, was originally designed by Horst Feistel
+N *  at IBM in 1974, and was adopted as a standard by NIST (formerly NBS).
+N *
+N *  http://csrc.nist.gov/publications/fips/fips46-3/fips46-3.pdf
+N */
+N#include "des.h"
+L 1 "..\inc\des.h" 1
+N/**
+N * \file des.h
+N *
+N * \brief DES block cipher
+N *
+N *  Copyright (C) 2006-2013, Brainspark B.V.
+N *
+N *  This file is part of PolarSSL (http://www.polarssl.org)
+N *  Lead Maintainer: Paul Bakker <polarssl_maintainer at polarssl.org>
+N *
+N *  All rights reserved.
+N *
+N *  This program is free software; you can redistribute it and/or modify
+N *  it under the terms of the GNU General Public License as published by
+N *  the Free Software Foundation; either version 2 of the License, or
+N *  (at your option) any later version.
+N *
+N *  This program is distributed in the hope that it will be useful,
+N *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+N *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+N *  GNU General Public License for more details.
+N *
+N *  You should have received a copy of the GNU General Public License along
+N *  with this program; if not, write to the Free Software Foundation, Inc.,
+N *  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+N */
+N#ifndef POLARSSL_DES_H
+N#define POLARSSL_DES_H
+N
+N#include <string.h>
+L 1 "C:\Keil_v5\ARM\ARMCC\bin\..\include\string.h" 1
+N/* string.h: ANSI 'C' (X3J11 Oct 88) library header, section 4.11 */
+N/* Copyright (C) Codemist Ltd., 1988-1993.                        */
+N/* Copyright 1991-1993 ARM Limited. All rights reserved.          */
+N/* version 0.04 */
+N
+N/*
+N * RCS $Revision: 177844 $
+N * Checkin $Date: 2012-11-21 11:51:12 +0000 (Wed, 21 Nov 2012) $
+N */
+N
+N/*
+N * string.h declares one type and several functions, and defines one macro
+N * useful for manipulating character arrays and other objects treated as
+N * character arrays. Various methods are used for determining the lengths of
+N * the arrays, but in all cases a char * or void * argument points to the
+N * initial (lowest addresses) character of the array. If an array is written
+N * beyond the end of an object, the behaviour is undefined.
+N */
+N
+N#ifndef __string_h
+N#define __string_h
+N#define __ARMCLIB_VERSION 5040049
+N
+N#define _ARMABI __declspec(__nothrow)
+N
+N  #ifndef __STRING_DECLS
+N  #define __STRING_DECLS
+N
+N    #undef __CLIBNS
+N
+N    #ifdef __cplusplus
+S        namespace std {
+S        #define __CLIBNS std::
+S        extern "C" {
+N    #else
+N      #define __CLIBNS
+N    #endif  /* __cplusplus */
+N
+N#if defined(__cplusplus) || !defined(__STRICT_ANSI__)
+X#if 0L || !0L
+N /* unconditional in C++ and non-strict C for consistency of debug info */
+N  typedef unsigned int size_t;
+N#elif !defined(__size_t)
+S  #define __size_t 1
+S  typedef unsigned int size_t;   /* see <stddef.h> */
+N#endif
+N
+N#undef NULL
+N#define NULL 0                   /* see <stddef.h> */
+N
+Nextern _ARMABI void *memcpy(void * __restrict /*s1*/,
+Xextern __declspec(__nothrow) void *memcpy(void * __restrict  ,
+N                    const void * __restrict /*s2*/, size_t /*n*/) __attribute__((__nonnull__(1,2)));
+N   /*
+N    * copies n characters from the object pointed to by s2 into the object
+N    * pointed to by s1. If copying takes place between objects that overlap,
+N    * the behaviour is undefined.
+N    * Returns: the value of s1.
+N    */
+Nextern _ARMABI void *memmove(void * /*s1*/,
+Xextern __declspec(__nothrow) void *memmove(void *  ,
+N                    const void * /*s2*/, size_t /*n*/) __attribute__((__nonnull__(1,2)));
+N   /*
+N    * copies n characters from the object pointed to by s2 into the object
+N    * pointed to by s1. Copying takes place as if the n characters from the
+N    * object pointed to by s2 are first copied into a temporary array of n
+N    * characters that does not overlap the objects pointed to by s1 and s2,
+N    * and then the n characters from the temporary array are copied into the
+N    * object pointed to by s1.
+N    * Returns: the value of s1.
+N    */
+Nextern _ARMABI char *strcpy(char * __restrict /*s1*/, const char * __restrict /*s2*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) char *strcpy(char * __restrict  , const char * __restrict  ) __attribute__((__nonnull__(1,2)));
+N   /*
+N    * copies the string pointed to by s2 (including the terminating nul
+N    * character) into the array pointed to by s1. If copying takes place
+N    * between objects that overlap, the behaviour is undefined.
+N    * Returns: the value of s1.
+N    */
+Nextern _ARMABI char *strncpy(char * __restrict /*s1*/, const char * __restrict /*s2*/, size_t /*n*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) char *strncpy(char * __restrict  , const char * __restrict  , size_t  ) __attribute__((__nonnull__(1,2)));
+N   /*
+N    * copies not more than n characters (characters that follow a null
+N    * character are not copied) from the array pointed to by s2 into the array
+N    * pointed to by s1. If copying takes place between objects that overlap,
+N    * the behaviour is undefined.
+N    * Returns: the value of s1.
+N    */
+N
+Nextern _ARMABI char *strcat(char * __restrict /*s1*/, const char * __restrict /*s2*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) char *strcat(char * __restrict  , const char * __restrict  ) __attribute__((__nonnull__(1,2)));
+N   /*
+N    * appends a copy of the string pointed to by s2 (including the terminating
+N    * null character) to the end of the string pointed to by s1. The initial
+N    * character of s2 overwrites the null character at the end of s1.
+N    * Returns: the value of s1.
+N    */
+Nextern _ARMABI char *strncat(char * __restrict /*s1*/, const char * __restrict /*s2*/, size_t /*n*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) char *strncat(char * __restrict  , const char * __restrict  , size_t  ) __attribute__((__nonnull__(1,2)));
+N   /*
+N    * appends not more than n characters (a null character and characters that
+N    * follow it are not appended) from the array pointed to by s2 to the end of
+N    * the string pointed to by s1. The initial character of s2 overwrites the
+N    * null character at the end of s1. A terminating null character is always
+N    * appended to the result.
+N    * Returns: the value of s1.
+N    */
+N
+N/*
+N * The sign of a nonzero value returned by the comparison functions is
+N * determined by the sign of the difference between the values of the first
+N * pair of characters (both interpreted as unsigned char) that differ in the
+N * objects being compared.
+N */
+N
+Nextern _ARMABI int memcmp(const void * /*s1*/, const void * /*s2*/, size_t /*n*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) int memcmp(const void *  , const void *  , size_t  ) __attribute__((__nonnull__(1,2)));
+N   /*
+N    * compares the first n characters of the object pointed to by s1 to the
+N    * first n characters of the object pointed to by s2.
+N    * Returns: an integer greater than, equal to, or less than zero, according
+N    *          as the object pointed to by s1 is greater than, equal to, or
+N    *          less than the object pointed to by s2.
+N    */
+Nextern _ARMABI int strcmp(const char * /*s1*/, const char * /*s2*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) int strcmp(const char *  , const char *  ) __attribute__((__nonnull__(1,2)));
+N   /*
+N    * compares the string pointed to by s1 to the string pointed to by s2.
+N    * Returns: an integer greater than, equal to, or less than zero, according
+N    *          as the string pointed to by s1 is greater than, equal to, or
+N    *          less than the string pointed to by s2.
+N    */
+Nextern _ARMABI int strncmp(const char * /*s1*/, const char * /*s2*/, size_t /*n*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) int strncmp(const char *  , const char *  , size_t  ) __attribute__((__nonnull__(1,2)));
+N   /*
+N    * compares not more than n characters (characters that follow a null
+N    * character are not compared) from the array pointed to by s1 to the array
+N    * pointed to by s2.
+N    * Returns: an integer greater than, equal to, or less than zero, according
+N    *          as the string pointed to by s1 is greater than, equal to, or
+N    *          less than the string pointed to by s2.
+N    */
+Nextern _ARMABI int strcasecmp(const char * /*s1*/, const char * /*s2*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) int strcasecmp(const char *  , const char *  ) __attribute__((__nonnull__(1,2)));
+N   /*
+N    * compares the string pointed to by s1 to the string pointed to by s2,
+N    * case-insensitively as defined by the current locale.
+N    * Returns: an integer greater than, equal to, or less than zero, according
+N    *          as the string pointed to by s1 is greater than, equal to, or
+N    *          less than the string pointed to by s2.
+N    */
+Nextern _ARMABI int strncasecmp(const char * /*s1*/, const char * /*s2*/, size_t /*n*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) int strncasecmp(const char *  , const char *  , size_t  ) __attribute__((__nonnull__(1,2)));
+N   /*
+N    * compares not more than n characters (characters that follow a null
+N    * character are not compared) from the array pointed to by s1 to the array
+N    * pointed to by s2, case-insensitively as defined by the current locale.
+N    * Returns: an integer greater than, equal to, or less than zero, according
+N    *          as the string pointed to by s1 is greater than, equal to, or
+N    *          less than the string pointed to by s2.
+N    */
+Nextern _ARMABI int strcoll(const char * /*s1*/, const char * /*s2*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) int strcoll(const char *  , const char *  ) __attribute__((__nonnull__(1,2)));
+N   /*
+N    * compares the string pointed to by s1 to the string pointed to by s2, both
+N    * interpreted as appropriate to the LC_COLLATE category of the current
+N    * locale.
+N    * Returns: an integer greater than, equal to, or less than zero, according
+N    *          as the string pointed to by s1 is greater than, equal to, or
+N    *          less than the string pointed to by s2 when both are interpreted
+N    *          as appropriate to the current locale.
+N    */
+N
+Nextern _ARMABI size_t strxfrm(char * __restrict /*s1*/, const char * __restrict /*s2*/, size_t /*n*/) __attribute__((__nonnull__(2)));
+Xextern __declspec(__nothrow) size_t strxfrm(char * __restrict  , const char * __restrict  , size_t  ) __attribute__((__nonnull__(2)));
+N   /*
+N    * transforms the string pointed to by s2 and places the resulting string
+N    * into the array pointed to by s1. The transformation function is such that
+N    * if the strcmp function is applied to two transformed strings, it returns
+N    * a value greater than, equal to or less than zero, corresponding to the
+N    * result of the strcoll function applied to the same two original strings.
+N    * No more than n characters are placed into the resulting array pointed to
+N    * by s1, including the terminating null character. If n is zero, s1 is
+N    * permitted to be a null pointer. If copying takes place between objects
+N    * that overlap, the behaviour is undefined.
+N    * Returns: The length of the transformed string is returned (not including
+N    *          the terminating null character). If the value returned is n or
+N    *          more, the contents of the array pointed to by s1 are
+N    *          indeterminate.
+N    */
+N
+N
+N#ifdef __cplusplus
+Sextern _ARMABI const void *memchr(const void * /*s*/, int /*c*/, size_t /*n*/) __attribute__((__nonnull__(1)));
+Sextern "C++" void *memchr(void * __s, int __c, size_t __n) __attribute__((__nonnull__(1)));
+Sextern "C++" inline void *memchr(void * __s, int __c, size_t __n)
+S    { return const_cast<void *>(memchr(const_cast<const void *>(__s), __c, __n)); }
+N#else
+Nextern _ARMABI void *memchr(const void * /*s*/, int /*c*/, size_t /*n*/) __attribute__((__nonnull__(1)));
+Xextern __declspec(__nothrow) void *memchr(const void *  , int  , size_t  ) __attribute__((__nonnull__(1)));
+N#endif
+N   /*
+N    * locates the first occurence of c (converted to an unsigned char) in the
+N    * initial n characters (each interpreted as unsigned char) of the object
+N    * pointed to by s.
+N    * Returns: a pointer to the located character, or a null pointer if the
+N    *          character does not occur in the object.
+N    */
+N
+N#ifdef __cplusplus
+Sextern _ARMABI const char *strchr(const char * /*s*/, int /*c*/) __attribute__((__nonnull__(1)));
+Sextern "C++" char *strchr(char * __s, int __c) __attribute__((__nonnull__(1)));
+Sextern "C++" inline char *strchr(char * __s, int __c)
+S    { return const_cast<char *>(strchr(const_cast<const char *>(__s), __c)); }
+N#else
+Nextern _ARMABI char *strchr(const char * /*s*/, int /*c*/) __attribute__((__nonnull__(1)));
+Xextern __declspec(__nothrow) char *strchr(const char *  , int  ) __attribute__((__nonnull__(1)));
+N#endif
+N   /*
+N    * locates the first occurence of c (converted to an char) in the string
+N    * pointed to by s (including the terminating null character).
+N    * Returns: a pointer to the located character, or a null pointer if the
+N    *          character does not occur in the string.
+N    */
+N
+Nextern _ARMABI size_t strcspn(const char * /*s1*/, const char * /*s2*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) size_t strcspn(const char *  , const char *  ) __attribute__((__nonnull__(1,2)));
+N   /*
+N    * computes the length of the initial segment of the string pointed to by s1
+N    * which consists entirely of characters not from the string pointed to by
+N    * s2. The terminating null character is not considered part of s2.
+N    * Returns: the length of the segment.
+N    */
+N
+N#ifdef __cplusplus
+Sextern _ARMABI const char *strpbrk(const char * /*s1*/, const char * /*s2*/) __attribute__((__nonnull__(1,2)));
+Sextern "C++" char *strpbrk(char * __s1, const char * __s2) __attribute__((__nonnull__(1,2)));
+Sextern "C++" inline char *strpbrk(char * __s1, const char * __s2)
+S    { return const_cast<char *>(strpbrk(const_cast<const char *>(__s1), __s2)); }
+N#else
+Nextern _ARMABI char *strpbrk(const char * /*s1*/, const char * /*s2*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) char *strpbrk(const char *  , const char *  ) __attribute__((__nonnull__(1,2)));
+N#endif
+N   /*
+N    * locates the first occurence in the string pointed to by s1 of any
+N    * character from the string pointed to by s2.
+N    * Returns: returns a pointer to the character, or a null pointer if no
+N    *          character form s2 occurs in s1.
+N    */
+N
+N#ifdef __cplusplus
+Sextern _ARMABI const char *strrchr(const char * /*s*/, int /*c*/) __attribute__((__nonnull__(1)));
+Sextern "C++" char *strrchr(char * __s, int __c) __attribute__((__nonnull__(1)));
+Sextern "C++" inline char *strrchr(char * __s, int __c)
+S    { return const_cast<char *>(strrchr(const_cast<const char *>(__s), __c)); }
+N#else
+Nextern _ARMABI char *strrchr(const char * /*s*/, int /*c*/) __attribute__((__nonnull__(1)));
+Xextern __declspec(__nothrow) char *strrchr(const char *  , int  ) __attribute__((__nonnull__(1)));
+N#endif
+N   /*
+N    * locates the last occurence of c (converted to a char) in the string
+N    * pointed to by s. The terminating null character is considered part of
+N    * the string.
+N    * Returns: returns a pointer to the character, or a null pointer if c does
+N    *          not occur in the string.
+N    */
+N
+Nextern _ARMABI size_t strspn(const char * /*s1*/, const char * /*s2*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) size_t strspn(const char *  , const char *  ) __attribute__((__nonnull__(1,2)));
+N   /*
+N    * computes the length of the initial segment of the string pointed to by s1
+N    * which consists entirely of characters from the string pointed to by S2
+N    * Returns: the length of the segment.
+N    */
+N
+N#ifdef __cplusplus
+Sextern _ARMABI const char *strstr(const char * /*s1*/, const char * /*s2*/) __attribute__((__nonnull__(1,2)));
+Sextern "C++" char *strstr(char * __s1, const char * __s2) __attribute__((__nonnull__(1,2)));
+Sextern "C++" inline char *strstr(char * __s1, const char * __s2)
+S    { return const_cast<char *>(strstr(const_cast<const char *>(__s1), __s2)); }
+N#else
+Nextern _ARMABI char *strstr(const char * /*s1*/, const char * /*s2*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) char *strstr(const char *  , const char *  ) __attribute__((__nonnull__(1,2)));
+N#endif
+N   /*
+N    * locates the first occurence in the string pointed to by s1 of the
+N    * sequence of characters (excluding the terminating null character) in the
+N    * string pointed to by s2.
+N    * Returns: a pointer to the located string, or a null pointer if the string
+N    *          is not found.
+N    */
+N
+Nextern _ARMABI char *strtok(char * __restrict /*s1*/, const char * __restrict /*s2*/) __attribute__((__nonnull__(2)));
+Xextern __declspec(__nothrow) char *strtok(char * __restrict  , const char * __restrict  ) __attribute__((__nonnull__(2)));
+Nextern _ARMABI char *_strtok_r(char * /*s1*/, const char * /*s2*/, char ** /*ptr*/) __attribute__((__nonnull__(2,3)));
+Xextern __declspec(__nothrow) char *_strtok_r(char *  , const char *  , char **  ) __attribute__((__nonnull__(2,3)));
+N#ifndef __STRICT_ANSI__
+Nextern _ARMABI char *strtok_r(char * /*s1*/, const char * /*s2*/, char ** /*ptr*/) __attribute__((__nonnull__(2,3)));
+Xextern __declspec(__nothrow) char *strtok_r(char *  , const char *  , char **  ) __attribute__((__nonnull__(2,3)));
+N#endif
+N   /*
+N    * A sequence of calls to the strtok function breaks the string pointed to
+N    * by s1 into a sequence of tokens, each of which is delimited by a
+N    * character from the string pointed to by s2. The first call in the
+N    * sequence has s1 as its first argument, and is followed by calls with a
+N    * null pointer as their first argument. The separator string pointed to by
+N    * s2 may be different from call to call.
+N    * The first call in the sequence searches for the first character that is
+N    * not contained in the current separator string s2. If no such character
+N    * is found, then there are no tokens in s1 and the strtok function returns
+N    * a null pointer. If such a character is found, it is the start of the
+N    * first token.
+N    * The strtok function then searches from there for a character that is
+N    * contained in the current separator string. If no such character is found,
+N    * the current token extends to the end of the string pointed to by s1, and
+N    * subsequent searches for a token will fail. If such a character is found,
+N    * it is overwritten by a null character, which terminates the current
+N    * token. The strtok function saves a pointer to the following character,
+N    * from which the next search for a token will start.
+N    * Each subsequent call, with a null pointer as the value for the first
+N    * argument, starts searching from the saved pointer and behaves as
+N    * described above.
+N    * Returns: pointer to the first character of a token, or a null pointer if
+N    *          there is no token.
+N    *
+N    * strtok_r() is a common extension which works exactly like
+N    * strtok(), but instead of storing its state in a hidden
+N    * library variable, requires the user to pass in a pointer to a
+N    * char * variable which will be used instead. Any sequence of
+N    * calls to strtok_r() passing the same char ** pointer should
+N    * behave exactly like the corresponding sequence of calls to
+N    * strtok(). This means that strtok_r() can safely be used in
+N    * multi-threaded programs, and also that you can tokenise two
+N    * strings in parallel.
+N    */
+N
+Nextern _ARMABI void *memset(void * /*s*/, int /*c*/, size_t /*n*/) __attribute__((__nonnull__(1)));
+Xextern __declspec(__nothrow) void *memset(void *  , int  , size_t  ) __attribute__((__nonnull__(1)));
+N   /*
+N    * copies the value of c (converted to an unsigned char) into each of the
+N    * first n charactes of the object pointed to by s.
+N    * Returns: the value of s.
+N    */
+Nextern _ARMABI char *strerror(int /*errnum*/);
+Xextern __declspec(__nothrow) char *strerror(int  );
+N   /*
+N    * maps the error number in errnum to an error message string.
+N    * Returns: a pointer to the string, the contents of which are
+N    *          implementation-defined. The array pointed to shall not be
+N    *          modified by the program, but may be overwritten by a
+N    *          subsequent call to the strerror function.
+N    */
+Nextern _ARMABI size_t strlen(const char * /*s*/) __attribute__((__nonnull__(1)));
+Xextern __declspec(__nothrow) size_t strlen(const char *  ) __attribute__((__nonnull__(1)));
+N   /*
+N    * computes the length of the string pointed to by s.
+N    * Returns: the number of characters that precede the terminating null
+N    *          character.
+N    */
+N
+Nextern _ARMABI size_t strlcpy(char * /*dst*/, const char * /*src*/, size_t /*len*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) size_t strlcpy(char *  , const char *  , size_t  ) __attribute__((__nonnull__(1,2)));
+N   /*
+N    * copies the string src into the string dst, using no more than
+N    * len bytes of dst. Always null-terminates dst _within the
+N    * length len (i.e. will copy at most len-1 bytes of string plus
+N    * a NUL), unless len is actually zero.
+N    * 
+N    * Return value is the length of the string that _would_ have
+N    * been written, i.e. the length of src. Thus, the operation
+N    * succeeded without truncation if and only if ret < len;
+N    * otherwise, the value in ret tells you how big to make dst if
+N    * you decide to reallocate it. (That value does _not_ include
+N    * the NUL.)
+N    * 
+N    * This is a BSD-derived library extension, which we are
+N    * permitted to declare in a standard header because ISO defines
+N    * function names beginning with 'str' as reserved for future
+N    * expansion of <string.h>.
+N    */
+N
+Nextern _ARMABI size_t strlcat(char * /*dst*/, const char * /*src*/, size_t /*len*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) size_t strlcat(char *  , const char *  , size_t  ) __attribute__((__nonnull__(1,2)));
+N   /*
+N    * concatenates the string src to the string dst, using no more
+N    * than len bytes of dst. Always null-terminates dst _within the
+N    * length len (i.e. will copy at most len-1 bytes of string plus
+N    * a NUL), unless len is actually zero.
+N    * 
+N    * Return value is the length of the string that _would_ have
+N    * been written, i.e. the length of src plus the original length
+N    * of dst. Thus, the operation succeeded without truncation if
+N    * and only if ret < len; otherwise, the value in ret tells you
+N    * how big to make dst if you decide to reallocate it. (That
+N    * value does _not_ include the NUL.)
+N    * 
+N    * If no NUL is encountered within the first len bytes of dst,
+N    * then the length of dst is considered to have been equal to
+N    * len for the purposes of the return value (as if there were a
+N    * NUL at dst[len]). Thus, the return value in this case is len
+N    * + strlen(src).
+N    * 
+N    * This is a BSD-derived library extension, which we are
+N    * permitted to declare in a standard header because ISO defines
+N    * function names beginning with 'str' as reserved for future
+N    * expansion of <string.h>.
+N    */
+N
+Nextern _ARMABI void _membitcpybl(void * /*dest*/, const void * /*src*/, int /*destoffset*/, int /*srcoffset*/, size_t /*nbits*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) void _membitcpybl(void *  , const void *  , int  , int  , size_t  ) __attribute__((__nonnull__(1,2)));
+Nextern _ARMABI void _membitcpybb(void * /*dest*/, const void * /*src*/, int /*destoffset*/, int /*srcoffset*/, size_t /*nbits*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) void _membitcpybb(void *  , const void *  , int  , int  , size_t  ) __attribute__((__nonnull__(1,2)));
+Nextern _ARMABI void _membitcpyhl(void * /*dest*/, const void * /*src*/, int /*destoffset*/, int /*srcoffset*/, size_t /*nbits*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) void _membitcpyhl(void *  , const void *  , int  , int  , size_t  ) __attribute__((__nonnull__(1,2)));
+Nextern _ARMABI void _membitcpyhb(void * /*dest*/, const void * /*src*/, int /*destoffset*/, int /*srcoffset*/, size_t /*nbits*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) void _membitcpyhb(void *  , const void *  , int  , int  , size_t  ) __attribute__((__nonnull__(1,2)));
+Nextern _ARMABI void _membitcpywl(void * /*dest*/, const void * /*src*/, int /*destoffset*/, int /*srcoffset*/, size_t /*nbits*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) void _membitcpywl(void *  , const void *  , int  , int  , size_t  ) __attribute__((__nonnull__(1,2)));
+Nextern _ARMABI void _membitcpywb(void * /*dest*/, const void * /*src*/, int /*destoffset*/, int /*srcoffset*/, size_t /*nbits*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) void _membitcpywb(void *  , const void *  , int  , int  , size_t  ) __attribute__((__nonnull__(1,2)));
+Nextern _ARMABI void _membitmovebl(void * /*dest*/, const void * /*src*/, int /*destoffset*/, int /*srcoffset*/, size_t /*nbits*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) void _membitmovebl(void *  , const void *  , int  , int  , size_t  ) __attribute__((__nonnull__(1,2)));
+Nextern _ARMABI void _membitmovebb(void * /*dest*/, const void * /*src*/, int /*destoffset*/, int /*srcoffset*/, size_t /*nbits*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) void _membitmovebb(void *  , const void *  , int  , int  , size_t  ) __attribute__((__nonnull__(1,2)));
+Nextern _ARMABI void _membitmovehl(void * /*dest*/, const void * /*src*/, int /*destoffset*/, int /*srcoffset*/, size_t /*nbits*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) void _membitmovehl(void *  , const void *  , int  , int  , size_t  ) __attribute__((__nonnull__(1,2)));
+Nextern _ARMABI void _membitmovehb(void * /*dest*/, const void * /*src*/, int /*destoffset*/, int /*srcoffset*/, size_t /*nbits*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) void _membitmovehb(void *  , const void *  , int  , int  , size_t  ) __attribute__((__nonnull__(1,2)));
+Nextern _ARMABI void _membitmovewl(void * /*dest*/, const void * /*src*/, int /*destoffset*/, int /*srcoffset*/, size_t /*nbits*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) void _membitmovewl(void *  , const void *  , int  , int  , size_t  ) __attribute__((__nonnull__(1,2)));
+Nextern _ARMABI void _membitmovewb(void * /*dest*/, const void * /*src*/, int /*destoffset*/, int /*srcoffset*/, size_t /*nbits*/) __attribute__((__nonnull__(1,2)));
+Xextern __declspec(__nothrow) void _membitmovewb(void *  , const void *  , int  , int  , size_t  ) __attribute__((__nonnull__(1,2)));
+N    /*
+N     * Copies or moves a piece of memory from one place to another,
+N     * with one-bit granularity. So you can start or finish a copy
+N     * part way through a byte, and you can copy between regions
+N     * with different alignment within a byte.
+N     * 
+N     * All these functions have the same prototype: two void *
+N     * pointers for destination and source, then two integers
+N     * giving the bit offset from those pointers, and finally the
+N     * number of bits to copy.
+N     * 
+N     * Just like memcpy and memmove, the "cpy" functions copy as
+N     * fast as they can in the assumption that the memory regions
+N     * do not overlap, while the "move" functions cope correctly
+N     * with overlap.
+N     *
+N     * Treating memory as a stream of individual bits requires
+N     * defining a convention about what order those bits are
+N     * considered to be arranged in. The above functions support
+N     * multiple conventions:
+N     * 
+N     *  - the "bl" functions consider the unit of memory to be the
+N     *    byte, and consider the bits within each byte to be
+N     *    arranged in little-endian fashion, so that the LSB comes
+N     *    first. (For example, membitcpybl(a,b,0,7,1) would copy
+N     *    the MSB of the byte at b to the LSB of the byte at a.)
+N     * 
+N     *  - the "bb" functions consider the unit of memory to be the
+N     *    byte, and consider the bits within each byte to be
+N     *    arranged in big-endian fashion, so that the MSB comes
+N     *    first.
+N     * 
+N     *  - the "hl" functions consider the unit of memory to be the
+N     *    16-bit halfword, and consider the bits within each word
+N     *    to be arranged in little-endian fashion.
+N     * 
+N     *  - the "hb" functions consider the unit of memory to be the
+N     *    16-bit halfword, and consider the bits within each word
+N     *    to be arranged in big-endian fashion.
+N     * 
+N     *  - the "wl" functions consider the unit of memory to be the
+N     *    32-bit word, and consider the bits within each word to be
+N     *    arranged in little-endian fashion.
+N     * 
+N     *  - the "wb" functions consider the unit of memory to be the
+N     *    32-bit word, and consider the bits within each word to be
+N     *    arranged in big-endian fashion.
+N     */
+N
+N    #ifdef __cplusplus
+S         }  /* extern "C" */
+S      }  /* namespace std */
+N    #endif /* __cplusplus */
+N  #endif /* __STRING_DECLS */
+N
+N  #ifdef __cplusplus
+S    #ifndef __STRING_NO_EXPORTS
+S      using ::std::size_t;
+S      using ::std::memcpy;
+S      using ::std::memmove;
+S      using ::std::strcpy;
+S      using ::std::strncpy;
+S      using ::std::strcat;
+S      using ::std::strncat;
+S      using ::std::memcmp;
+S      using ::std::strcmp;
+S      using ::std::strncmp;
+S      using ::std::strcasecmp;
+S      using ::std::strncasecmp;
+S      using ::std::strcoll;
+S      using ::std::strxfrm;
+S      using ::std::memchr;
+S      using ::std::strchr;
+S      using ::std::strcspn;
+S      using ::std::strpbrk;
+S      using ::std::strrchr;
+S      using ::std::strspn;
+S      using ::std::strstr;
+S      using ::std::strtok;
+S#ifndef __STRICT_ANSI__
+S      using ::std::strtok_r;
+S#endif
+S      using ::std::_strtok_r;
+S      using ::std::memset;
+S      using ::std::strerror;
+S      using ::std::strlen;
+S      using ::std::strlcpy;
+S      using ::std::strlcat;
+S      using ::std::_membitcpybl;
+S      using ::std::_membitcpybb;
+S      using ::std::_membitcpyhl;
+S      using ::std::_membitcpyhb;
+S      using ::std::_membitcpywl;
+S      using ::std::_membitcpywb;
+S      using ::std::_membitmovebl;
+S      using ::std::_membitmovebb;
+S      using ::std::_membitmovehl;
+S      using ::std::_membitmovehb;
+S      using ::std::_membitmovewl;
+S      using ::std::_membitmovewb;
+S    #endif /* __STRING_NO_EXPORTS */
+N  #endif /* __cplusplus */
+N
+N#endif
+N
+N/* end of string.h */
+N
+L 31 "..\inc\des.h" 2
+N
+N#if defined(_MSC_VER) && !defined(EFIX64) && !defined(EFI32)
+X#if 0L && !0L && !0L
+S#include <basetsd.h>
+Stypedef UINT32 uint32_t;
+N#else
+N#include <inttypes.h>
+L 1 "C:\Keil_v5\ARM\ARMCC\bin\..\include\inttypes.h" 1
+N/* Copyright (C) ARM Ltd., 1999 */
+N/* All rights reserved */
+N
+N/*
+N * RCS $Revision: 180113 $
+N * Checkin $Date: 2013-05-22 14:27:44 +0100 (Wed, 22 May 2013) $
+N * Revising $Author: agrant $
+N */
+N
+N/* Based on WG14/N843 (C9X) Committee Draft August 3, 1998 */
+N
+N#ifndef __inttypes_h
+N#define __inttypes_h
+N#define __ARMCLIB_VERSION 5040049
+N
+N#define _ARMABI __declspec(__nothrow)
+N#define _ARMABI_PURE __declspec(__nothrow) __attribute__((const))
+N
+N#include <stdint.h>
+L 1 "C:\Keil_v5\ARM\ARMCC\bin\..\include\stdint.h" 1
+N/* Copyright (C) ARM Ltd., 1999 */
+N/* All rights reserved */
+N
+N/*
+N * RCS $Revision: 180721 $
+N * Checkin $Date: 2013-06-24 09:41:57 +0100 (Mon, 24 Jun 2013) $
+N * Revising $Author: agrant $
+N */
+N
+N#ifndef __stdint_h
+N#define __stdint_h
+N#define __ARMCLIB_VERSION 5040049
+N
+N/*
+N * Depending on compiler version __int64 or __INT64_TYPE__ should be defined.
+N */
+N#ifndef __int64
+N  #ifdef __INT64_TYPE__
+S    #define __int64 __INT64_TYPE__
+N  #endif
+N  /* On some architectures neither of these may be defined - if so, fall
+N     through and error out if used. */
+N#endif
+N
+N  #ifndef __STDINT_DECLS
+N  #define __STDINT_DECLS
+N
+N    #undef __CLIBNS
+N
+N    #ifdef __cplusplus
+S      namespace std {
+S          #define __CLIBNS std::
+S          extern "C" {
+N    #else
+N      #define __CLIBNS
+N    #endif  /* __cplusplus */
+N
+N
+N/*
+N * 'signed' is redundant below, except for 'signed char' and if
+N * the typedef is used to declare a bitfield.
+N * '__int64' is used instead of 'long long' so that this header
+N * can be used in --strict mode.
+N */
+N
+N    /* 7.18.1.1 */
+N
+N    /* exact-width signed integer types */
+Ntypedef   signed          char int8_t;
+Ntypedef   signed short     int int16_t;
+Ntypedef   signed           int int32_t;
+Ntypedef   signed       __int64 int64_t;
+N
+N    /* exact-width unsigned integer types */
+Ntypedef unsigned          char uint8_t;
+Ntypedef unsigned short     int uint16_t;
+Ntypedef unsigned           int uint32_t;
+Ntypedef unsigned       __int64 uint64_t;
+N
+N    /* 7.18.1.2 */
+N
+N    /* smallest type of at least n bits */
+N    /* minimum-width signed integer types */
+Ntypedef   signed          char int_least8_t;
+Ntypedef   signed short     int int_least16_t;
+Ntypedef   signed           int int_least32_t;
+Ntypedef   signed       __int64 int_least64_t;
+N
+N    /* minimum-width unsigned integer types */
+Ntypedef unsigned          char uint_least8_t;
+Ntypedef unsigned short     int uint_least16_t;
+Ntypedef unsigned           int uint_least32_t;
+Ntypedef unsigned       __int64 uint_least64_t;
+N
+N    /* 7.18.1.3 */
+N
+N    /* fastest minimum-width signed integer types */
+Ntypedef   signed           int int_fast8_t;
+Ntypedef   signed           int int_fast16_t;
+Ntypedef   signed           int int_fast32_t;
+Ntypedef   signed       __int64 int_fast64_t;
+N
+N    /* fastest minimum-width unsigned integer types */
+Ntypedef unsigned           int uint_fast8_t;
+Ntypedef unsigned           int uint_fast16_t;
+Ntypedef unsigned           int uint_fast32_t;
+Ntypedef unsigned       __int64 uint_fast64_t;
+N
+N    /* 7.18.1.4 integer types capable of holding object pointers */
+Ntypedef   signed           int intptr_t;
+Ntypedef unsigned           int uintptr_t;
+N
+N    /* 7.18.1.5 greatest-width integer types */
+Ntypedef   signed       __int64 intmax_t;
+Ntypedef unsigned       __int64 uintmax_t;
+N
+N
+N#if !defined(__cplusplus) || defined(__STDC_LIMIT_MACROS)
+X#if !0L || 0L
+N
+N    /* 7.18.2.1 */
+N
+N    /* minimum values of exact-width signed integer types */
+N#define INT8_MIN                   -128
+N#define INT16_MIN                -32768
+N#define INT32_MIN          (~0x7fffffff)   /* -2147483648 is unsigned */
+N#define INT64_MIN  __ESCAPE__(~0x7fffffffffffffffll) /* -9223372036854775808 is unsigned */
+N
+N    /* maximum values of exact-width signed integer types */
+N#define INT8_MAX                    127
+N#define INT16_MAX                 32767
+N#define INT32_MAX            2147483647
+N#define INT64_MAX  __ESCAPE__(9223372036854775807ll)
+N
+N    /* maximum values of exact-width unsigned integer types */
+N#define UINT8_MAX                   255
+N#define UINT16_MAX                65535
+N#define UINT32_MAX           4294967295u
+N#define UINT64_MAX __ESCAPE__(18446744073709551615ull)
+N
+N    /* 7.18.2.2 */
+N
+N    /* minimum values of minimum-width signed integer types */
+N#define INT_LEAST8_MIN                   -128
+N#define INT_LEAST16_MIN                -32768
+N#define INT_LEAST32_MIN          (~0x7fffffff)
+N#define INT_LEAST64_MIN  __ESCAPE__(~0x7fffffffffffffffll)
+N
+N    /* maximum values of minimum-width signed integer types */
+N#define INT_LEAST8_MAX                    127
+N#define INT_LEAST16_MAX                 32767
+N#define INT_LEAST32_MAX            2147483647
+N#define INT_LEAST64_MAX  __ESCAPE__(9223372036854775807ll)
+N
+N    /* maximum values of minimum-width unsigned integer types */
+N#define UINT_LEAST8_MAX                   255
+N#define UINT_LEAST16_MAX                65535
+N#define UINT_LEAST32_MAX           4294967295u
+N#define UINT_LEAST64_MAX __ESCAPE__(18446744073709551615ull)
+N
+N    /* 7.18.2.3 */
+N
+N    /* minimum values of fastest minimum-width signed integer types */
+N#define INT_FAST8_MIN           (~0x7fffffff)
+N#define INT_FAST16_MIN          (~0x7fffffff)
+N#define INT_FAST32_MIN          (~0x7fffffff)
+N#define INT_FAST64_MIN  __ESCAPE__(~0x7fffffffffffffffll)
+N
+N    /* maximum values of fastest minimum-width signed integer types */
+N#define INT_FAST8_MAX             2147483647
+N#define INT_FAST16_MAX            2147483647
+N#define INT_FAST32_MAX            2147483647
+N#define INT_FAST64_MAX  __ESCAPE__(9223372036854775807ll)
+N
+N    /* maximum values of fastest minimum-width unsigned integer types */
+N#define UINT_FAST8_MAX            4294967295u
+N#define UINT_FAST16_MAX           4294967295u
+N#define UINT_FAST32_MAX           4294967295u
+N#define UINT_FAST64_MAX __ESCAPE__(18446744073709551615ull)
+N
+N    /* 7.18.2.4 */
+N
+N    /* minimum value of pointer-holding signed integer type */
+N#define INTPTR_MIN (~0x7fffffff)
+N
+N    /* maximum value of pointer-holding signed integer type */
+N#define INTPTR_MAX   2147483647
+N
+N    /* maximum value of pointer-holding unsigned integer type */
+N#define UINTPTR_MAX  4294967295u
+N
+N    /* 7.18.2.5 */
+N
+N    /* minimum value of greatest-width signed integer type */
+N#define INTMAX_MIN  __ESCAPE__(~0x7fffffffffffffffll)
+N
+N    /* maximum value of greatest-width signed integer type */
+N#define INTMAX_MAX  __ESCAPE__(9223372036854775807ll)
+N
+N    /* maximum value of greatest-width unsigned integer type */
+N#define UINTMAX_MAX __ESCAPE__(18446744073709551615ull)
+N
+N    /* 7.18.3 */
+N
+N    /* limits of ptrdiff_t */
+N#define PTRDIFF_MIN (~0x7fffffff)
+N#define PTRDIFF_MAX   2147483647
+N
+N    /* limits of sig_atomic_t */
+N#define SIG_ATOMIC_MIN (~0x7fffffff)
+N#define SIG_ATOMIC_MAX   2147483647
+N
+N    /* limit of size_t */
+N#define SIZE_MAX 4294967295u
+N
+N    /* limits of wchar_t */
+N    /* NB we have to undef and redef because they're defined in both
+N     * stdint.h and wchar.h */
+N#undef WCHAR_MIN
+N#undef WCHAR_MAX
+N
+N#if defined(__WCHAR32) || (defined(__ARM_SIZEOF_WCHAR_T) && __ARM_SIZEOF_WCHAR_T == 4)
+X#if 0L || (0L && __ARM_SIZEOF_WCHAR_T == 4)
+S  #define WCHAR_MIN   0
+S  #define WCHAR_MAX   0xffffffffU
+N#else
+N  #define WCHAR_MIN   0
+N  #define WCHAR_MAX   65535
+N#endif
+N
+N    /* limits of wint_t */
+N#define WINT_MIN (~0x7fffffff)
+N#define WINT_MAX 2147483647
+N
+N#endif /* __STDC_LIMIT_MACROS */
+N
+N#if !defined(__cplusplus) || defined(__STDC_CONSTANT_MACROS)
+X#if !0L || 0L
+N
+N    /* 7.18.4.1 macros for minimum-width integer constants */
+N#define INT8_C(x)   (x)
+N#define INT16_C(x)  (x)
+N#define INT32_C(x)  (x)
+N#define INT64_C(x)  __ESCAPE__(x ## ll)
+N
+N#define UINT8_C(x)  (x ## u)
+N#define UINT16_C(x) (x ## u)
+N#define UINT32_C(x) (x ## u)
+N#define UINT64_C(x) __ESCAPE__(x ## ull)
+N
+N    /* 7.18.4.2 macros for greatest-width integer constants */
+N#define INTMAX_C(x)  __ESCAPE__(x ## ll)
+N#define UINTMAX_C(x) __ESCAPE__(x ## ull)
+N
+N#endif /* __STDC_CONSTANT_MACROS */
+N
+N    #ifdef __cplusplus
+S         }  /* extern "C" */
+S      }  /* namespace std */
+N    #endif /* __cplusplus */
+N  #endif /* __STDINT_DECLS */
+N
+N  #ifdef __cplusplus
+S    #ifndef __STDINT_NO_EXPORTS
+S      using ::std::int8_t;
+S      using ::std::int16_t;
+S      using ::std::int32_t;
+S      using ::std::int64_t;
+S      using ::std::uint8_t;
+S      using ::std::uint16_t;
+S      using ::std::uint32_t;
+S      using ::std::uint64_t;
+S      using ::std::int_least8_t;
+S      using ::std::int_least16_t;
+S      using ::std::int_least32_t;
+S      using ::std::int_least64_t;
+S      using ::std::uint_least8_t;
+S      using ::std::uint_least16_t;
+S      using ::std::uint_least32_t;
+S      using ::std::uint_least64_t;
+S      using ::std::int_fast8_t;
+S      using ::std::int_fast16_t;
+S      using ::std::int_fast32_t;
+S      using ::std::int_fast64_t;
+S      using ::std::uint_fast8_t;
+S      using ::std::uint_fast16_t;
+S      using ::std::uint_fast32_t;
+S      using ::std::uint_fast64_t;
+S      using ::std::intptr_t;
+S      using ::std::uintptr_t;
+S      using ::std::intmax_t;
+S      using ::std::uintmax_t;
+S    #endif 
+N  #endif /* __cplusplus */
+N
+N#endif /* __stdint_h */
+N
+N/* end of stdint.h */
+N
+N
+N
+L 20 "C:\Keil_v5\ARM\ARMCC\bin\..\include\inttypes.h" 2
+N
+N#if !defined(__cplusplus) || defined(__STDC_FORMAT_MACROS)
+X#if !0L || 0L
+N
+N    /* 7.8.1 */
+N
+N#define PRId8         "d"
+N#define PRId16        "d"
+N#define PRId32        "d"
+N#define PRId64      "lld"
+N#define PRIdLEAST8    "d"
+N#define PRIdLEAST16   "d"
+N#define PRIdLEAST32   "d"
+N#define PRIdLEAST64 "lld"
+N#define PRIdFAST8     "d"
+N#define PRIdFAST16    "d"
+N#define PRIdFAST32    "d"
+N#define PRIdFAST64  "lld"
+N#define PRIdMAX      "jd"
+N#define PRIdPTR       "d"
+N
+N#define PRIi8         "i"
+N#define PRIi16        "i"
+N#define PRIi32        "i"
+N#define PRIi64      "lli"
+N#define PRIiLEAST8    "i"
+N#define PRIiLEAST16   "i"
+N#define PRIiLEAST32   "i"
+N#define PRIiLEAST64 "lli"
+N#define PRIiFAST8     "i"
+N#define PRIiFAST16    "i"
+N#define PRIiFAST32    "i"
+N#define PRIiFAST64  "lli"
+N#define PRIiMAX      "ji"
+N#define PRIiPTR       "i"
+N
+N#define PRIo8         "o"
+N#define PRIo16        "o"
+N#define PRIo32        "o"
+N#define PRIo64      "llo"
+N#define PRIoLEAST8    "o"
+N#define PRIoLEAST16   "o"
+N#define PRIoLEAST32   "o"
+N#define PRIoLEAST64 "llo"
+N#define PRIoFAST8     "o"
+N#define PRIoFAST16    "o"
+N#define PRIoFAST32    "o"
+N#define PRIoFAST64  "llo"
+N#define PRIoMAX      "jo"
+N#define PRIoPTR       "o"
+N
+N#define PRIu8         "d"
+N#define PRIu16        "d"
+N#define PRIu32        "u"
+N#define PRIu64      "llu"
+N#define PRIuLEAST8    "d"
+N#define PRIuLEAST16   "d"
+N#define PRIuLEAST32   "u"
+N#define PRIuLEAST64 "llu"
+N#define PRIuFAST8     "u"
+N#define PRIuFAST16    "u"
+N#define PRIuFAST32    "u"
+N#define PRIuFAST64  "llu"
+N#define PRIuMAX      "ju"
+N#define PRIuPTR       "u"
+N
+N#define PRIx8         "x"
+N#define PRIx16        "x"
+N#define PRIx32        "x"
+N#define PRIx64      "llx"
+N#define PRIxLEAST8    "x"
+N#define PRIxLEAST16   "x"
+N#define PRIxLEAST32   "x"
+N#define PRIxLEAST64 "llx"
+N#define PRIxFAST8     "x"
+N#define PRIxFAST16    "x"
+N#define PRIxFAST32    "x"
+N#define PRIxFAST64  "llx"
+N#define PRIxMAX      "jx"
+N#define PRIxPTR       "x"
+N
+N#define PRIX8         "X"
+N#define PRIX16        "X"
+N#define PRIX32        "X"
+N#define PRIX64      "llX"
+N#define PRIXLEAST8    "X"
+N#define PRIXLEAST16   "X"
+N#define PRIXLEAST32   "X"
+N#define PRIXLEAST64 "llX"
+N#define PRIXFAST8     "X"
+N#define PRIXFAST16    "X"
+N#define PRIXFAST32    "X"
+N#define PRIXFAST64  "llX"
+N#define PRIXMAX      "jX"
+N#define PRIXPTR       "X"
+N
+N#define SCNd8       "hhd"
+N#define SCNd16       "hd"
+N#define SCNd32        "d"
+N#define SCNd64      "lld"
+N#define SCNdLEAST8  "hhd"
+N#define SCNdLEAST16  "hd"
+N#define SCNdLEAST32   "d"
+N#define SCNdLEAST64 "lld"
+N#define SCNdFAST8     "d"
+N#define SCNdFAST16    "d"
+N#define SCNdFAST32    "d"
+N#define SCNdFAST64  "lld"
+N#define SCNdMAX      "jd"
+N#define SCNdPTR       "d"
+N
+N#define SCNi8       "hhd"
+N#define SCNi16       "hi"
+N#define SCNi32        "i"
+N#define SCNi64      "lli"
+N#define SCNiLEAST8  "hhi"
+N#define SCNiLEAST16  "hi"
+N#define SCNiLEAST32   "i"
+N#define SCNiLEAST64 "lli"
+N#define SCNiFAST8     "i"
+N#define SCNiFAST16    "i"
+N#define SCNiFAST32    "i"
+N#define SCNiFAST64  "lli"
+N#define SCNiMAX      "ji"
+N#define SCNiPTR       "i"
+N
+N#define SCNo8       "hho"
+N#define SCNo16       "ho"
+N#define SCNo32        "o"
+N#define SCNo64      "llo"
+N#define SCNoLEAST8  "hho"
+N#define SCNoLEAST16  "ho"
+N#define SCNoLEAST32   "o"
+N#define SCNoLEAST64 "llo"
+N#define SCNoFAST8     "o"
+N#define SCNoFAST16    "o"
+N#define SCNoFAST32    "o"
+N#define SCNoFAST64  "llo"
+N#define SCNoMAX      "jo"
+N#define SCNoPTR       "o"
+N
+N#define SCNu8       "hhu"
+N#define SCNu16       "hu"
+N#define SCNu32        "u"
+N#define SCNu64      "llu"
+N#define SCNuLEAST8  "hhu"
+N#define SCNuLEAST16  "hu"
+N#define SCNuLEAST32   "u"
+N#define SCNuLEAST64 "llu"
+N#define SCNuFAST8     "u"
+N#define SCNuFAST16    "u"
+N#define SCNuFAST32    "u"
+N#define SCNuFAST64  "llu"
+N#define SCNuMAX      "ju"
+N#define SCNuPTR       "u"
+N
+N#define SCNx8       "hhx"
+N#define SCNx16       "hx"
+N#define SCNx32        "x"
+N#define SCNx64      "llx"
+N#define SCNxLEAST8  "hhx"
+N#define SCNxLEAST16  "hx"
+N#define SCNxLEAST32   "x"
+N#define SCNxLEAST64 "llx"
+N#define SCNxFAST8     "x"
+N#define SCNxFAST16    "x"
+N#define SCNxFAST32    "x"
+N#define SCNxFAST64  "llx"
+N#define SCNxMAX      "jx"
+N#define SCNxPTR       "x"
+N
+N#endif /* __STDC_FORMAT_MACROS */
+N
+N#ifndef __cplusplus  /* wchar_t is a builtin type for C++ */
+N  #if !defined(__STRICT_ANSI__)
+X  #if !0L
+N   /* unconditional in non-strict C for consistency of debug info */
+N    #if defined(__WCHAR32) || (defined(__ARM_SIZEOF_WCHAR_T) && __ARM_SIZEOF_WCHAR_T == 4)
+X    #if 0L || (0L && __ARM_SIZEOF_WCHAR_T == 4)
+S      typedef unsigned int wchar_t; /* see <stddef.h> */
+N    #else
+N      typedef unsigned short wchar_t; /* see <stddef.h> */
+N    #endif
+N  #elif !defined(__wchar_t)
+S    #define __wchar_t 1
+S    #if defined(__WCHAR32) || (defined(__ARM_SIZEOF_WCHAR_T) && __ARM_SIZEOF_WCHAR_T == 4)
+S      typedef unsigned int wchar_t; /* see <stddef.h> */
+S    #else
+S      typedef unsigned short wchar_t; /* see <stddef.h> */
+S    #endif
+N  #endif
+N#endif
+N
+Ntypedef struct imaxdiv_t { intmax_t quot, rem; } imaxdiv_t;
+N   /* type of the value returned by the imaxdiv function. */
+N
+N#ifdef __cplusplus
+Sextern "C" {
+N#endif
+N
+N_ARMABI intmax_t strtoimax(const char * __restrict /*nptr*/,
+X__declspec(__nothrow) intmax_t strtoimax(const char * __restrict  ,
+N                   char ** __restrict /*endptr*/, int /*base*/) __attribute__((__nonnull__(1)));
+N    /* as for strtol */
+N_ARMABI uintmax_t strtoumax(const char * __restrict /*nptr*/,
+X__declspec(__nothrow) uintmax_t strtoumax(const char * __restrict  ,
+N                    char ** __restrict /*endptr*/, int /*base*/) __attribute__((__nonnull__(1)));
+N    /* as for strtoul */
+N
+N_ARMABI intmax_t wcstoimax(const wchar_t * __restrict /*nptr*/,
+X__declspec(__nothrow) intmax_t wcstoimax(const wchar_t * __restrict  ,
+N                   wchar_t ** __restrict /*endptr*/, int /*base*/) __attribute__((__nonnull__(1)));
+N_ARMABI uintmax_t wcstoumax(const wchar_t * __restrict /*nptr*/,
+X__declspec(__nothrow) uintmax_t wcstoumax(const wchar_t * __restrict  ,
+N                    wchar_t ** __restrict /*endptr*/, int /*base*/) __attribute__((__nonnull__(1)));
+N
+Nextern _ARMABI_PURE intmax_t imaxabs(intmax_t /*j*/);
+Xextern __declspec(__nothrow) __attribute__((const)) intmax_t imaxabs(intmax_t  );
+N   /*
+N    * computes the absolute value of an intmax_t j. If the result cannot be
+N    * represented, the behaviour is undefined.
+N    * Returns: the absolute value.
+N    */
+Nextern _ARMABI_PURE imaxdiv_t imaxdiv(intmax_t /*numer*/, intmax_t /*denom*/);
+Xextern __declspec(__nothrow) __attribute__((const)) imaxdiv_t imaxdiv(intmax_t  , intmax_t  );
+N   /*
+N    * computes the quotient and remainder of the division of the numerator
+N    * numer by the denominator denom. If the division is inexact, the sign of
+N    * the resulting quotient is that of the algebraic quotient, and the
+N    * magnitude of the resulting quotient is the largest integer less than the
+N    * magnitude of the algebraic quotient. If the result cannot be represented,
+N    * the behaviour is undefined; otherwise, quot * denom + rem shall equal
+N    * numer.
+N    * Returns: a structure of type imaxdiv_t, comprising both the quotient and
+N    *          the remainder. the structure shall contain the following
+N    *          members, in either order.
+N    *          intmax_t quot; intmax_t rem;
+N    */
+N
+N#ifdef __cplusplus
+S}
+N#endif
+N
+N#endif /* __inttypes_h */
+N
+N/* end of inttypes.h */
+N
+L 37 "..\inc\des.h" 2
+N#endif
+N
+N#define DES_ENCRYPT     1
+N#define DES_DECRYPT     0
+N
+N#define POLARSSL_ERR_DES_INVALID_INPUT_LENGTH              -0x0032  /**< The data input has an invalid length. */
+N
+N#define DES_KEY_SIZE    8
+N
+N#ifdef __cplusplus
+Sextern "C" {
+N#endif
+N
+N/**
+N * \brief          DES context structure
+N */
+Ntypedef struct
+N{
+N    int mode;                   /*!<  encrypt/decrypt   */
+N    uint32_t sk[32];            /*!<  DES subkeys       */
+N}
+Ndes_context;
+N
+N/**
+N * \brief          Triple-DES context structure
+N */
+Ntypedef struct
+N{
+N    int mode;                   /*!<  encrypt/decrypt   */
+N    uint32_t sk[96];            /*!<  3DES subkeys      */
+N}
+Ndes3_context;
+N
+N/**
+N * \brief          Set key parity on the given key to odd.
+N *
+N *                 DES keys are 56 bits long, but each byte is padded with
+N *                 a parity bit to allow verification.
+N *
+N * \param key      8-byte secret key
+N */
+Nvoid des_key_set_parity( unsigned char key[DES_KEY_SIZE] );
+Xvoid des_key_set_parity( unsigned char key[8] );
+N
+N/**
+N * \brief          Check that key parity on the given key is odd.
+N *
+N *                 DES keys are 56 bits long, but each byte is padded with
+N *                 a parity bit to allow verification.
+N *
+N * \param key      8-byte secret key
+N *
+N * \return         0 is parity was ok, 1 if parity was not correct.
+N */
+Nint des_key_check_key_parity( const unsigned char key[DES_KEY_SIZE] );
+Xint des_key_check_key_parity( const unsigned char key[8] );
+N
+N/**
+N * \brief          Check that key is not a weak or semi-weak DES key
+N *
+N * \param key      8-byte secret key
+N *
+N * \return         0 if no weak key was found, 1 if a weak key was identified.
+N */
+Nint des_key_check_weak( const unsigned char key[DES_KEY_SIZE] );
+Xint des_key_check_weak( const unsigned char key[8] );
+N
+N/**
+N * \brief          DES key schedule (56-bit, encryption)
+N *
+N * \param ctx      DES context to be initialized
+N * \param key      8-byte secret key
+N *
+N * \return         0
+N */
+Nint des_setkey_enc( des_context *ctx, const unsigned char key[DES_KEY_SIZE] );
+Xint des_setkey_enc( des_context *ctx, const unsigned char key[8] );
+N
+N/**
+N * \brief          DES key schedule (56-bit, decryption)
+N *
+N * \param ctx      DES context to be initialized
+N * \param key      8-byte secret key
+N *
+N * \return         0
+N */
+Nint des_setkey_dec( des_context *ctx, const unsigned char key[DES_KEY_SIZE] );
+Xint des_setkey_dec( des_context *ctx, const unsigned char key[8] );
+N
+N/**
+N * \brief          Triple-DES key schedule (112-bit, encryption)
+N *
+N * \param ctx      3DES context to be initialized
+N * \param key      16-byte secret key
+N *
+N * \return         0
+N */
+Nint des3_set2key_enc( des3_context *ctx, const unsigned char key[DES_KEY_SIZE * 2] );
+Xint des3_set2key_enc( des3_context *ctx, const unsigned char key[8 * 2] );
+N
+N/**
+N * \brief          Triple-DES key schedule (112-bit, decryption)
+N *
+N * \param ctx      3DES context to be initialized
+N * \param key      16-byte secret key
+N *
+N * \return         0
+N */
+Nint des3_set2key_dec( des3_context *ctx, const unsigned char key[DES_KEY_SIZE * 2] );
+Xint des3_set2key_dec( des3_context *ctx, const unsigned char key[8 * 2] );
+N
+N/**
+N * \brief          Triple-DES key schedule (168-bit, encryption)
+N *
+N * \param ctx      3DES context to be initialized
+N * \param key      24-byte secret key
+N *
+N * \return         0
+N */
+Nint des3_set3key_enc( des3_context *ctx, const unsigned char key[DES_KEY_SIZE * 3] );
+Xint des3_set3key_enc( des3_context *ctx, const unsigned char key[8 * 3] );
+N
+N/**
+N * \brief          Triple-DES key schedule (168-bit, decryption)
+N *
+N * \param ctx      3DES context to be initialized
+N * \param key      24-byte secret key
+N *
+N * \return         0
+N */
+Nint des3_set3key_dec( des3_context *ctx, const unsigned char key[DES_KEY_SIZE * 3] );
+Xint des3_set3key_dec( des3_context *ctx, const unsigned char key[8 * 3] );
+N
+N/**
+N * \brief          DES-ECB block encryption/decryption
+N *
+N * \param ctx      DES context
+N * \param input    64-bit input block
+N * \param output   64-bit output block
+N *
+N * \return         0 if successful
+N */
+Nint des_crypt_ecb( des_context *ctx,
+N                    const unsigned char input[8],
+N                    unsigned char output[8] );
+N
+N/**
+N * \brief          DES-CBC buffer encryption/decryption
+N *
+N * \param ctx      DES context
+N * \param mode     DES_ENCRYPT or DES_DECRYPT
+N * \param length   length of the input data
+N * \param iv       initialization vector (updated after use)
+N * \param input    buffer holding the input data
+N * \param output   buffer holding the output data
+N */
+Nint des_crypt_cbc( des_context *ctx,
+N                    int mode,
+N                    size_t length,
+N                    unsigned char iv[8],
+N                    const unsigned char *input,
+N                    unsigned char *output );
+N
+N/**
+N * \brief          3DES-ECB block encryption/decryption
+N *
+N * \param ctx      3DES context
+N * \param input    64-bit input block
+N * \param output   64-bit output block
+N *
+N * \return         0 if successful
+N */
+Nint des3_crypt_ecb( des3_context *ctx,
+N                     const unsigned char input[8],
+N                     unsigned char output[8] );
+N
+N/**
+N * \brief          3DES-CBC buffer encryption/decryption
+N *
+N * \param ctx      3DES context
+N * \param mode     DES_ENCRYPT or DES_DECRYPT
+N * \param length   length of the input data
+N * \param iv       initialization vector (updated after use)
+N * \param input    buffer holding the input data
+N * \param output   buffer holding the output data
+N *
+N * \return         0 if successful, or POLARSSL_ERR_DES_INVALID_INPUT_LENGTH
+N */
+Nint des3_crypt_cbc( des3_context *ctx,
+N                     int mode,
+N                     size_t length,
+N                     unsigned char iv[8],
+N                     const unsigned char *input,
+N                     unsigned char *output );
+N										 
+Nint DES3_App(unsigned char *pucHexKey, unsigned char ucMode, unsigned char *pIV,
+N			unsigned char *pucIn, unsigned int* puiLen, unsigned char *pucOut);
+N
+N#ifdef __cplusplus
+S}
+N#endif
+N
+N#endif /* des.h */
+L 32 "..\src\des.c" 2
+N
+N/*
+N * 32-bit integer manipulation macros (big endian)
+N */
+N#ifndef GET_UINT32_BE
+N#define GET_UINT32_BE(n,b,i)                            \
+N{                                                       \
+N    (n) = ( (uint32_t) (b)[(i)    ] << 24 )             \
+N        | ( (uint32_t) (b)[(i) + 1] << 16 )             \
+N        | ( (uint32_t) (b)[(i) + 2] <<  8 )             \
+N        | ( (uint32_t) (b)[(i) + 3]       );            \
+N}
+X#define GET_UINT32_BE(n,b,i)                            {                                                           (n) = ( (uint32_t) (b)[(i)    ] << 24 )                     | ( (uint32_t) (b)[(i) + 1] << 16 )                     | ( (uint32_t) (b)[(i) + 2] <<  8 )                     | ( (uint32_t) (b)[(i) + 3]       );            }
+N#endif
+N
+N#ifndef PUT_UINT32_BE
+N#define PUT_UINT32_BE(n,b,i)                            \
+N{                                                       \
+N    (b)[(i)    ] = (unsigned char) ( (n) >> 24 );       \
+N    (b)[(i) + 1] = (unsigned char) ( (n) >> 16 );       \
+N    (b)[(i) + 2] = (unsigned char) ( (n) >>  8 );       \
+N    (b)[(i) + 3] = (unsigned char) ( (n)       );       \
+N}
+X#define PUT_UINT32_BE(n,b,i)                            {                                                           (b)[(i)    ] = (unsigned char) ( (n) >> 24 );           (b)[(i) + 1] = (unsigned char) ( (n) >> 16 );           (b)[(i) + 2] = (unsigned char) ( (n) >>  8 );           (b)[(i) + 3] = (unsigned char) ( (n)       );       }
+N
+N/*
+N * Expanded DES S-boxes
+N */
+Nstatic const uint32_t SB1[64] =
+N{
+N    0x01010400, 0x00000000, 0x00010000, 0x01010404,
+N    0x01010004, 0x00010404, 0x00000004, 0x00010000,
+N    0x00000400, 0x01010400, 0x01010404, 0x00000400,
+N    0x01000404, 0x01010004, 0x01000000, 0x00000004,
+N    0x00000404, 0x01000400, 0x01000400, 0x00010400,
+N    0x00010400, 0x01010000, 0x01010000, 0x01000404,
+N    0x00010004, 0x01000004, 0x01000004, 0x00010004,
+N    0x00000000, 0x00000404, 0x00010404, 0x01000000,
+N    0x00010000, 0x01010404, 0x00000004, 0x01010000,
+N    0x01010400, 0x01000000, 0x01000000, 0x00000400,
+N    0x01010004, 0x00010000, 0x00010400, 0x01000004,
+N    0x00000400, 0x00000004, 0x01000404, 0x00010404,
+N    0x01010404, 0x00010004, 0x01010000, 0x01000404,
+N    0x01000004, 0x00000404, 0x00010404, 0x01010400,
+N    0x00000404, 0x01000400, 0x01000400, 0x00000000,
+N    0x00010004, 0x00010400, 0x00000000, 0x01010004
+N};
+N
+Nstatic const uint32_t SB2[64] =
+N{
+N    0x80108020, 0x80008000, 0x00008000, 0x00108020,
+N    0x00100000, 0x00000020, 0x80100020, 0x80008020,
+N    0x80000020, 0x80108020, 0x80108000, 0x80000000,
+N    0x80008000, 0x00100000, 0x00000020, 0x80100020,
+N    0x00108000, 0x00100020, 0x80008020, 0x00000000,
+N    0x80000000, 0x00008000, 0x00108020, 0x80100000,
+N    0x00100020, 0x80000020, 0x00000000, 0x00108000,
+N    0x00008020, 0x80108000, 0x80100000, 0x00008020,
+N    0x00000000, 0x00108020, 0x80100020, 0x00100000,
+N    0x80008020, 0x80100000, 0x80108000, 0x00008000,
+N    0x80100000, 0x80008000, 0x00000020, 0x80108020,
+N    0x00108020, 0x00000020, 0x00008000, 0x80000000,
+N    0x00008020, 0x80108000, 0x00100000, 0x80000020,
+N    0x00100020, 0x80008020, 0x80000020, 0x00100020,
+N    0x00108000, 0x00000000, 0x80008000, 0x00008020,
+N    0x80000000, 0x80100020, 0x80108020, 0x00108000
+N};
+N
+Nstatic const uint32_t SB3[64] =
+N{
+N    0x00000208, 0x08020200, 0x00000000, 0x08020008,
+N    0x08000200, 0x00000000, 0x00020208, 0x08000200,
+N    0x00020008, 0x08000008, 0x08000008, 0x00020000,
+N    0x08020208, 0x00020008, 0x08020000, 0x00000208,
+N    0x08000000, 0x00000008, 0x08020200, 0x00000200,
+N    0x00020200, 0x08020000, 0x08020008, 0x00020208,
+N    0x08000208, 0x00020200, 0x00020000, 0x08000208,
+N    0x00000008, 0x08020208, 0x00000200, 0x08000000,
+N    0x08020200, 0x08000000, 0x00020008, 0x00000208,
+N    0x00020000, 0x08020200, 0x08000200, 0x00000000,
+N    0x00000200, 0x00020008, 0x08020208, 0x08000200,
+N    0x08000008, 0x00000200, 0x00000000, 0x08020008,
+N    0x08000208, 0x00020000, 0x08000000, 0x08020208,
+N    0x00000008, 0x00020208, 0x00020200, 0x08000008,
+N    0x08020000, 0x08000208, 0x00000208, 0x08020000,
+N    0x00020208, 0x00000008, 0x08020008, 0x00020200
+N};
+N
+Nstatic const uint32_t SB4[64] =
+N{
+N    0x00802001, 0x00002081, 0x00002081, 0x00000080,
+N    0x00802080, 0x00800081, 0x00800001, 0x00002001,
+N    0x00000000, 0x00802000, 0x00802000, 0x00802081,
+N    0x00000081, 0x00000000, 0x00800080, 0x00800001,
+N    0x00000001, 0x00002000, 0x00800000, 0x00802001,
+N    0x00000080, 0x00800000, 0x00002001, 0x00002080,
+N    0x00800081, 0x00000001, 0x00002080, 0x00800080,
+N    0x00002000, 0x00802080, 0x00802081, 0x00000081,
+N    0x00800080, 0x00800001, 0x00802000, 0x00802081,
+N    0x00000081, 0x00000000, 0x00000000, 0x00802000,
+N    0x00002080, 0x00800080, 0x00800081, 0x00000001,
+N    0x00802001, 0x00002081, 0x00002081, 0x00000080,
+N    0x00802081, 0x00000081, 0x00000001, 0x00002000,
+N    0x00800001, 0x00002001, 0x00802080, 0x00800081,
+N    0x00002001, 0x00002080, 0x00800000, 0x00802001,
+N    0x00000080, 0x00800000, 0x00002000, 0x00802080
+N};
+N
+Nstatic const uint32_t SB5[64] =
+N{
+N    0x00000100, 0x02080100, 0x02080000, 0x42000100,
+N    0x00080000, 0x00000100, 0x40000000, 0x02080000,
+N    0x40080100, 0x00080000, 0x02000100, 0x40080100,
+N    0x42000100, 0x42080000, 0x00080100, 0x40000000,
+N    0x02000000, 0x40080000, 0x40080000, 0x00000000,
+N    0x40000100, 0x42080100, 0x42080100, 0x02000100,
+N    0x42080000, 0x40000100, 0x00000000, 0x42000000,
+N    0x02080100, 0x02000000, 0x42000000, 0x00080100,
+N    0x00080000, 0x42000100, 0x00000100, 0x02000000,
+N    0x40000000, 0x02080000, 0x42000100, 0x40080100,
+N    0x02000100, 0x40000000, 0x42080000, 0x02080100,
+N    0x40080100, 0x00000100, 0x02000000, 0x42080000,
+N    0x42080100, 0x00080100, 0x42000000, 0x42080100,
+N    0x02080000, 0x00000000, 0x40080000, 0x42000000,
+N    0x00080100, 0x02000100, 0x40000100, 0x00080000,
+N    0x00000000, 0x40080000, 0x02080100, 0x40000100
+N};
+N
+Nstatic const uint32_t SB6[64] =
+N{
+N    0x20000010, 0x20400000, 0x00004000, 0x20404010,
+N    0x20400000, 0x00000010, 0x20404010, 0x00400000,
+N    0x20004000, 0x00404010, 0x00400000, 0x20000010,
+N    0x00400010, 0x20004000, 0x20000000, 0x00004010,
+N    0x00000000, 0x00400010, 0x20004010, 0x00004000,
+N    0x00404000, 0x20004010, 0x00000010, 0x20400010,
+N    0x20400010, 0x00000000, 0x00404010, 0x20404000,
+N    0x00004010, 0x00404000, 0x20404000, 0x20000000,
+N    0x20004000, 0x00000010, 0x20400010, 0x00404000,
+N    0x20404010, 0x00400000, 0x00004010, 0x20000010,
+N    0x00400000, 0x20004000, 0x20000000, 0x00004010,
+N    0x20000010, 0x20404010, 0x00404000, 0x20400000,
+N    0x00404010, 0x20404000, 0x00000000, 0x20400010,
+N    0x00000010, 0x00004000, 0x20400000, 0x00404010,
+N    0x00004000, 0x00400010, 0x20004010, 0x00000000,
+N    0x20404000, 0x20000000, 0x00400010, 0x20004010
+N};
+N
+Nstatic const uint32_t SB7[64] =
+N{
+N    0x00200000, 0x04200002, 0x04000802, 0x00000000,
+N    0x00000800, 0x04000802, 0x00200802, 0x04200800,
+N    0x04200802, 0x00200000, 0x00000000, 0x04000002,
+N    0x00000002, 0x04000000, 0x04200002, 0x00000802,
+N    0x04000800, 0x00200802, 0x00200002, 0x04000800,
+N    0x04000002, 0x04200000, 0x04200800, 0x00200002,
+N    0x04200000, 0x00000800, 0x00000802, 0x04200802,
+N    0x00200800, 0x00000002, 0x04000000, 0x00200800,
+N    0x04000000, 0x00200800, 0x00200000, 0x04000802,
+N    0x04000802, 0x04200002, 0x04200002, 0x00000002,
+N    0x00200002, 0x04000000, 0x04000800, 0x00200000,
+N    0x04200800, 0x00000802, 0x00200802, 0x04200800,
+N    0x00000802, 0x04000002, 0x04200802, 0x04200000,
+N    0x00200800, 0x00000000, 0x00000002, 0x04200802,
+N    0x00000000, 0x00200802, 0x04200000, 0x00000800,
+N    0x04000002, 0x04000800, 0x00000800, 0x00200002
+N};
+N
+Nstatic const uint32_t SB8[64] =
+N{
+N    0x10001040, 0x00001000, 0x00040000, 0x10041040,
+N    0x10000000, 0x10001040, 0x00000040, 0x10000000,
+N    0x00040040, 0x10040000, 0x10041040, 0x00041000,
+N    0x10041000, 0x00041040, 0x00001000, 0x00000040,
+N    0x10040000, 0x10000040, 0x10001000, 0x00001040,
+N    0x00041000, 0x00040040, 0x10040040, 0x10041000,
+N    0x00001040, 0x00000000, 0x00000000, 0x10040040,
+N    0x10000040, 0x10001000, 0x00041040, 0x00040000,
+N    0x00041040, 0x00040000, 0x10041000, 0x00001000,
+N    0x00000040, 0x10040040, 0x00001000, 0x00041040,
+N    0x10001000, 0x00000040, 0x10000040, 0x10040000,
+N    0x10040040, 0x10000000, 0x00040000, 0x10001040,
+N    0x00000000, 0x10041040, 0x00040040, 0x10000040,
+N    0x10040000, 0x10001000, 0x10001040, 0x00000000,
+N    0x10041040, 0x00041000, 0x00041000, 0x00001040,
+N    0x00001040, 0x00040040, 0x10000000, 0x10041000
+N};
+N
+N/*
+N * PC1: left and right halves bit-swap
+N */
+Nstatic const uint32_t LHs[16] =
+N{
+N    0x00000000, 0x00000001, 0x00000100, 0x00000101,
+N    0x00010000, 0x00010001, 0x00010100, 0x00010101,
+N    0x01000000, 0x01000001, 0x01000100, 0x01000101,
+N    0x01010000, 0x01010001, 0x01010100, 0x01010101
+N};
+N
+Nstatic const uint32_t RHs[16] =
+N{
+N    0x00000000, 0x01000000, 0x00010000, 0x01010000,
+N    0x00000100, 0x01000100, 0x00010100, 0x01010100,
+N    0x00000001, 0x01000001, 0x00010001, 0x01010001,
+N    0x00000101, 0x01000101, 0x00010101, 0x01010101,
+N};
+N
+N/*
+N * Initial Permutation macro
+N */
+N#define DES_IP(X,Y)                                             \
+N{                                                               \
+N    T = ((X >>  4) ^ Y) & 0x0F0F0F0F; Y ^= T; X ^= (T <<  4);   \
+N    T = ((X >> 16) ^ Y) & 0x0000FFFF; Y ^= T; X ^= (T << 16);   \
+N    T = ((Y >>  2) ^ X) & 0x33333333; X ^= T; Y ^= (T <<  2);   \
+N    T = ((Y >>  8) ^ X) & 0x00FF00FF; X ^= T; Y ^= (T <<  8);   \
+N    Y = ((Y << 1) | (Y >> 31)) & 0xFFFFFFFF;                    \
+N    T = (X ^ Y) & 0xAAAAAAAA; Y ^= T; X ^= T;                   \
+N    X = ((X << 1) | (X >> 31)) & 0xFFFFFFFF;                    \
+N}
+X#define DES_IP(X,Y)                                             {                                                                   T = ((X >>  4) ^ Y) & 0x0F0F0F0F; Y ^= T; X ^= (T <<  4);       T = ((X >> 16) ^ Y) & 0x0000FFFF; Y ^= T; X ^= (T << 16);       T = ((Y >>  2) ^ X) & 0x33333333; X ^= T; Y ^= (T <<  2);       T = ((Y >>  8) ^ X) & 0x00FF00FF; X ^= T; Y ^= (T <<  8);       Y = ((Y << 1) | (Y >> 31)) & 0xFFFFFFFF;                        T = (X ^ Y) & 0xAAAAAAAA; Y ^= T; X ^= T;                       X = ((X << 1) | (X >> 31)) & 0xFFFFFFFF;                    }
+N
+N/*
+N * Final Permutation macro
+N */
+N#define DES_FP(X,Y)                                             \
+N{                                                               \
+N    X = ((X << 31) | (X >> 1)) & 0xFFFFFFFF;                    \
+N    T = (X ^ Y) & 0xAAAAAAAA; X ^= T; Y ^= T;                   \
+N    Y = ((Y << 31) | (Y >> 1)) & 0xFFFFFFFF;                    \
+N    T = ((Y >>  8) ^ X) & 0x00FF00FF; X ^= T; Y ^= (T <<  8);   \
+N    T = ((Y >>  2) ^ X) & 0x33333333; X ^= T; Y ^= (T <<  2);   \
+N    T = ((X >> 16) ^ Y) & 0x0000FFFF; Y ^= T; X ^= (T << 16);   \
+N    T = ((X >>  4) ^ Y) & 0x0F0F0F0F; Y ^= T; X ^= (T <<  4);   \
+N}
+X#define DES_FP(X,Y)                                             {                                                                   X = ((X << 31) | (X >> 1)) & 0xFFFFFFFF;                        T = (X ^ Y) & 0xAAAAAAAA; X ^= T; Y ^= T;                       Y = ((Y << 31) | (Y >> 1)) & 0xFFFFFFFF;                        T = ((Y >>  8) ^ X) & 0x00FF00FF; X ^= T; Y ^= (T <<  8);       T = ((Y >>  2) ^ X) & 0x33333333; X ^= T; Y ^= (T <<  2);       T = ((X >> 16) ^ Y) & 0x0000FFFF; Y ^= T; X ^= (T << 16);       T = ((X >>  4) ^ Y) & 0x0F0F0F0F; Y ^= T; X ^= (T <<  4);   }
+N
+N/*
+N * DES round macro
+N */
+N#define DES_ROUND(X,Y)                          \
+N{                                               \
+N    T = *SK++ ^ X;                              \
+N    Y ^= SB8[ (T      ) & 0x3F ] ^              \
+N         SB6[ (T >>  8) & 0x3F ] ^              \
+N         SB4[ (T >> 16) & 0x3F ] ^              \
+N         SB2[ (T >> 24) & 0x3F ];               \
+N                                                \
+N    T = *SK++ ^ ((X << 28) | (X >> 4));         \
+N    Y ^= SB7[ (T      ) & 0x3F ] ^              \
+N         SB5[ (T >>  8) & 0x3F ] ^              \
+N         SB3[ (T >> 16) & 0x3F ] ^              \
+N         SB1[ (T >> 24) & 0x3F ];               \
+N}
+X#define DES_ROUND(X,Y)                          {                                                   T = *SK++ ^ X;                                  Y ^= SB8[ (T      ) & 0x3F ] ^                       SB6[ (T >>  8) & 0x3F ] ^                       SB4[ (T >> 16) & 0x3F ] ^                       SB2[ (T >> 24) & 0x3F ];                                                                   T = *SK++ ^ ((X << 28) | (X >> 4));             Y ^= SB7[ (T      ) & 0x3F ] ^                       SB5[ (T >>  8) & 0x3F ] ^                       SB3[ (T >> 16) & 0x3F ] ^                       SB1[ (T >> 24) & 0x3F ];               }
+N
+N#define SWAP(a,b) { uint32_t t = a; a = b; b = t; t = 0; }
+N
+Nstatic const unsigned char odd_parity_table[128] = { 1,  2,  4,  7,  8,
+N        11, 13, 14, 16, 19, 21, 22, 25, 26, 28, 31, 32, 35, 37, 38, 41, 42, 44,
+N        47, 49, 50, 52, 55, 56, 59, 61, 62, 64, 67, 69, 70, 73, 74, 76, 79, 81,
+N        82, 84, 87, 88, 91, 93, 94, 97, 98, 100, 103, 104, 107, 109, 110, 112,
+N        115, 117, 118, 121, 122, 124, 127, 128, 131, 133, 134, 137, 138, 140,
+N        143, 145, 146, 148, 151, 152, 155, 157, 158, 161, 162, 164, 167, 168,
+N        171, 173, 174, 176, 179, 181, 182, 185, 186, 188, 191, 193, 194, 196,
+N        199, 200, 203, 205, 206, 208, 211, 213, 214, 217, 218, 220, 223, 224,
+N        227, 229, 230, 233, 234, 236, 239, 241, 242, 244, 247, 248, 251, 253,
+N        254 };
+N
+Nvoid des_key_set_parity( unsigned char key[DES_KEY_SIZE] )
+Xvoid des_key_set_parity( unsigned char key[8] )
+N{
+N    int i;
+N
+N    for( i = 0; i < DES_KEY_SIZE; i++ )
+X    for( i = 0; i < 8; i++ )
+N        key[i] = odd_parity_table[key[i] / 2];
+N}
+N
+N/*
+N * Check the given key's parity, returns 1 on failure, 0 on SUCCESS
+N */
+Nint des_key_check_key_parity( const unsigned char key[DES_KEY_SIZE] )
+Xint des_key_check_key_parity( const unsigned char key[8] )
+N{
+N    int i;
+N
+N    for( i = 0; i < DES_KEY_SIZE; i++ )
+X    for( i = 0; i < 8; i++ )
+N        if ( key[i] != odd_parity_table[key[i] / 2] )
+N            return( 1 );
+N
+N    return( 0 );
+N}
+N
+N/*
+N * Table of weak and semi-weak keys
+N *
+N * Source: http://en.wikipedia.org/wiki/Weak_key
+N *
+N * Weak:
+N * Alternating ones + zeros (0x0101010101010101)
+N * Alternating 'F' + 'E' (0xFEFEFEFEFEFEFEFE)
+N * '0xE0E0E0E0F1F1F1F1'
+N * '0x1F1F1F1F0E0E0E0E'
+N *
+N * Semi-weak:
+N * 0x011F011F010E010E and 0x1F011F010E010E01
+N * 0x01E001E001F101F1 and 0xE001E001F101F101
+N * 0x01FE01FE01FE01FE and 0xFE01FE01FE01FE01
+N * 0x1FE01FE00EF10EF1 and 0xE01FE01FF10EF10E
+N * 0x1FFE1FFE0EFE0EFE and 0xFE1FFE1FFE0EFE0E
+N * 0xE0FEE0FEF1FEF1FE and 0xFEE0FEE0FEF1FEF1
+N *
+N */
+N
+N#define WEAK_KEY_COUNT 16
+N
+Nstatic const unsigned char weak_key_table[WEAK_KEY_COUNT][DES_KEY_SIZE] =
+Xstatic const unsigned char weak_key_table[16][8] =
+N{
+N    { 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01 },
+N    { 0xFE, 0xFE, 0xFE, 0xFE, 0xFE, 0xFE, 0xFE, 0xFE },
+N    { 0x1F, 0x1F, 0x1F, 0x1F, 0x0E, 0x0E, 0x0E, 0x0E },
+N    { 0xE0, 0xE0, 0xE0, 0xE0, 0xF1, 0xF1, 0xF1, 0xF1 },
+N
+N    { 0x01, 0x1F, 0x01, 0x1F, 0x01, 0x0E, 0x01, 0x0E },
+N    { 0x1F, 0x01, 0x1F, 0x01, 0x0E, 0x01, 0x0E, 0x01 },
+N    { 0x01, 0xE0, 0x01, 0xE0, 0x01, 0xF1, 0x01, 0xF1 },
+N    { 0xE0, 0x01, 0xE0, 0x01, 0xF1, 0x01, 0xF1, 0x01 },
+N    { 0x01, 0xFE, 0x01, 0xFE, 0x01, 0xFE, 0x01, 0xFE },
+N    { 0xFE, 0x01, 0xFE, 0x01, 0xFE, 0x01, 0xFE, 0x01 },
+N    { 0x1F, 0xE0, 0x1F, 0xE0, 0x0E, 0xF1, 0x0E, 0xF1 },
+N    { 0xE0, 0x1F, 0xE0, 0x1F, 0xF1, 0x0E, 0xF1, 0x0E },
+N    { 0x1F, 0xFE, 0x1F, 0xFE, 0x0E, 0xFE, 0x0E, 0xFE },
+N    { 0xFE, 0x1F, 0xFE, 0x1F, 0xFE, 0x0E, 0xFE, 0x0E },
+N    { 0xE0, 0xFE, 0xE0, 0xFE, 0xF1, 0xFE, 0xF1, 0xFE },
+N    { 0xFE, 0xE0, 0xFE, 0xE0, 0xFE, 0xF1, 0xFE, 0xF1 }
+N};
+N
+Nint des_key_check_weak( const unsigned char key[DES_KEY_SIZE] )
+Xint des_key_check_weak( const unsigned char key[8] )
+N{
+N    int i;
+N
+N    for( i = 0; i < WEAK_KEY_COUNT; i++ )
+X    for( i = 0; i < 16; i++ )
+N        if( memcmp( weak_key_table[i], key, DES_KEY_SIZE) == 0)
+X        if( memcmp( weak_key_table[i], key, 8) == 0)
+N            return( 1 );
+N
+N    return( 0 );
+N}
+N
+Nstatic void des_setkey( uint32_t SK[32], const unsigned char key[DES_KEY_SIZE] )
+Xstatic void des_setkey( uint32_t SK[32], const unsigned char key[8] )
+N{
+N    int i;
+N    uint32_t X, Y, T;
+N
+N    GET_UINT32_BE( X, key, 0 );
+X    { (X) = ( (uint32_t) (key)[(0) ] << 24 ) | ( (uint32_t) (key)[(0) + 1] << 16 ) | ( (uint32_t) (key)[(0) + 2] << 8 ) | ( (uint32_t) (key)[(0) + 3] ); };
+N    GET_UINT32_BE( Y, key, 4 );
+X    { (Y) = ( (uint32_t) (key)[(4) ] << 24 ) | ( (uint32_t) (key)[(4) + 1] << 16 ) | ( (uint32_t) (key)[(4) + 2] << 8 ) | ( (uint32_t) (key)[(4) + 3] ); };
+N
+N    /*
+N     * Permuted Choice 1
+N     */
+N    T =  ((Y >>  4) ^ X) & 0x0F0F0F0F;  X ^= T; Y ^= (T <<  4);
+N    T =  ((Y      ) ^ X) & 0x10101010;  X ^= T; Y ^= (T      );
+N
+N    X =   (LHs[ (X      ) & 0xF] << 3) | (LHs[ (X >>  8) & 0xF ] << 2)
+N        | (LHs[ (X >> 16) & 0xF] << 1) | (LHs[ (X >> 24) & 0xF ]     )
+N        | (LHs[ (X >>  5) & 0xF] << 7) | (LHs[ (X >> 13) & 0xF ] << 6)
+N        | (LHs[ (X >> 21) & 0xF] << 5) | (LHs[ (X >> 29) & 0xF ] << 4);
+N
+N    Y =   (RHs[ (Y >>  1) & 0xF] << 3) | (RHs[ (Y >>  9) & 0xF ] << 2)
+N        | (RHs[ (Y >> 17) & 0xF] << 1) | (RHs[ (Y >> 25) & 0xF ]     )
+N        | (RHs[ (Y >>  4) & 0xF] << 7) | (RHs[ (Y >> 12) & 0xF ] << 6)
+N        | (RHs[ (Y >> 20) & 0xF] << 5) | (RHs[ (Y >> 28) & 0xF ] << 4);
+N
+N    X &= 0x0FFFFFFF;
+N    Y &= 0x0FFFFFFF;
+N
+N    /*
+N     * calculate subkeys
+N     */
+N    for( i = 0; i < 16; i++ )
+N    {
+N        if( i < 2 || i == 8 || i == 15 )
+N        {
+N            X = ((X <<  1) | (X >> 27)) & 0x0FFFFFFF;
+N            Y = ((Y <<  1) | (Y >> 27)) & 0x0FFFFFFF;
+N        }
+N        else
+N        {
+N            X = ((X <<  2) | (X >> 26)) & 0x0FFFFFFF;
+N            Y = ((Y <<  2) | (Y >> 26)) & 0x0FFFFFFF;
+N        }
+N
+N        *SK++ =   ((X <<  4) & 0x24000000) | ((X << 28) & 0x10000000)
+N                | ((X << 14) & 0x08000000) | ((X << 18) & 0x02080000)
+N                | ((X <<  6) & 0x01000000) | ((X <<  9) & 0x00200000)
+N                | ((X >>  1) & 0x00100000) | ((X << 10) & 0x00040000)
+N                | ((X <<  2) & 0x00020000) | ((X >> 10) & 0x00010000)
+N                | ((Y >> 13) & 0x00002000) | ((Y >>  4) & 0x00001000)
+N                | ((Y <<  6) & 0x00000800) | ((Y >>  1) & 0x00000400)
+N                | ((Y >> 14) & 0x00000200) | ((Y      ) & 0x00000100)
+N                | ((Y >>  5) & 0x00000020) | ((Y >> 10) & 0x00000010)
+N                | ((Y >>  3) & 0x00000008) | ((Y >> 18) & 0x00000004)
+N                | ((Y >> 26) & 0x00000002) | ((Y >> 24) & 0x00000001);
+N
+N        *SK++ =   ((X << 15) & 0x20000000) | ((X << 17) & 0x10000000)
+N                | ((X << 10) & 0x08000000) | ((X << 22) & 0x04000000)
+N                | ((X >>  2) & 0x02000000) | ((X <<  1) & 0x01000000)
+N                | ((X << 16) & 0x00200000) | ((X << 11) & 0x00100000)
+N                | ((X <<  3) & 0x00080000) | ((X >>  6) & 0x00040000)
+N                | ((X << 15) & 0x00020000) | ((X >>  4) & 0x00010000)
+N                | ((Y >>  2) & 0x00002000) | ((Y <<  8) & 0x00001000)
+N                | ((Y >> 14) & 0x00000808) | ((Y >>  9) & 0x00000400)
+N                | ((Y      ) & 0x00000200) | ((Y <<  7) & 0x00000100)
+N                | ((Y >>  7) & 0x00000020) | ((Y >>  3) & 0x00000011)
+N                | ((Y <<  2) & 0x00000004) | ((Y >> 21) & 0x00000002);
+N    }
+N}
+N
+N/*
+N * DES key schedule (56-bit, encryption)
+N */
+Nint des_setkey_enc( des_context *ctx, const unsigned char key[DES_KEY_SIZE] )
+Xint des_setkey_enc( des_context *ctx, const unsigned char key[8] )
+N{
+N    des_setkey( ctx->sk, key );
+N
+N    return( 0 );
+N}
+N
+N/*
+N * DES key schedule (56-bit, decryption)
+N */
+Nint des_setkey_dec( des_context *ctx, const unsigned char key[DES_KEY_SIZE] )
+Xint des_setkey_dec( des_context *ctx, const unsigned char key[8] )
+N{
+N    int i;
+N
+N    des_setkey( ctx->sk, key );
+N
+N    for( i = 0; i < 16; i += 2 )
+N    {
+N        SWAP( ctx->sk[i    ], ctx->sk[30 - i] );
+X        { uint32_t t = ctx->sk[i ]; ctx->sk[i ] = ctx->sk[30 - i]; ctx->sk[30 - i] = t; t = 0; };
+N        SWAP( ctx->sk[i + 1], ctx->sk[31 - i] );
+X        { uint32_t t = ctx->sk[i + 1]; ctx->sk[i + 1] = ctx->sk[31 - i]; ctx->sk[31 - i] = t; t = 0; };
+N    }
+N
+N    return( 0 );
+N}
+N
+Nstatic void des3_set2key( uint32_t esk[96],
+N                          uint32_t dsk[96],
+N                          const unsigned char key[DES_KEY_SIZE*2] )
+X                          const unsigned char key[8*2] )
+N{
+N    int i;
+N
+N    des_setkey( esk, key );
+N    des_setkey( dsk + 32, key + 8 );
+N
+N    for( i = 0; i < 32; i += 2 )
+N    {
+N        dsk[i     ] = esk[30 - i];
+N        dsk[i +  1] = esk[31 - i];
+N
+N        esk[i + 32] = dsk[62 - i];
+N        esk[i + 33] = dsk[63 - i];
+N
+N        esk[i + 64] = esk[i    ];
+N        esk[i + 65] = esk[i + 1];
+N
+N        dsk[i + 64] = dsk[i    ];
+N        dsk[i + 65] = dsk[i + 1];
+N    }
+N}
+N
+N/*
+N * Triple-DES key schedule (112-bit, encryption)
+N */
+Nint des3_set2key_enc( des3_context *ctx, const unsigned char key[DES_KEY_SIZE * 2] )
+Xint des3_set2key_enc( des3_context *ctx, const unsigned char key[8 * 2] )
+N{
+N    uint32_t sk[96];
+N
+N    des3_set2key( ctx->sk, sk, key );
+N    memset( sk,  0, sizeof( sk ) );
+N
+N    return( 0 );
+N}
+N
+N/*
+N * Triple-DES key schedule (112-bit, decryption)
+N */
+Nint des3_set2key_dec( des3_context *ctx, const unsigned char key[DES_KEY_SIZE * 2] )
+Xint des3_set2key_dec( des3_context *ctx, const unsigned char key[8 * 2] )
+N{
+N    uint32_t sk[96];
+N
+N    des3_set2key( sk, ctx->sk, key );
+N    memset( sk,  0, sizeof( sk ) );
+N
+N    return( 0 );
+N}
+N
+Nstatic void des3_set3key( uint32_t esk[96],
+N                          uint32_t dsk[96],
+N                          const unsigned char key[24] )
+N{
+N    int i;
+N
+N    des_setkey( esk, key );
+N    des_setkey( dsk + 32, key +  8 );
+N    des_setkey( esk + 64, key + 16 );
+N
+N    for( i = 0; i < 32; i += 2 )
+N    {
+N        dsk[i     ] = esk[94 - i];
+N        dsk[i +  1] = esk[95 - i];
+N
+N        esk[i + 32] = dsk[62 - i];
+N        esk[i + 33] = dsk[63 - i];
+N
+N        dsk[i + 64] = esk[30 - i];
+N        dsk[i + 65] = esk[31 - i];
+N    }
+N}
+N
+N/*
+N * Triple-DES key schedule (168-bit, encryption)
+N */
+Nint des3_set3key_enc( des3_context *ctx, const unsigned char key[DES_KEY_SIZE * 3] )
+Xint des3_set3key_enc( des3_context *ctx, const unsigned char key[8 * 3] )
+N{
+N    uint32_t sk[96];
+N
+N    des3_set3key( ctx->sk, sk, key );
+N    memset( sk, 0, sizeof( sk ) );
+N
+N    return( 0 );
+N}
+N
+N/*
+N * Triple-DES key schedule (168-bit, decryption)
+N */
+Nint des3_set3key_dec( des3_context *ctx, const unsigned char key[DES_KEY_SIZE * 3] )
+Xint des3_set3key_dec( des3_context *ctx, const unsigned char key[8 * 3] )
+N{
+N    uint32_t sk[96];
+N
+N    des3_set3key( sk, ctx->sk, key );
+N    memset( sk, 0, sizeof( sk ) );
+N
+N    return( 0 );
+N}
+N
+N/*
+N * DES-ECB block encryption/decryption
+N */
+Nint des_crypt_ecb( des_context *ctx,
+N                    const unsigned char input[8],
+N                    unsigned char output[8] )
+N{
+N    int i;
+N    uint32_t X, Y, T, *SK;
+N
+N    SK = ctx->sk;
+N
+N    GET_UINT32_BE( X, input, 0 );
+X    { (X) = ( (uint32_t) (input)[(0) ] << 24 ) | ( (uint32_t) (input)[(0) + 1] << 16 ) | ( (uint32_t) (input)[(0) + 2] << 8 ) | ( (uint32_t) (input)[(0) + 3] ); };
+N    GET_UINT32_BE( Y, input, 4 );
+X    { (Y) = ( (uint32_t) (input)[(4) ] << 24 ) | ( (uint32_t) (input)[(4) + 1] << 16 ) | ( (uint32_t) (input)[(4) + 2] << 8 ) | ( (uint32_t) (input)[(4) + 3] ); };
+N
+N    DES_IP( X, Y );
+X    { T = ((X >> 4) ^ Y) & 0x0F0F0F0F; Y ^= T; X ^= (T << 4); T = ((X >> 16) ^ Y) & 0x0000FFFF; Y ^= T; X ^= (T << 16); T = ((Y >> 2) ^ X) & 0x33333333; X ^= T; Y ^= (T << 2); T = ((Y >> 8) ^ X) & 0x00FF00FF; X ^= T; Y ^= (T << 8); Y = ((Y << 1) | (Y >> 31)) & 0xFFFFFFFF; T = (X ^ Y) & 0xAAAAAAAA; Y ^= T; X ^= T; X = ((X << 1) | (X >> 31)) & 0xFFFFFFFF; };
+N
+N    for( i = 0; i < 8; i++ )
+N    {
+N        DES_ROUND( Y, X );
+X        { T = *SK++ ^ Y; X ^= SB8[ (T ) & 0x3F ] ^ SB6[ (T >> 8) & 0x3F ] ^ SB4[ (T >> 16) & 0x3F ] ^ SB2[ (T >> 24) & 0x3F ]; T = *SK++ ^ ((Y << 28) | (Y >> 4)); X ^= SB7[ (T ) & 0x3F ] ^ SB5[ (T >> 8) & 0x3F ] ^ SB3[ (T >> 16) & 0x3F ] ^ SB1[ (T >> 24) & 0x3F ]; };
+N        DES_ROUND( X, Y );
+X        { T = *SK++ ^ X; Y ^= SB8[ (T ) & 0x3F ] ^ SB6[ (T >> 8) & 0x3F ] ^ SB4[ (T >> 16) & 0x3F ] ^ SB2[ (T >> 24) & 0x3F ]; T = *SK++ ^ ((X << 28) | (X >> 4)); Y ^= SB7[ (T ) & 0x3F ] ^ SB5[ (T >> 8) & 0x3F ] ^ SB3[ (T >> 16) & 0x3F ] ^ SB1[ (T >> 24) & 0x3F ]; };
+N    }
+N
+N    DES_FP( Y, X );
+X    { Y = ((Y << 31) | (Y >> 1)) & 0xFFFFFFFF; T = (Y ^ X) & 0xAAAAAAAA; Y ^= T; X ^= T; X = ((X << 31) | (X >> 1)) & 0xFFFFFFFF; T = ((X >> 8) ^ Y) & 0x00FF00FF; Y ^= T; X ^= (T << 8); T = ((X >> 2) ^ Y) & 0x33333333; Y ^= T; X ^= (T << 2); T = ((Y >> 16) ^ X) & 0x0000FFFF; X ^= T; Y ^= (T << 16); T = ((Y >> 4) ^ X) & 0x0F0F0F0F; X ^= T; Y ^= (T << 4); };
+N
+N    PUT_UINT32_BE( Y, output, 0 );
+X    { (output)[(0) ] = (unsigned char) ( (Y) >> 24 ); (output)[(0) + 1] = (unsigned char) ( (Y) >> 16 ); (output)[(0) + 2] = (unsigned char) ( (Y) >> 8 ); (output)[(0) + 3] = (unsigned char) ( (Y) ); };
+N    PUT_UINT32_BE( X, output, 4 );
+X    { (output)[(4) ] = (unsigned char) ( (X) >> 24 ); (output)[(4) + 1] = (unsigned char) ( (X) >> 16 ); (output)[(4) + 2] = (unsigned char) ( (X) >> 8 ); (output)[(4) + 3] = (unsigned char) ( (X) ); };
+N
+N    return( 0 );
+N}
+N
+N/*
+N * DES-CBC buffer encryption/decryption
+N */
+Nint des_crypt_cbc( des_context *ctx,
+N                    int mode,
+N                    size_t length,
+N                    unsigned char iv[8],
+N                    const unsigned char *input,
+N                    unsigned char *output )
+N{
+N    int i;
+N    unsigned char temp[8];
+N
+N    if( length % 8 )
+N        return( POLARSSL_ERR_DES_INVALID_INPUT_LENGTH );
+X        return( -0x0032 );
+N
+N    if( mode == DES_ENCRYPT )
+X    if( mode == 1 )
+N    {
+N        while( length > 0 )
+N        {
+N            for( i = 0; i < 8; i++ )
+N                output[i] = (unsigned char)( input[i] ^ iv[i] );
+N
+N            des_crypt_ecb( ctx, output, output );
+N            memcpy( iv, output, 8 );
+N
+N            input  += 8;
+N            output += 8;
+N            length -= 8;
+N        }
+N    }
+N    else /* DES_DECRYPT */
+N    {
+N        while( length > 0 )
+N        {
+N            memcpy( temp, input, 8 );
+N            des_crypt_ecb( ctx, input, output );
+N
+N            for( i = 0; i < 8; i++ )
+N                output[i] = (unsigned char)( output[i] ^ iv[i] );
+N
+N            memcpy( iv, temp, 8 );
+N
+N            input  += 8;
+N            output += 8;
+N            length -= 8;
+N        }
+N    }
+N
+N    return( 0 );
+N}
+N
+N/*
+N * 3DES-ECB block encryption/decryption
+N */
+Nint des3_crypt_ecb( des3_context *ctx,
+N                     const unsigned char input[8],
+N                     unsigned char output[8] )
+N{
+N    int i;
+N    uint32_t X, Y, T, *SK;
+N
+N    SK = ctx->sk;
+N
+N    GET_UINT32_BE( X, input, 0 );
+X    { (X) = ( (uint32_t) (input)[(0) ] << 24 ) | ( (uint32_t) (input)[(0) + 1] << 16 ) | ( (uint32_t) (input)[(0) + 2] << 8 ) | ( (uint32_t) (input)[(0) + 3] ); };
+N    GET_UINT32_BE( Y, input, 4 );
+X    { (Y) = ( (uint32_t) (input)[(4) ] << 24 ) | ( (uint32_t) (input)[(4) + 1] << 16 ) | ( (uint32_t) (input)[(4) + 2] << 8 ) | ( (uint32_t) (input)[(4) + 3] ); };
+N
+N    DES_IP( X, Y );
+X    { T = ((X >> 4) ^ Y) & 0x0F0F0F0F; Y ^= T; X ^= (T << 4); T = ((X >> 16) ^ Y) & 0x0000FFFF; Y ^= T; X ^= (T << 16); T = ((Y >> 2) ^ X) & 0x33333333; X ^= T; Y ^= (T << 2); T = ((Y >> 8) ^ X) & 0x00FF00FF; X ^= T; Y ^= (T << 8); Y = ((Y << 1) | (Y >> 31)) & 0xFFFFFFFF; T = (X ^ Y) & 0xAAAAAAAA; Y ^= T; X ^= T; X = ((X << 1) | (X >> 31)) & 0xFFFFFFFF; };
+N
+N    for( i = 0; i < 8; i++ )
+N    {
+N        DES_ROUND( Y, X );
+X        { T = *SK++ ^ Y; X ^= SB8[ (T ) & 0x3F ] ^ SB6[ (T >> 8) & 0x3F ] ^ SB4[ (T >> 16) & 0x3F ] ^ SB2[ (T >> 24) & 0x3F ]; T = *SK++ ^ ((Y << 28) | (Y >> 4)); X ^= SB7[ (T ) & 0x3F ] ^ SB5[ (T >> 8) & 0x3F ] ^ SB3[ (T >> 16) & 0x3F ] ^ SB1[ (T >> 24) & 0x3F ]; };
+N        DES_ROUND( X, Y );
+X        { T = *SK++ ^ X; Y ^= SB8[ (T ) & 0x3F ] ^ SB6[ (T >> 8) & 0x3F ] ^ SB4[ (T >> 16) & 0x3F ] ^ SB2[ (T >> 24) & 0x3F ]; T = *SK++ ^ ((X << 28) | (X >> 4)); Y ^= SB7[ (T ) & 0x3F ] ^ SB5[ (T >> 8) & 0x3F ] ^ SB3[ (T >> 16) & 0x3F ] ^ SB1[ (T >> 24) & 0x3F ]; };
+N    }
+N
+N    for( i = 0; i < 8; i++ )
+N    {
+N        DES_ROUND( X, Y );
+X        { T = *SK++ ^ X; Y ^= SB8[ (T ) & 0x3F ] ^ SB6[ (T >> 8) & 0x3F ] ^ SB4[ (T >> 16) & 0x3F ] ^ SB2[ (T >> 24) & 0x3F ]; T = *SK++ ^ ((X << 28) | (X >> 4)); Y ^= SB7[ (T ) & 0x3F ] ^ SB5[ (T >> 8) & 0x3F ] ^ SB3[ (T >> 16) & 0x3F ] ^ SB1[ (T >> 24) & 0x3F ]; };
+N        DES_ROUND( Y, X );
+X        { T = *SK++ ^ Y; X ^= SB8[ (T ) & 0x3F ] ^ SB6[ (T >> 8) & 0x3F ] ^ SB4[ (T >> 16) & 0x3F ] ^ SB2[ (T >> 24) & 0x3F ]; T = *SK++ ^ ((Y << 28) | (Y >> 4)); X ^= SB7[ (T ) & 0x3F ] ^ SB5[ (T >> 8) & 0x3F ] ^ SB3[ (T >> 16) & 0x3F ] ^ SB1[ (T >> 24) & 0x3F ]; };
+N    }
+N
+N    for( i = 0; i < 8; i++ )
+N    {
+N        DES_ROUND( Y, X );
+X        { T = *SK++ ^ Y; X ^= SB8[ (T ) & 0x3F ] ^ SB6[ (T >> 8) & 0x3F ] ^ SB4[ (T >> 16) & 0x3F ] ^ SB2[ (T >> 24) & 0x3F ]; T = *SK++ ^ ((Y << 28) | (Y >> 4)); X ^= SB7[ (T ) & 0x3F ] ^ SB5[ (T >> 8) & 0x3F ] ^ SB3[ (T >> 16) & 0x3F ] ^ SB1[ (T >> 24) & 0x3F ]; };
+N        DES_ROUND( X, Y );
+X        { T = *SK++ ^ X; Y ^= SB8[ (T ) & 0x3F ] ^ SB6[ (T >> 8) & 0x3F ] ^ SB4[ (T >> 16) & 0x3F ] ^ SB2[ (T >> 24) & 0x3F ]; T = *SK++ ^ ((X << 28) | (X >> 4)); Y ^= SB7[ (T ) & 0x3F ] ^ SB5[ (T >> 8) & 0x3F ] ^ SB3[ (T >> 16) & 0x3F ] ^ SB1[ (T >> 24) & 0x3F ]; };
+N    }
+N
+N    DES_FP( Y, X );
+X    { Y = ((Y << 31) | (Y >> 1)) & 0xFFFFFFFF; T = (Y ^ X) & 0xAAAAAAAA; Y ^= T; X ^= T; X = ((X << 31) | (X >> 1)) & 0xFFFFFFFF; T = ((X >> 8) ^ Y) & 0x00FF00FF; Y ^= T; X ^= (T << 8); T = ((X >> 2) ^ Y) & 0x33333333; Y ^= T; X ^= (T << 2); T = ((Y >> 16) ^ X) & 0x0000FFFF; X ^= T; Y ^= (T << 16); T = ((Y >> 4) ^ X) & 0x0F0F0F0F; X ^= T; Y ^= (T << 4); };
+N
+N    PUT_UINT32_BE( Y, output, 0 );
+X    { (output)[(0) ] = (unsigned char) ( (Y) >> 24 ); (output)[(0) + 1] = (unsigned char) ( (Y) >> 16 ); (output)[(0) + 2] = (unsigned char) ( (Y) >> 8 ); (output)[(0) + 3] = (unsigned char) ( (Y) ); };
+N    PUT_UINT32_BE( X, output, 4 );
+X    { (output)[(4) ] = (unsigned char) ( (X) >> 24 ); (output)[(4) + 1] = (unsigned char) ( (X) >> 16 ); (output)[(4) + 2] = (unsigned char) ( (X) >> 8 ); (output)[(4) + 3] = (unsigned char) ( (X) ); };
+N
+N    return( 0 );
+N}
+N
+N/*
+N * 3DES-CBC buffer encryption/decryption
+N */
+Nint des3_crypt_cbc( des3_context *ctx,
+N                     int mode,
+N                     size_t length,
+N                     unsigned char iv[8],
+N                     const unsigned char *input,
+N                     unsigned char *output )
+N{
+N    int i;
+N    unsigned char temp[8];
+N
+N    if( length % 8 )
+N        return( POLARSSL_ERR_DES_INVALID_INPUT_LENGTH );
+X        return( -0x0032 );
+N
+N    if( mode == DES_ENCRYPT )
+X    if( mode == 1 )
+N    {
+N        while( length > 0 )
+N        {
+N            for( i = 0; i < 8; i++ )
+N                output[i] = (unsigned char)( input[i] ^ iv[i] );
+N
+N            des3_crypt_ecb( ctx, output, output );
+N            memcpy( iv, output, 8 );
+N
+N            input  += 8;
+N            output += 8;
+N            length -= 8;
+N        }
+N    }
+N    else /* DES_DECRYPT */
+N    {
+N        while( length > 0 )
+N        {
+N            memcpy( temp, input, 8 );
+N            des3_crypt_ecb( ctx, input, output );
+N
+N            for( i = 0; i < 8; i++ )
+N                output[i] = (unsigned char)( output[i] ^ iv[i] );
+N
+N            memcpy( iv, temp, 8 );
+N
+N            input  += 8;
+N            output += 8;
+N            length -= 8;
+N        }
+N    }
+N
+N    return( 0 );
+N}
+N
+Nint DES3_App(unsigned char *pucHexKey, unsigned char ucMode, unsigned char *pIV,
+N			unsigned char *pucIn, unsigned int* puiLen, unsigned char *pucOut)
+N{
+N	des3_context	h3Des;
+N	des_context	hDes;
+N	unsigned char mode;
+N	unsigned char *pucTemp;
+N	int iLen;
+N	if(pucHexKey == NULL || pucIn == NULL || puiLen == NULL || pucOut == NULL)
+X	if(pucHexKey == 0 || pucIn == 0 || puiLen == 0 || pucOut == 0)
+N	{
+N		return -1;
+N	}
+N
+N#if 0
+S	pucTemp = pucIn;
+S	iLen = *puiLen;
+S	des2key (pucHexKey, (short)ucMode);	 /*16 byte key*/
+S	while(iLen >= 8)
+S	{
+S		Ddes(pucTemp, pucOut);
+S		pucTemp += 8;
+S		pucOut += 8;
+S		iLen -= 8; 
+S	}
+S
+S	if(iLen > 0)
+S	{	/*Make data length multiples of 8, add 0x00 to the  end of data*/
+S//		pucTemp[iLen] = 0x80;
+S//		memset(pucTemp + iLen + 1, 0x00, 8 - iLen - 1);
+S		memset(pucTemp + iLen, 0x00, 8 - iLen);
+S		Ddes(pucTemp, pucOut);
+S		*puiLen += 8 - iLen;
+S	}
+S	else{}
+N#else
+N	pucTemp = pucIn;
+N	iLen = *puiLen;
+N
+N	if(ucMode)
+N	{
+N		des3_set2key_dec(&h3Des, pucHexKey);
+N	}
+N	else
+N	{
+N		des3_set2key_enc(&h3Des, pucHexKey);
+N	}
+N
+N	if(pIV == NULL)
+X	if(pIV == 0)
+N	{
+N		while(iLen >= 8)
+N		{
+N			des3_crypt_ecb(&h3Des, pucTemp, pucOut);
+N			pucTemp += 8;
+N			pucOut += 8;
+N			iLen -= 8; 
+N		}
+N
+N		if(iLen > 0)
+N		{	/*Make data length multiples of 8, add 0x00 to the  end of data*/
+N	//		pucTemp[iLen] = 0x80;
+N	//		memset(pucTemp + iLen + 1, 0x00, 8 - iLen - 1);
+N			memset(pucTemp + iLen, 0x00, 8 - iLen);
+N			des3_crypt_ecb(&h3Des, pucTemp, pucOut);
+N			*puiLen += 8 - iLen;
+N		}
+N	}
+N	else
+N	{
+N
+N		if(ucMode)
+N		{
+N			des_setkey_dec(&hDes, pucHexKey);
+N			mode = DES_DECRYPT;
+X			mode = 0;
+N		}
+N		else
+N		{
+N			des_setkey_enc(&hDes, pucHexKey);
+N			mode = DES_ENCRYPT;
+X			mode = 1;
+N		}
+N
+N		if(iLen % 8)
+N		{
+N			memset(pucTemp + iLen, 0x00, (8-iLen % 8));
+N			iLen = iLen + (8-iLen % 8);
+N		}
+N		
+N                     
+N		des_crypt_cbc(&hDes, mode, iLen, pIV, pucTemp, pucOut);
+N		
+N	}
+N
+N	
+N
+N#endif
+N	
+N	return 0;
+N} 
+N
+N
+N#endif

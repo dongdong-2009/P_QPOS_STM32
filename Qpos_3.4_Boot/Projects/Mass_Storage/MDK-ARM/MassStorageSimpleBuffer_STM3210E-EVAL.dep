@@ -1,0 +1,1070 @@
+Dependencies for Project 'MassStorageSimpleBuffer', Target 'STM3210E-EVAL': (DO NOT MODIFY !)
+F (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\src\misc.c)(0x56EFB6ED)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections --asm --interleave --asm_dir ".\\STM3210E-EVAL\\" -I..\inc -I..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include -I..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc -I..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc -I..\..\..\Utilities\STM32_EVAL -I..\..\..\Utilities\STM32_EVAL\Common -I..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I C:\Keil_v5\ARM\Inc\ST\STM32F10x-DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -DUSE_STM3210E_EVAL -o .\stm3210e-eval\misc.o --list_dir ".\\STM3210E-EVAL\\" --list --omf_browse .\stm3210e-eval\misc.crf --depend .\stm3210e-eval\misc.d)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x56EFB6ED)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\stm32f10x.h)(0x56EFB6ED)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cm3.h)(0x512C1E62)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x52FDD27E)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmInstr.h)(0x51BA6374)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmFunc.h)(0x512C1E62)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\system_stm32f10x.h)(0x56EFB6ED)
+I (..\inc\stm32f10x_conf.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_bkp.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_dbgmcu.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_exti.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_flash.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_gpio.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_iwdg.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_pwr.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_rcc.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_spi.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_tim.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h)(0x56EFB6ED)
+F (..\src\hw_config.c)(0x56EFB6EC)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections --asm --interleave --asm_dir ".\\STM3210E-EVAL\\" -I..\inc -I..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include -I..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc -I..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc -I..\..\..\Utilities\STM32_EVAL -I..\..\..\Utilities\STM32_EVAL\Common -I..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I C:\Keil_v5\ARM\Inc\ST\STM32F10x-DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -DUSE_STM3210E_EVAL -o .\stm3210e-eval\hw_config.o --list_dir ".\\STM3210E-EVAL\\" --list --omf_browse .\stm3210e-eval\hw_config.crf --depend .\stm3210e-eval\hw_config.d)
+I (..\inc\hw_config.h)(0x56EFB6ED)
+I (..\inc\platform_config.h)(0x56EFB6ED)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\stm32f10x.h)(0x56EFB6ED)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cm3.h)(0x512C1E62)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x52FDD27E)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmInstr.h)(0x51BA6374)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmFunc.h)(0x512C1E62)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\system_stm32f10x.h)(0x56EFB6ED)
+I (..\inc\stm32f10x_conf.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_bkp.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_dbgmcu.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_exti.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_flash.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_gpio.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_iwdg.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_pwr.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_rcc.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_spi.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_tim.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x56EFB6ED)
+I (..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL\stm3210e_eval_sdio_sd.h)(0x56EFB6ED)
+I (..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL\stm3210e_eval.h)(0x56EFB6ED)
+I (..\..\..\Utilities\STM32_EVAL\Common\stm32_eval_legacy.h)(0x56EFB6ED)
+I (..\inc\stm32_it.h)(0x56EFB6ED)
+I (..\inc\mass_mal.h)(0x56EFB6ED)
+I (..\inc\usb_desc.h)(0x56EFB6ED)
+I (..\inc\usb_pwr.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_core.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_type.h)(0x56EFB6ED)
+I (..\inc\usb_conf.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_lib.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_regs.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_def.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_init.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_sil.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_mem.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_int.h)(0x56EFB6ED)
+F (..\src\main.c)(0x56EFB6EC)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections --asm --interleave --asm_dir ".\\STM3210E-EVAL\\" -I..\inc -I..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include -I..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc -I..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc -I..\..\..\Utilities\STM32_EVAL -I..\..\..\Utilities\STM32_EVAL\Common -I..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I C:\Keil_v5\ARM\Inc\ST\STM32F10x-DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -DUSE_STM3210E_EVAL -o .\stm3210e-eval\main.o --list_dir ".\\STM3210E-EVAL\\" --list --omf_browse .\stm3210e-eval\main.crf --depend .\stm3210e-eval\main.d)
+I (..\inc\hw_config.h)(0x56EFB6ED)
+I (..\inc\platform_config.h)(0x56EFB6ED)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\stm32f10x.h)(0x56EFB6ED)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cm3.h)(0x512C1E62)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x52FDD27E)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmInstr.h)(0x51BA6374)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmFunc.h)(0x512C1E62)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\system_stm32f10x.h)(0x56EFB6ED)
+I (..\inc\stm32f10x_conf.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_bkp.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_dbgmcu.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_exti.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_flash.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_gpio.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_iwdg.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_pwr.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_rcc.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_spi.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_tim.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x56EFB6ED)
+I (..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL\stm3210e_eval_sdio_sd.h)(0x56EFB6ED)
+I (..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL\stm3210e_eval.h)(0x56EFB6ED)
+I (..\..\..\Utilities\STM32_EVAL\Common\stm32_eval_legacy.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_lib.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_type.h)(0x56EFB6ED)
+I (..\inc\usb_conf.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_regs.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_def.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_core.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_init.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_sil.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_mem.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_int.h)(0x56EFB6ED)
+I (..\inc\usb_pwr.h)(0x56EFB6ED)
+I (..\inc\flash_if.h)(0x56EFB6ED)
+I (..\inc\app_boot.h)(0x56EFB6ED)
+F (..\src\mass_mal.c)(0x56EFB6EC)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections --asm --interleave --asm_dir ".\\STM3210E-EVAL\\" -I..\inc -I..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include -I..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc -I..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc -I..\..\..\Utilities\STM32_EVAL -I..\..\..\Utilities\STM32_EVAL\Common -I..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I C:\Keil_v5\ARM\Inc\ST\STM32F10x-DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -DUSE_STM3210E_EVAL -o .\stm3210e-eval\mass_mal.o --list_dir ".\\STM3210E-EVAL\\" --list --omf_browse .\stm3210e-eval\mass_mal.crf --depend .\stm3210e-eval\mass_mal.d)
+I (..\inc\platform_config.h)(0x56EFB6ED)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\stm32f10x.h)(0x56EFB6ED)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cm3.h)(0x512C1E62)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x52FDD27E)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmInstr.h)(0x51BA6374)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmFunc.h)(0x512C1E62)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\system_stm32f10x.h)(0x56EFB6ED)
+I (..\inc\stm32f10x_conf.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_bkp.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_dbgmcu.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_exti.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_flash.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_gpio.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_iwdg.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_pwr.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_rcc.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_spi.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_tim.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x56EFB6ED)
+I (..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL\stm3210e_eval_sdio_sd.h)(0x56EFB6ED)
+I (..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL\stm3210e_eval.h)(0x56EFB6ED)
+I (..\..\..\Utilities\STM32_EVAL\Common\stm32_eval_legacy.h)(0x56EFB6ED)
+I (..\inc\mass_mal.h)(0x56EFB6ED)
+F (..\src\memory.c)(0x56EFB6EC)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections --asm --interleave --asm_dir ".\\STM3210E-EVAL\\" -I..\inc -I..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include -I..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc -I..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc -I..\..\..\Utilities\STM32_EVAL -I..\..\..\Utilities\STM32_EVAL\Common -I..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I C:\Keil_v5\ARM\Inc\ST\STM32F10x-DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -DUSE_STM3210E_EVAL -o .\stm3210e-eval\memory.o --list_dir ".\\STM3210E-EVAL\\" --list --omf_browse .\stm3210e-eval\memory.crf --depend .\stm3210e-eval\memory.d)
+I (..\inc\memory.h)(0x56EFB6ED)
+I (..\inc\hw_config.h)(0x56EFB6ED)
+I (..\inc\platform_config.h)(0x56EFB6ED)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\stm32f10x.h)(0x56EFB6ED)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cm3.h)(0x512C1E62)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x52FDD27E)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmInstr.h)(0x51BA6374)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmFunc.h)(0x512C1E62)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\system_stm32f10x.h)(0x56EFB6ED)
+I (..\inc\stm32f10x_conf.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_bkp.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_dbgmcu.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_exti.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_flash.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_gpio.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_iwdg.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_pwr.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_rcc.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_spi.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_tim.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x56EFB6ED)
+I (..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL\stm3210e_eval_sdio_sd.h)(0x56EFB6ED)
+I (..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL\stm3210e_eval.h)(0x56EFB6ED)
+I (..\..\..\Utilities\STM32_EVAL\Common\stm32_eval_legacy.h)(0x56EFB6ED)
+I (..\inc\usb_scsi.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_type.h)(0x56EFB6ED)
+I (..\inc\usb_conf.h)(0x56EFB6ED)
+I (..\inc\usb_bot.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_regs.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_mem.h)(0x56EFB6ED)
+I (..\inc\mass_mal.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_lib.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_def.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_core.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_init.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_sil.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_int.h)(0x56EFB6ED)
+F (..\src\scsi_data.c)(0x56EFB6EC)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections --asm --interleave --asm_dir ".\\STM3210E-EVAL\\" -I..\inc -I..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include -I..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc -I..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc -I..\..\..\Utilities\STM32_EVAL -I..\..\..\Utilities\STM32_EVAL\Common -I..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I C:\Keil_v5\ARM\Inc\ST\STM32F10x-DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -DUSE_STM3210E_EVAL -o .\stm3210e-eval\scsi_data.o --list_dir ".\\STM3210E-EVAL\\" --list --omf_browse .\stm3210e-eval\scsi_data.crf --depend .\stm3210e-eval\scsi_data.d)
+I (..\inc\usb_scsi.h)(0x56EFB6ED)
+I (..\inc\hw_config.h)(0x56EFB6ED)
+I (..\inc\platform_config.h)(0x56EFB6ED)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\stm32f10x.h)(0x56EFB6ED)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cm3.h)(0x512C1E62)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x52FDD27E)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmInstr.h)(0x51BA6374)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmFunc.h)(0x512C1E62)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\system_stm32f10x.h)(0x56EFB6ED)
+I (..\inc\stm32f10x_conf.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_bkp.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_dbgmcu.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_exti.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_flash.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_gpio.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_iwdg.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_pwr.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_rcc.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_spi.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_tim.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x56EFB6ED)
+I (..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL\stm3210e_eval_sdio_sd.h)(0x56EFB6ED)
+I (..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL\stm3210e_eval.h)(0x56EFB6ED)
+I (..\..\..\Utilities\STM32_EVAL\Common\stm32_eval_legacy.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_type.h)(0x56EFB6ED)
+I (..\inc\usb_conf.h)(0x56EFB6ED)
+I (..\inc\memory.h)(0x56EFB6ED)
+F (..\src\usb_bot.c)(0x56EFB6EC)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections --asm --interleave --asm_dir ".\\STM3210E-EVAL\\" -I..\inc -I..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include -I..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc -I..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc -I..\..\..\Utilities\STM32_EVAL -I..\..\..\Utilities\STM32_EVAL\Common -I..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I C:\Keil_v5\ARM\Inc\ST\STM32F10x-DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -DUSE_STM3210E_EVAL -o .\stm3210e-eval\usb_bot.o --list_dir ".\\STM3210E-EVAL\\" --list --omf_browse .\stm3210e-eval\usb_bot.crf --depend .\stm3210e-eval\usb_bot.d)
+I (..\inc\usb_scsi.h)(0x56EFB6ED)
+I (..\inc\hw_config.h)(0x56EFB6ED)
+I (..\inc\platform_config.h)(0x56EFB6ED)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\stm32f10x.h)(0x56EFB6ED)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cm3.h)(0x512C1E62)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x52FDD27E)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmInstr.h)(0x51BA6374)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmFunc.h)(0x512C1E62)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\system_stm32f10x.h)(0x56EFB6ED)
+I (..\inc\stm32f10x_conf.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_bkp.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_dbgmcu.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_exti.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_flash.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_gpio.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_iwdg.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_pwr.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_rcc.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_spi.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_tim.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x56EFB6ED)
+I (..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL\stm3210e_eval_sdio_sd.h)(0x56EFB6ED)
+I (..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL\stm3210e_eval.h)(0x56EFB6ED)
+I (..\..\..\Utilities\STM32_EVAL\Common\stm32_eval_legacy.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_type.h)(0x56EFB6ED)
+I (..\inc\usb_conf.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_regs.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_mem.h)(0x56EFB6ED)
+I (..\inc\usb_bot.h)(0x56EFB6ED)
+I (..\inc\memory.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_lib.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_def.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_core.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_init.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_sil.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_int.h)(0x56EFB6ED)
+I (..\inc\app_boot.h)(0x56EFB6ED)
+F (..\src\usb_desc.c)(0x56EFB6EC)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections --asm --interleave --asm_dir ".\\STM3210E-EVAL\\" -I..\inc -I..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include -I..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc -I..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc -I..\..\..\Utilities\STM32_EVAL -I..\..\..\Utilities\STM32_EVAL\Common -I..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I C:\Keil_v5\ARM\Inc\ST\STM32F10x-DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -DUSE_STM3210E_EVAL -o .\stm3210e-eval\usb_desc.o --list_dir ".\\STM3210E-EVAL\\" --list --omf_browse .\stm3210e-eval\usb_desc.crf --depend .\stm3210e-eval\usb_desc.d)
+I (..\inc\usb_desc.h)(0x56EFB6ED)
+I (..\inc\hw_config.h)(0x56EFB6ED)
+I (..\inc\platform_config.h)(0x56EFB6ED)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\stm32f10x.h)(0x56EFB6ED)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cm3.h)(0x512C1E62)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x52FDD27E)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmInstr.h)(0x51BA6374)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmFunc.h)(0x512C1E62)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\system_stm32f10x.h)(0x56EFB6ED)
+I (..\inc\stm32f10x_conf.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_bkp.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_dbgmcu.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_exti.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_flash.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_gpio.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_iwdg.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_pwr.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_rcc.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_spi.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_tim.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x56EFB6ED)
+I (..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL\stm3210e_eval_sdio_sd.h)(0x56EFB6ED)
+I (..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL\stm3210e_eval.h)(0x56EFB6ED)
+I (..\..\..\Utilities\STM32_EVAL\Common\stm32_eval_legacy.h)(0x56EFB6ED)
+F (..\src\usb_endp.c)(0x56EFB6EC)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections --asm --interleave --asm_dir ".\\STM3210E-EVAL\\" -I..\inc -I..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include -I..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc -I..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc -I..\..\..\Utilities\STM32_EVAL -I..\..\..\Utilities\STM32_EVAL\Common -I..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I C:\Keil_v5\ARM\Inc\ST\STM32F10x-DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -DUSE_STM3210E_EVAL -o .\stm3210e-eval\usb_endp.o --list_dir ".\\STM3210E-EVAL\\" --list --omf_browse .\stm3210e-eval\usb_endp.crf --depend .\stm3210e-eval\usb_endp.d)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_lib.h)(0x56EFB6ED)
+I (..\inc\hw_config.h)(0x56EFB6ED)
+I (..\inc\platform_config.h)(0x56EFB6ED)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\stm32f10x.h)(0x56EFB6ED)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cm3.h)(0x512C1E62)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x52FDD27E)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmInstr.h)(0x51BA6374)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmFunc.h)(0x512C1E62)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\system_stm32f10x.h)(0x56EFB6ED)
+I (..\inc\stm32f10x_conf.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_bkp.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_dbgmcu.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_exti.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_flash.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_gpio.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_iwdg.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_pwr.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_rcc.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_spi.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_tim.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x56EFB6ED)
+I (..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL\stm3210e_eval_sdio_sd.h)(0x56EFB6ED)
+I (..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL\stm3210e_eval.h)(0x56EFB6ED)
+I (..\..\..\Utilities\STM32_EVAL\Common\stm32_eval_legacy.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_type.h)(0x56EFB6ED)
+I (..\inc\usb_conf.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_regs.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_def.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_core.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_init.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_sil.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_mem.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_int.h)(0x56EFB6ED)
+I (..\inc\usb_bot.h)(0x56EFB6ED)
+I (..\inc\usb_istr.h)(0x56EFB6ED)
+F (..\src\usb_istr.c)(0x56EFB6EC)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections --asm --interleave --asm_dir ".\\STM3210E-EVAL\\" -I..\inc -I..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include -I..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc -I..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc -I..\..\..\Utilities\STM32_EVAL -I..\..\..\Utilities\STM32_EVAL\Common -I..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I C:\Keil_v5\ARM\Inc\ST\STM32F10x-DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -DUSE_STM3210E_EVAL -o .\stm3210e-eval\usb_istr.o --list_dir ".\\STM3210E-EVAL\\" --list --omf_browse .\stm3210e-eval\usb_istr.crf --depend .\stm3210e-eval\usb_istr.d)
+I (..\inc\hw_config.h)(0x56EFB6ED)
+I (..\inc\platform_config.h)(0x56EFB6ED)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\stm32f10x.h)(0x56EFB6ED)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cm3.h)(0x512C1E62)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x52FDD27E)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmInstr.h)(0x51BA6374)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmFunc.h)(0x512C1E62)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\system_stm32f10x.h)(0x56EFB6ED)
+I (..\inc\stm32f10x_conf.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_bkp.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_dbgmcu.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_exti.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_flash.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_gpio.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_iwdg.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_pwr.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_rcc.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_spi.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_tim.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x56EFB6ED)
+I (..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL\stm3210e_eval_sdio_sd.h)(0x56EFB6ED)
+I (..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL\stm3210e_eval.h)(0x56EFB6ED)
+I (..\..\..\Utilities\STM32_EVAL\Common\stm32_eval_legacy.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_type.h)(0x56EFB6ED)
+I (..\inc\usb_conf.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_regs.h)(0x56EFB6ED)
+I (..\inc\usb_pwr.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_core.h)(0x56EFB6ED)
+I (..\inc\usb_istr.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_init.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_int.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_lib.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_def.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_sil.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_mem.h)(0x56EFB6ED)
+F (..\src\usb_prop.c)(0x56EFB6EC)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections --asm --interleave --asm_dir ".\\STM3210E-EVAL\\" -I..\inc -I..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include -I..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc -I..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc -I..\..\..\Utilities\STM32_EVAL -I..\..\..\Utilities\STM32_EVAL\Common -I..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I C:\Keil_v5\ARM\Inc\ST\STM32F10x-DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -DUSE_STM3210E_EVAL -o .\stm3210e-eval\usb_prop.o --list_dir ".\\STM3210E-EVAL\\" --list --omf_browse .\stm3210e-eval\usb_prop.crf --depend .\stm3210e-eval\usb_prop.d)
+I (..\inc\hw_config.h)(0x56EFB6ED)
+I (..\inc\platform_config.h)(0x56EFB6ED)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\stm32f10x.h)(0x56EFB6ED)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cm3.h)(0x512C1E62)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x52FDD27E)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmInstr.h)(0x51BA6374)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmFunc.h)(0x512C1E62)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\system_stm32f10x.h)(0x56EFB6ED)
+I (..\inc\stm32f10x_conf.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_bkp.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_dbgmcu.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_exti.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_flash.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_gpio.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_iwdg.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_pwr.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_rcc.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_spi.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_tim.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x56EFB6ED)
+I (..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL\stm3210e_eval_sdio_sd.h)(0x56EFB6ED)
+I (..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL\stm3210e_eval.h)(0x56EFB6ED)
+I (..\..\..\Utilities\STM32_EVAL\Common\stm32_eval_legacy.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_lib.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_type.h)(0x56EFB6ED)
+I (..\inc\usb_conf.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_regs.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_def.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_core.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_init.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_sil.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_mem.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_int.h)(0x56EFB6ED)
+I (..\inc\usb_desc.h)(0x56EFB6ED)
+I (..\inc\usb_pwr.h)(0x56EFB6ED)
+I (..\inc\usb_bot.h)(0x56EFB6ED)
+I (..\inc\memory.h)(0x56EFB6ED)
+I (..\inc\mass_mal.h)(0x56EFB6ED)
+I (..\inc\usb_prop.h)(0x56EFB6ED)
+F (..\src\usb_pwr.c)(0x56EFB6EC)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections --asm --interleave --asm_dir ".\\STM3210E-EVAL\\" -I..\inc -I..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include -I..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc -I..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc -I..\..\..\Utilities\STM32_EVAL -I..\..\..\Utilities\STM32_EVAL\Common -I..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I C:\Keil_v5\ARM\Inc\ST\STM32F10x-DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -DUSE_STM3210E_EVAL -o .\stm3210e-eval\usb_pwr.o --list_dir ".\\STM3210E-EVAL\\" --list --omf_browse .\stm3210e-eval\usb_pwr.crf --depend .\stm3210e-eval\usb_pwr.d)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_lib.h)(0x56EFB6ED)
+I (..\inc\hw_config.h)(0x56EFB6ED)
+I (..\inc\platform_config.h)(0x56EFB6ED)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\stm32f10x.h)(0x56EFB6ED)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cm3.h)(0x512C1E62)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x52FDD27E)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmInstr.h)(0x51BA6374)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmFunc.h)(0x512C1E62)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\system_stm32f10x.h)(0x56EFB6ED)
+I (..\inc\stm32f10x_conf.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_bkp.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_dbgmcu.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_exti.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_flash.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_gpio.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_iwdg.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_pwr.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_rcc.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_spi.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_tim.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x56EFB6ED)
+I (..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL\stm3210e_eval_sdio_sd.h)(0x56EFB6ED)
+I (..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL\stm3210e_eval.h)(0x56EFB6ED)
+I (..\..\..\Utilities\STM32_EVAL\Common\stm32_eval_legacy.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_type.h)(0x56EFB6ED)
+I (..\inc\usb_conf.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_regs.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_def.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_core.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_init.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_sil.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_mem.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_int.h)(0x56EFB6ED)
+I (..\inc\usb_pwr.h)(0x56EFB6ED)
+F (..\src\usb_scsi.c)(0x56EFB6EC)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections --asm --interleave --asm_dir ".\\STM3210E-EVAL\\" -I..\inc -I..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include -I..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc -I..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc -I..\..\..\Utilities\STM32_EVAL -I..\..\..\Utilities\STM32_EVAL\Common -I..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I C:\Keil_v5\ARM\Inc\ST\STM32F10x-DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -DUSE_STM3210E_EVAL -o .\stm3210e-eval\usb_scsi.o --list_dir ".\\STM3210E-EVAL\\" --list --omf_browse .\stm3210e-eval\usb_scsi.crf --depend .\stm3210e-eval\usb_scsi.d)
+I (..\inc\hw_config.h)(0x56EFB6ED)
+I (..\inc\platform_config.h)(0x56EFB6ED)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\stm32f10x.h)(0x56EFB6ED)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cm3.h)(0x512C1E62)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x52FDD27E)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmInstr.h)(0x51BA6374)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmFunc.h)(0x512C1E62)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\system_stm32f10x.h)(0x56EFB6ED)
+I (..\inc\stm32f10x_conf.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_bkp.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_dbgmcu.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_exti.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_flash.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_gpio.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_iwdg.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_pwr.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_rcc.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_spi.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_tim.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x56EFB6ED)
+I (..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL\stm3210e_eval_sdio_sd.h)(0x56EFB6ED)
+I (..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL\stm3210e_eval.h)(0x56EFB6ED)
+I (..\..\..\Utilities\STM32_EVAL\Common\stm32_eval_legacy.h)(0x56EFB6ED)
+I (..\inc\usb_scsi.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_type.h)(0x56EFB6ED)
+I (..\inc\usb_conf.h)(0x56EFB6ED)
+I (..\inc\mass_mal.h)(0x56EFB6ED)
+I (..\inc\usb_bot.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_regs.h)(0x56EFB6ED)
+I (..\inc\memory.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_lib.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_def.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_core.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_init.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_sil.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_mem.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_int.h)(0x56EFB6ED)
+I (..\inc\app_boot.h)(0x56EFB6ED)
+F (..\src\stm32_it.c)(0x56EFB6EC)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections --asm --interleave --asm_dir ".\\STM3210E-EVAL\\" -I..\inc -I..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include -I..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc -I..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc -I..\..\..\Utilities\STM32_EVAL -I..\..\..\Utilities\STM32_EVAL\Common -I..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I C:\Keil_v5\ARM\Inc\ST\STM32F10x-DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -DUSE_STM3210E_EVAL -o .\stm3210e-eval\stm32_it.o --list_dir ".\\STM3210E-EVAL\\" --list --omf_browse .\stm3210e-eval\stm32_it.crf --depend .\stm3210e-eval\stm32_it.d)
+I (..\inc\hw_config.h)(0x56EFB6ED)
+I (..\inc\platform_config.h)(0x56EFB6ED)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\stm32f10x.h)(0x56EFB6ED)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cm3.h)(0x512C1E62)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x52FDD27E)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmInstr.h)(0x51BA6374)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmFunc.h)(0x512C1E62)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\system_stm32f10x.h)(0x56EFB6ED)
+I (..\inc\stm32f10x_conf.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_bkp.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_dbgmcu.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_exti.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_flash.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_gpio.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_iwdg.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_pwr.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_rcc.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_spi.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_tim.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x56EFB6ED)
+I (..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL\stm3210e_eval_sdio_sd.h)(0x56EFB6ED)
+I (..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL\stm3210e_eval.h)(0x56EFB6ED)
+I (..\..\..\Utilities\STM32_EVAL\Common\stm32_eval_legacy.h)(0x56EFB6ED)
+I (..\inc\stm32_it.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_lib.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_type.h)(0x56EFB6ED)
+I (..\inc\usb_conf.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_regs.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_def.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_core.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_init.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_sil.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_mem.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_int.h)(0x56EFB6ED)
+I (..\inc\usb_istr.h)(0x56EFB6ED)
+I (..\inc\usb_pwr.h)(0x56EFB6ED)
+F (..\src\app_boot.c)(0x56EFB6EC)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections --asm --interleave --asm_dir ".\\STM3210E-EVAL\\" -I..\inc -I..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include -I..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc -I..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc -I..\..\..\Utilities\STM32_EVAL -I..\..\..\Utilities\STM32_EVAL\Common -I..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I C:\Keil_v5\ARM\Inc\ST\STM32F10x-DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -DUSE_STM3210E_EVAL -o .\stm3210e-eval\app_boot.o --list_dir ".\\STM3210E-EVAL\\" --list --omf_browse .\stm3210e-eval\app_boot.crf --depend .\stm3210e-eval\app_boot.d)
+I (..\inc\App_boot.h)(0x56EFB6ED)
+I (..\inc\Flash_if.h)(0x56EFB6ED)
+I (..\inc\platform_config.h)(0x56EFB6ED)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\stm32f10x.h)(0x56EFB6ED)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cm3.h)(0x512C1E62)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x52FDD27E)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmInstr.h)(0x51BA6374)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmFunc.h)(0x512C1E62)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\system_stm32f10x.h)(0x56EFB6ED)
+I (..\inc\stm32f10x_conf.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_bkp.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_dbgmcu.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_exti.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_flash.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_gpio.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_iwdg.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_pwr.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_rcc.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_spi.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_tim.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x56EFB6ED)
+I (..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL\stm3210e_eval_sdio_sd.h)(0x56EFB6ED)
+I (..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL\stm3210e_eval.h)(0x56EFB6ED)
+I (..\..\..\Utilities\STM32_EVAL\Common\stm32_eval_legacy.h)(0x56EFB6ED)
+I (..\inc\msd.h)(0x56EFB6ED)
+F (..\src\Display.c)(0x56EFB6EC)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections --asm --interleave --asm_dir ".\\STM3210E-EVAL\\" -I..\inc -I..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include -I..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc -I..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc -I..\..\..\Utilities\STM32_EVAL -I..\..\..\Utilities\STM32_EVAL\Common -I..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I C:\Keil_v5\ARM\Inc\ST\STM32F10x-DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -DUSE_STM3210E_EVAL -o .\stm3210e-eval\display.o --list_dir ".\\STM3210E-EVAL\\" --list --omf_browse .\stm3210e-eval\display.crf --depend .\stm3210e-eval\display.d)
+I (..\src\Display.h)(0x56EFB6EC)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\stm32f10x.h)(0x56EFB6ED)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cm3.h)(0x512C1E62)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x52FDD27E)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmInstr.h)(0x51BA6374)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmFunc.h)(0x512C1E62)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\system_stm32f10x.h)(0x56EFB6ED)
+I (..\inc\stm32f10x_conf.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_bkp.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_dbgmcu.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_exti.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_flash.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_gpio.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_iwdg.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_pwr.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_rcc.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_spi.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_tim.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x56EFB6ED)
+I (..\src\SysTick_delay.h)(0x56EFB6EC)
+F (..\src\SysTick_delay.c)(0x56EFB6EC)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections --asm --interleave --asm_dir ".\\STM3210E-EVAL\\" -I..\inc -I..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include -I..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc -I..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc -I..\..\..\Utilities\STM32_EVAL -I..\..\..\Utilities\STM32_EVAL\Common -I..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I C:\Keil_v5\ARM\Inc\ST\STM32F10x-DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -DUSE_STM3210E_EVAL -o .\stm3210e-eval\systick_delay.o --list_dir ".\\STM3210E-EVAL\\" --list --omf_browse .\stm3210e-eval\systick_delay.crf --depend .\stm3210e-eval\systick_delay.d)
+I (..\src\SysTick_delay.h)(0x56EFB6EC)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\stm32f10x.h)(0x56EFB6ED)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cm3.h)(0x512C1E62)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x52FDD27E)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmInstr.h)(0x51BA6374)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmFunc.h)(0x512C1E62)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\system_stm32f10x.h)(0x56EFB6ED)
+I (..\inc\stm32f10x_conf.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_bkp.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_dbgmcu.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_exti.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_flash.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_gpio.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_iwdg.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_pwr.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_rcc.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_spi.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_tim.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x56EFB6ED)
+F (..\src\system_stm32f10x.c)(0x56EFB6EC)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections --asm --interleave --asm_dir ".\\STM3210E-EVAL\\" -I..\inc -I..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include -I..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc -I..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc -I..\..\..\Utilities\STM32_EVAL -I..\..\..\Utilities\STM32_EVAL\Common -I..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I C:\Keil_v5\ARM\Inc\ST\STM32F10x-DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -DUSE_STM3210E_EVAL -o .\stm3210e-eval\system_stm32f10x.o --list_dir ".\\STM3210E-EVAL\\" --list --omf_browse .\stm3210e-eval\system_stm32f10x.crf --depend .\stm3210e-eval\system_stm32f10x.d)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\stm32f10x.h)(0x56EFB6ED)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cm3.h)(0x512C1E62)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x52FDD27E)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmInstr.h)(0x51BA6374)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmFunc.h)(0x512C1E62)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\system_stm32f10x.h)(0x56EFB6ED)
+I (..\inc\stm32f10x_conf.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_bkp.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_dbgmcu.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_exti.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_flash.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_gpio.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_iwdg.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_pwr.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_rcc.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_spi.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_tim.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x56EFB6ED)
+F (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Source\Templates\arm\startup_stm32f10x_hd.s)(0x56EFB6ED)(--cpu Cortex-M3 -g --apcs=interwork --pd "__MICROLIB SETA 1"-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I C:\Keil_v5\ARM\Inc\ST\STM32F10x--list .\stm3210e-eval\startup_stm32f10x_hd.lst --xref -o .\stm3210e-eval\startup_stm32f10x_hd.o --depend .\stm3210e-eval\startup_stm32f10x_hd.d)
+F (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Source\Templates\arm\startup_stm32f10x_md.s)(0x56EFB6ED)()
+F (..\..\..\Libraries\STM32_USB-FS-Device_Driver\src\usb_core.c)(0x56EFB6ED)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections --asm --interleave --asm_dir ".\\STM3210E-EVAL\\" -I..\inc -I..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include -I..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc -I..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc -I..\..\..\Utilities\STM32_EVAL -I..\..\..\Utilities\STM32_EVAL\Common -I..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I C:\Keil_v5\ARM\Inc\ST\STM32F10x-DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -DUSE_STM3210E_EVAL -o .\stm3210e-eval\usb_core.o --list_dir ".\\STM3210E-EVAL\\" --list --omf_browse .\stm3210e-eval\usb_core.crf --depend .\stm3210e-eval\usb_core.d)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_lib.h)(0x56EFB6ED)
+I (..\inc\hw_config.h)(0x56EFB6ED)
+I (..\inc\platform_config.h)(0x56EFB6ED)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\stm32f10x.h)(0x56EFB6ED)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cm3.h)(0x512C1E62)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x52FDD27E)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmInstr.h)(0x51BA6374)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmFunc.h)(0x512C1E62)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\system_stm32f10x.h)(0x56EFB6ED)
+I (..\inc\stm32f10x_conf.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_bkp.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_dbgmcu.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_exti.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_flash.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_gpio.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_iwdg.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_pwr.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_rcc.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_spi.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_tim.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x56EFB6ED)
+I (..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL\stm3210e_eval_sdio_sd.h)(0x56EFB6ED)
+I (..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL\stm3210e_eval.h)(0x56EFB6ED)
+I (..\..\..\Utilities\STM32_EVAL\Common\stm32_eval_legacy.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_type.h)(0x56EFB6ED)
+I (..\inc\usb_conf.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_regs.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_def.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_core.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_init.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_sil.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_mem.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_int.h)(0x56EFB6ED)
+F (..\..\..\Libraries\STM32_USB-FS-Device_Driver\src\usb_init.c)(0x56EFB6ED)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections --asm --interleave --asm_dir ".\\STM3210E-EVAL\\" -I..\inc -I..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include -I..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc -I..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc -I..\..\..\Utilities\STM32_EVAL -I..\..\..\Utilities\STM32_EVAL\Common -I..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I C:\Keil_v5\ARM\Inc\ST\STM32F10x-DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -DUSE_STM3210E_EVAL -o .\stm3210e-eval\usb_init.o --list_dir ".\\STM3210E-EVAL\\" --list --omf_browse .\stm3210e-eval\usb_init.crf --depend .\stm3210e-eval\usb_init.d)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_lib.h)(0x56EFB6ED)
+I (..\inc\hw_config.h)(0x56EFB6ED)
+I (..\inc\platform_config.h)(0x56EFB6ED)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\stm32f10x.h)(0x56EFB6ED)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cm3.h)(0x512C1E62)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x52FDD27E)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmInstr.h)(0x51BA6374)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmFunc.h)(0x512C1E62)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\system_stm32f10x.h)(0x56EFB6ED)
+I (..\inc\stm32f10x_conf.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_bkp.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_dbgmcu.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_exti.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_flash.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_gpio.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_iwdg.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_pwr.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_rcc.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_spi.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_tim.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x56EFB6ED)
+I (..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL\stm3210e_eval_sdio_sd.h)(0x56EFB6ED)
+I (..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL\stm3210e_eval.h)(0x56EFB6ED)
+I (..\..\..\Utilities\STM32_EVAL\Common\stm32_eval_legacy.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_type.h)(0x56EFB6ED)
+I (..\inc\usb_conf.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_regs.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_def.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_core.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_init.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_sil.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_mem.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_int.h)(0x56EFB6ED)
+F (..\..\..\Libraries\STM32_USB-FS-Device_Driver\src\usb_int.c)(0x56EFB6ED)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections --asm --interleave --asm_dir ".\\STM3210E-EVAL\\" -I..\inc -I..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include -I..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc -I..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc -I..\..\..\Utilities\STM32_EVAL -I..\..\..\Utilities\STM32_EVAL\Common -I..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I C:\Keil_v5\ARM\Inc\ST\STM32F10x-DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -DUSE_STM3210E_EVAL -o .\stm3210e-eval\usb_int.o --list_dir ".\\STM3210E-EVAL\\" --list --omf_browse .\stm3210e-eval\usb_int.crf --depend .\stm3210e-eval\usb_int.d)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_lib.h)(0x56EFB6ED)
+I (..\inc\hw_config.h)(0x56EFB6ED)
+I (..\inc\platform_config.h)(0x56EFB6ED)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\stm32f10x.h)(0x56EFB6ED)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cm3.h)(0x512C1E62)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x52FDD27E)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmInstr.h)(0x51BA6374)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmFunc.h)(0x512C1E62)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\system_stm32f10x.h)(0x56EFB6ED)
+I (..\inc\stm32f10x_conf.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_bkp.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_dbgmcu.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_exti.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_flash.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_gpio.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_iwdg.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_pwr.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_rcc.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_spi.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_tim.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x56EFB6ED)
+I (..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL\stm3210e_eval_sdio_sd.h)(0x56EFB6ED)
+I (..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL\stm3210e_eval.h)(0x56EFB6ED)
+I (..\..\..\Utilities\STM32_EVAL\Common\stm32_eval_legacy.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_type.h)(0x56EFB6ED)
+I (..\inc\usb_conf.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_regs.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_def.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_core.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_init.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_sil.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_mem.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_int.h)(0x56EFB6ED)
+F (..\..\..\Libraries\STM32_USB-FS-Device_Driver\src\usb_mem.c)(0x56EFB6ED)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections --asm --interleave --asm_dir ".\\STM3210E-EVAL\\" -I..\inc -I..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include -I..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc -I..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc -I..\..\..\Utilities\STM32_EVAL -I..\..\..\Utilities\STM32_EVAL\Common -I..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I C:\Keil_v5\ARM\Inc\ST\STM32F10x-DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -DUSE_STM3210E_EVAL -o .\stm3210e-eval\usb_mem.o --list_dir ".\\STM3210E-EVAL\\" --list --omf_browse .\stm3210e-eval\usb_mem.crf --depend .\stm3210e-eval\usb_mem.d)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_lib.h)(0x56EFB6ED)
+I (..\inc\hw_config.h)(0x56EFB6ED)
+I (..\inc\platform_config.h)(0x56EFB6ED)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\stm32f10x.h)(0x56EFB6ED)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cm3.h)(0x512C1E62)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x52FDD27E)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmInstr.h)(0x51BA6374)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmFunc.h)(0x512C1E62)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\system_stm32f10x.h)(0x56EFB6ED)
+I (..\inc\stm32f10x_conf.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_bkp.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_dbgmcu.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_exti.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_flash.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_gpio.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_iwdg.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_pwr.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_rcc.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_spi.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_tim.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x56EFB6ED)
+I (..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL\stm3210e_eval_sdio_sd.h)(0x56EFB6ED)
+I (..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL\stm3210e_eval.h)(0x56EFB6ED)
+I (..\..\..\Utilities\STM32_EVAL\Common\stm32_eval_legacy.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_type.h)(0x56EFB6ED)
+I (..\inc\usb_conf.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_regs.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_def.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_core.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_init.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_sil.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_mem.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_int.h)(0x56EFB6ED)
+F (..\..\..\Libraries\STM32_USB-FS-Device_Driver\src\usb_regs.c)(0x56EFB6ED)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections --asm --interleave --asm_dir ".\\STM3210E-EVAL\\" -I..\inc -I..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include -I..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc -I..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc -I..\..\..\Utilities\STM32_EVAL -I..\..\..\Utilities\STM32_EVAL\Common -I..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I C:\Keil_v5\ARM\Inc\ST\STM32F10x-DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -DUSE_STM3210E_EVAL -o .\stm3210e-eval\usb_regs.o --list_dir ".\\STM3210E-EVAL\\" --list --omf_browse .\stm3210e-eval\usb_regs.crf --depend .\stm3210e-eval\usb_regs.d)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_lib.h)(0x56EFB6ED)
+I (..\inc\hw_config.h)(0x56EFB6ED)
+I (..\inc\platform_config.h)(0x56EFB6ED)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\stm32f10x.h)(0x56EFB6ED)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cm3.h)(0x512C1E62)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x52FDD27E)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmInstr.h)(0x51BA6374)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmFunc.h)(0x512C1E62)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\system_stm32f10x.h)(0x56EFB6ED)
+I (..\inc\stm32f10x_conf.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_bkp.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_dbgmcu.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_exti.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_flash.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_gpio.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_iwdg.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_pwr.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_rcc.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_spi.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_tim.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x56EFB6ED)
+I (..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL\stm3210e_eval_sdio_sd.h)(0x56EFB6ED)
+I (..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL\stm3210e_eval.h)(0x56EFB6ED)
+I (..\..\..\Utilities\STM32_EVAL\Common\stm32_eval_legacy.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_type.h)(0x56EFB6ED)
+I (..\inc\usb_conf.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_regs.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_def.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_core.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_init.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_sil.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_mem.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_int.h)(0x56EFB6ED)
+F (..\..\..\Libraries\STM32_USB-FS-Device_Driver\src\usb_sil.c)(0x56EFB6ED)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections --asm --interleave --asm_dir ".\\STM3210E-EVAL\\" -I..\inc -I..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include -I..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc -I..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc -I..\..\..\Utilities\STM32_EVAL -I..\..\..\Utilities\STM32_EVAL\Common -I..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I C:\Keil_v5\ARM\Inc\ST\STM32F10x-DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -DUSE_STM3210E_EVAL -o .\stm3210e-eval\usb_sil.o --list_dir ".\\STM3210E-EVAL\\" --list --omf_browse .\stm3210e-eval\usb_sil.crf --depend .\stm3210e-eval\usb_sil.d)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_lib.h)(0x56EFB6ED)
+I (..\inc\hw_config.h)(0x56EFB6ED)
+I (..\inc\platform_config.h)(0x56EFB6ED)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\stm32f10x.h)(0x56EFB6ED)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cm3.h)(0x512C1E62)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x52FDD27E)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmInstr.h)(0x51BA6374)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmFunc.h)(0x512C1E62)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\system_stm32f10x.h)(0x56EFB6ED)
+I (..\inc\stm32f10x_conf.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_bkp.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_dbgmcu.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_exti.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_flash.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_gpio.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_iwdg.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_pwr.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_rcc.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_spi.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_tim.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x56EFB6ED)
+I (..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL\stm3210e_eval_sdio_sd.h)(0x56EFB6ED)
+I (..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL\stm3210e_eval.h)(0x56EFB6ED)
+I (..\..\..\Utilities\STM32_EVAL\Common\stm32_eval_legacy.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_type.h)(0x56EFB6ED)
+I (..\inc\usb_conf.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_regs.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_def.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_core.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_init.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_sil.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_mem.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc\usb_int.h)(0x56EFB6ED)
+F (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_exti.c)(0x56EFB6ED)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections --asm --interleave --asm_dir ".\\STM3210E-EVAL\\" -I..\inc -I..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include -I..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc -I..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc -I..\..\..\Utilities\STM32_EVAL -I..\..\..\Utilities\STM32_EVAL\Common -I..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I C:\Keil_v5\ARM\Inc\ST\STM32F10x-DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -DUSE_STM3210E_EVAL -o .\stm3210e-eval\stm32f10x_exti.o --list_dir ".\\STM3210E-EVAL\\" --list --omf_browse .\stm3210e-eval\stm32f10x_exti.crf --depend .\stm3210e-eval\stm32f10x_exti.d)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_exti.h)(0x56EFB6ED)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\stm32f10x.h)(0x56EFB6ED)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cm3.h)(0x512C1E62)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x52FDD27E)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmInstr.h)(0x51BA6374)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmFunc.h)(0x512C1E62)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\system_stm32f10x.h)(0x56EFB6ED)
+I (..\inc\stm32f10x_conf.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_bkp.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_dbgmcu.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_flash.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_gpio.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_iwdg.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_pwr.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_rcc.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_spi.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_tim.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x56EFB6ED)
+F (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_dma.c)(0x56EFB6ED)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections --asm --interleave --asm_dir ".\\STM3210E-EVAL\\" -I..\inc -I..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include -I..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc -I..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc -I..\..\..\Utilities\STM32_EVAL -I..\..\..\Utilities\STM32_EVAL\Common -I..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I C:\Keil_v5\ARM\Inc\ST\STM32F10x-DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -DUSE_STM3210E_EVAL -o .\stm3210e-eval\stm32f10x_dma.o --list_dir ".\\STM3210E-EVAL\\" --list --omf_browse .\stm3210e-eval\stm32f10x_dma.crf --depend .\stm3210e-eval\stm32f10x_dma.d)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_dma.h)(0x56EFB6ED)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\stm32f10x.h)(0x56EFB6ED)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cm3.h)(0x512C1E62)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x52FDD27E)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmInstr.h)(0x51BA6374)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmFunc.h)(0x512C1E62)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\system_stm32f10x.h)(0x56EFB6ED)
+I (..\inc\stm32f10x_conf.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_bkp.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_dbgmcu.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_exti.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_flash.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_gpio.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_iwdg.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_pwr.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_rcc.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_spi.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_tim.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x56EFB6ED)
+F (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_spi.c)(0x56EFB6ED)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections --asm --interleave --asm_dir ".\\STM3210E-EVAL\\" -I..\inc -I..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include -I..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc -I..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc -I..\..\..\Utilities\STM32_EVAL -I..\..\..\Utilities\STM32_EVAL\Common -I..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I C:\Keil_v5\ARM\Inc\ST\STM32F10x-DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -DUSE_STM3210E_EVAL -o .\stm3210e-eval\stm32f10x_spi.o --list_dir ".\\STM3210E-EVAL\\" --list --omf_browse .\stm3210e-eval\stm32f10x_spi.crf --depend .\stm3210e-eval\stm32f10x_spi.d)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_spi.h)(0x56EFB6ED)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\stm32f10x.h)(0x56EFB6ED)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cm3.h)(0x512C1E62)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x52FDD27E)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmInstr.h)(0x51BA6374)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmFunc.h)(0x512C1E62)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\system_stm32f10x.h)(0x56EFB6ED)
+I (..\inc\stm32f10x_conf.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_bkp.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_dbgmcu.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_exti.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_flash.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_gpio.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_iwdg.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_pwr.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_rcc.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_tim.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x56EFB6ED)
+F (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_fsmc.c)(0x56EFB6ED)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections --asm --interleave --asm_dir ".\\STM3210E-EVAL\\" -I..\inc -I..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include -I..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc -I..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc -I..\..\..\Utilities\STM32_EVAL -I..\..\..\Utilities\STM32_EVAL\Common -I..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I C:\Keil_v5\ARM\Inc\ST\STM32F10x-DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -DUSE_STM3210E_EVAL -o .\stm3210e-eval\stm32f10x_fsmc.o --list_dir ".\\STM3210E-EVAL\\" --list --omf_browse .\stm3210e-eval\stm32f10x_fsmc.crf --depend .\stm3210e-eval\stm32f10x_fsmc.d)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_fsmc.h)(0x56EFB6ED)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\stm32f10x.h)(0x56EFB6ED)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cm3.h)(0x512C1E62)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x52FDD27E)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmInstr.h)(0x51BA6374)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmFunc.h)(0x512C1E62)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\system_stm32f10x.h)(0x56EFB6ED)
+I (..\inc\stm32f10x_conf.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_bkp.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_dbgmcu.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_exti.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_flash.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_gpio.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_iwdg.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_pwr.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_rcc.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_spi.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_tim.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x56EFB6ED)
+F (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c)(0x56EFB6ED)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections --asm --interleave --asm_dir ".\\STM3210E-EVAL\\" -I..\inc -I..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include -I..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc -I..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc -I..\..\..\Utilities\STM32_EVAL -I..\..\..\Utilities\STM32_EVAL\Common -I..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I C:\Keil_v5\ARM\Inc\ST\STM32F10x-DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -DUSE_STM3210E_EVAL -o .\stm3210e-eval\stm32f10x_gpio.o --list_dir ".\\STM3210E-EVAL\\" --list --omf_browse .\stm3210e-eval\stm32f10x_gpio.crf --depend .\stm3210e-eval\stm32f10x_gpio.d)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_gpio.h)(0x56EFB6ED)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\stm32f10x.h)(0x56EFB6ED)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cm3.h)(0x512C1E62)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x52FDD27E)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmInstr.h)(0x51BA6374)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmFunc.h)(0x512C1E62)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\system_stm32f10x.h)(0x56EFB6ED)
+I (..\inc\stm32f10x_conf.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_bkp.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_dbgmcu.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_exti.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_flash.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_iwdg.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_pwr.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_rcc.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_spi.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_tim.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x56EFB6ED)
+F (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c)(0x56EFB6ED)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections --asm --interleave --asm_dir ".\\STM3210E-EVAL\\" -I..\inc -I..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include -I..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc -I..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc -I..\..\..\Utilities\STM32_EVAL -I..\..\..\Utilities\STM32_EVAL\Common -I..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I C:\Keil_v5\ARM\Inc\ST\STM32F10x-DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -DUSE_STM3210E_EVAL -o .\stm3210e-eval\stm32f10x_rcc.o --list_dir ".\\STM3210E-EVAL\\" --list --omf_browse .\stm3210e-eval\stm32f10x_rcc.crf --depend .\stm3210e-eval\stm32f10x_rcc.d)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_rcc.h)(0x56EFB6ED)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\stm32f10x.h)(0x56EFB6ED)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cm3.h)(0x512C1E62)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x52FDD27E)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmInstr.h)(0x51BA6374)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmFunc.h)(0x512C1E62)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\system_stm32f10x.h)(0x56EFB6ED)
+I (..\inc\stm32f10x_conf.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_bkp.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_dbgmcu.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_exti.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_flash.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_gpio.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_iwdg.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_pwr.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_spi.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_tim.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x56EFB6ED)
+F (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_sdio.c)(0x56EFB6ED)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections --asm --interleave --asm_dir ".\\STM3210E-EVAL\\" -I..\inc -I..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include -I..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc -I..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc -I..\..\..\Utilities\STM32_EVAL -I..\..\..\Utilities\STM32_EVAL\Common -I..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I C:\Keil_v5\ARM\Inc\ST\STM32F10x-DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -DUSE_STM3210E_EVAL -o .\stm3210e-eval\stm32f10x_sdio.o --list_dir ".\\STM3210E-EVAL\\" --list --omf_browse .\stm3210e-eval\stm32f10x_sdio.crf --depend .\stm3210e-eval\stm32f10x_sdio.d)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_sdio.h)(0x56EFB6ED)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\stm32f10x.h)(0x56EFB6ED)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cm3.h)(0x512C1E62)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x52FDD27E)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmInstr.h)(0x51BA6374)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmFunc.h)(0x512C1E62)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\system_stm32f10x.h)(0x56EFB6ED)
+I (..\inc\stm32f10x_conf.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_bkp.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_dbgmcu.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_exti.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_flash.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_gpio.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_iwdg.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_pwr.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_rcc.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_spi.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_tim.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x56EFB6ED)
+F (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_flash.c)(0x56EFB6ED)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections --asm --interleave --asm_dir ".\\STM3210E-EVAL\\" -I..\inc -I..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include -I..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc -I..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc -I..\..\..\Utilities\STM32_EVAL -I..\..\..\Utilities\STM32_EVAL\Common -I..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I C:\Keil_v5\ARM\Inc\ST\STM32F10x-DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -DUSE_STM3210E_EVAL -o .\stm3210e-eval\stm32f10x_flash.o --list_dir ".\\STM3210E-EVAL\\" --list --omf_browse .\stm3210e-eval\stm32f10x_flash.crf --depend .\stm3210e-eval\stm32f10x_flash.d)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_flash.h)(0x56EFB6ED)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\stm32f10x.h)(0x56EFB6ED)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cm3.h)(0x512C1E62)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x52FDD27E)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmInstr.h)(0x51BA6374)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmFunc.h)(0x512C1E62)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\system_stm32f10x.h)(0x56EFB6ED)
+I (..\inc\stm32f10x_conf.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_bkp.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_dbgmcu.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_exti.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_gpio.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_iwdg.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_pwr.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_rcc.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_spi.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_tim.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x56EFB6ED)
+F (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_usart.c)(0x56EFB6ED)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections --asm --interleave --asm_dir ".\\STM3210E-EVAL\\" -I..\inc -I..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include -I..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc -I..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc -I..\..\..\Utilities\STM32_EVAL -I..\..\..\Utilities\STM32_EVAL\Common -I..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I C:\Keil_v5\ARM\Inc\ST\STM32F10x-DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -DUSE_STM3210E_EVAL -o .\stm3210e-eval\stm32f10x_usart.o --list_dir ".\\STM3210E-EVAL\\" --list --omf_browse .\stm3210e-eval\stm32f10x_usart.crf --depend .\stm3210e-eval\stm32f10x_usart.d)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h)(0x56EFB6ED)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\stm32f10x.h)(0x56EFB6ED)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cm3.h)(0x512C1E62)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x52FDD27E)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmInstr.h)(0x51BA6374)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmFunc.h)(0x512C1E62)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\system_stm32f10x.h)(0x56EFB6ED)
+I (..\inc\stm32f10x_conf.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_bkp.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_dbgmcu.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_exti.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_flash.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_gpio.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_iwdg.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_pwr.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_rcc.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_spi.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_tim.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x56EFB6ED)
+F (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_i2c.c)(0x56EFB6ED)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections --asm --interleave --asm_dir ".\\STM3210E-EVAL\\" -I..\inc -I..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include -I..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc -I..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc -I..\..\..\Utilities\STM32_EVAL -I..\..\..\Utilities\STM32_EVAL\Common -I..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I C:\Keil_v5\ARM\Inc\ST\STM32F10x-DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -DUSE_STM3210E_EVAL -o .\stm3210e-eval\stm32f10x_i2c.o --list_dir ".\\STM3210E-EVAL\\" --list --omf_browse .\stm3210e-eval\stm32f10x_i2c.crf --depend .\stm3210e-eval\stm32f10x_i2c.d)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_i2c.h)(0x56EFB6ED)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\stm32f10x.h)(0x56EFB6ED)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cm3.h)(0x512C1E62)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x52FDD27E)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmInstr.h)(0x51BA6374)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmFunc.h)(0x512C1E62)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\system_stm32f10x.h)(0x56EFB6ED)
+I (..\inc\stm32f10x_conf.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_bkp.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_dbgmcu.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_exti.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_flash.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_gpio.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_iwdg.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_pwr.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_rcc.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_spi.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_tim.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x56EFB6ED)
+F (..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL\stm3210e_eval.c)(0x56EFB6ED)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections --asm --interleave --asm_dir ".\\STM3210E-EVAL\\" -I..\inc -I..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include -I..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc -I..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc -I..\..\..\Utilities\STM32_EVAL -I..\..\..\Utilities\STM32_EVAL\Common -I..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I C:\Keil_v5\ARM\Inc\ST\STM32F10x-DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -DUSE_STM3210E_EVAL -o .\stm3210e-eval\stm3210e_eval.o --list_dir ".\\STM3210E-EVAL\\" --list --omf_browse .\stm3210e-eval\stm3210e_eval.crf --depend .\stm3210e-eval\stm3210e_eval.d)
+I (..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL\stm3210e_eval.h)(0x56EFB6ED)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\stm32f10x.h)(0x56EFB6ED)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cm3.h)(0x512C1E62)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x52FDD27E)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmInstr.h)(0x51BA6374)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmFunc.h)(0x512C1E62)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\system_stm32f10x.h)(0x56EFB6ED)
+I (..\inc\stm32f10x_conf.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_bkp.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_dbgmcu.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_exti.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_flash.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_gpio.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_iwdg.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_pwr.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_rcc.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_spi.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_tim.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x56EFB6ED)
+I (..\..\..\Utilities\STM32_EVAL\Common\stm32_eval_legacy.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_i2c.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_sdio.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_dma.h)(0x56EFB6ED)
+F (..\..\..\Utilities\STM32_EVAL\STM3210B_EVAL\stm3210b_eval.c)(0x56EFB6ED)()
+F (..\src\flash_if.c)(0x56EFB6EC)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections --asm --interleave --asm_dir ".\\STM3210E-EVAL\\" -I..\inc -I..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include -I..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc -I..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc -I..\..\..\Utilities\STM32_EVAL -I..\..\..\Utilities\STM32_EVAL\Common -I..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I C:\Keil_v5\ARM\Inc\ST\STM32F10x-DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -DUSE_STM3210E_EVAL -o .\stm3210e-eval\flash_if.o --list_dir ".\\STM3210E-EVAL\\" --list --omf_browse .\stm3210e-eval\flash_if.crf --depend .\stm3210e-eval\flash_if.d)
+I (..\inc\flash_if.h)(0x56EFB6ED)
+I (..\inc\platform_config.h)(0x56EFB6ED)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\stm32f10x.h)(0x56EFB6ED)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cm3.h)(0x512C1E62)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x52FDD27E)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmInstr.h)(0x51BA6374)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmFunc.h)(0x512C1E62)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\system_stm32f10x.h)(0x56EFB6ED)
+I (..\inc\stm32f10x_conf.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_bkp.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_dbgmcu.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_exti.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_flash.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_gpio.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_iwdg.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_pwr.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_rcc.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_spi.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_tim.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x56EFB6ED)
+I (..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL\stm3210e_eval_sdio_sd.h)(0x56EFB6ED)
+I (..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL\stm3210e_eval.h)(0x56EFB6ED)
+I (..\..\..\Utilities\STM32_EVAL\Common\stm32_eval_legacy.h)(0x56EFB6ED)
+I (..\inc\mass_mal.h)(0x56EFB6ED)
+F (..\src\des.c)(0x56EFB6EC)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections --asm --interleave --asm_dir ".\\STM3210E-EVAL\\" -I..\inc -I..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include -I..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc -I..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc -I..\..\..\Utilities\STM32_EVAL -I..\..\..\Utilities\STM32_EVAL\Common -I..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I C:\Keil_v5\ARM\Inc\ST\STM32F10x-DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -DUSE_STM3210E_EVAL -o .\stm3210e-eval\des.o --list_dir ".\\STM3210E-EVAL\\" --list --omf_browse .\stm3210e-eval\des.crf --depend .\stm3210e-eval\des.d)
+I (..\inc\des.h)(0x56EFB6ED)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x52FDD27E)
+I (C:\Keil_v5\ARM\ARMCC\include\inttypes.h)(0x52FDD27E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x52FDD27E)
+F (..\src\msd.c)(0x56EFB6EC)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections --asm --interleave --asm_dir ".\\STM3210E-EVAL\\" -I..\inc -I..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include -I..\..\..\Libraries\STM32_USB-FS-Device_Driver\inc -I..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc -I..\..\..\Utilities\STM32_EVAL -I..\..\..\Utilities\STM32_EVAL\Common -I..\..\..\Utilities\STM32_EVAL\STM3210E_EVAL-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I C:\Keil_v5\ARM\Inc\ST\STM32F10x-DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -DUSE_STM3210E_EVAL -o .\stm3210e-eval\msd.o --list_dir ".\\STM3210E-EVAL\\" --list --omf_browse .\stm3210e-eval\msd.crf --depend .\stm3210e-eval\msd.d)
+I (..\inc\msd.h)(0x56EFB6ED)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\stm32f10x.h)(0x56EFB6ED)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cm3.h)(0x512C1E62)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x52FDD27E)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmInstr.h)(0x51BA6374)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmFunc.h)(0x512C1E62)
+I (..\..\..\Libraries\CMSIS\Device\ST\STM32F10x\Include\system_stm32f10x.h)(0x56EFB6ED)
+I (..\inc\stm32f10x_conf.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_bkp.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_dbgmcu.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_exti.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_flash.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_gpio.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_iwdg.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_pwr.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_rcc.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_spi.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_tim.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h)(0x56EFB6ED)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x56EFB6ED)
+F (..\readme.txt)(0x56EFB6ED)()
