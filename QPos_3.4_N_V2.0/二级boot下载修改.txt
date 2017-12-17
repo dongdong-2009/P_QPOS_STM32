@@ -1,0 +1,16 @@
+一共修改两项
+1.修改NVIC中断向量表：为二级boot中定义的应用程序的起始地址0x8004000.
+修改方法：NVIC_SetVectorTable(NVIC_VectTab_FLASH, 0x4000);
+2.修改整个应用程序的起始地址：
+option-》target中的Onchip中的IROM选项Start的地址为0x8004000，size为0x3C000
+
+
+
+
+
+
+
+
+
+
+

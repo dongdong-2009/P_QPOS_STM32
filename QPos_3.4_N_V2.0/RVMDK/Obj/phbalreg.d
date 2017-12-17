@@ -1,0 +1,9 @@
+.\rvmdk\obj\phbalreg.o: RF\Bfl\src\phbalReg.c
+.\rvmdk\obj\phbalreg.o: .\RF\Bfl\inc\ph_Status.h
+.\rvmdk\obj\phbalreg.o: .\RF\Bfl\inc\ph_NxpBuild.h
+.\rvmdk\obj\phbalreg.o: .\RF\Bfl\inc\ph_TypeDefs.h
+.\rvmdk\obj\phbalreg.o: .\RF\Bfl\inc\ph_EmvCoRefs.h
+.\rvmdk\obj\phbalreg.o: d:\Keil_v5\ARM\ARMCC\bin\..\include\string.h
+.\rvmdk\obj\phbalreg.o: .\RF\Bfl\inc\phbalReg.h
+.\rvmdk\obj\phbalreg.o: .\RF\Bfl\inc\ph_RefDefs.h
+.\rvmdk\obj\phbalreg.o: .\RF\Bfl\inc\phbalReg_Stub.h

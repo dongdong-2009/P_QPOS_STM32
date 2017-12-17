@@ -1,0 +1,11 @@
+.\rvmdk\obj\offline.o: QPBOC\offline.c
+.\rvmdk\obj\offline.o: d:\Keil_v5\ARM\ARMCC\bin\..\include\string.h
+.\rvmdk\obj\offline.o: QPBOC\offline.h
+.\rvmdk\obj\offline.o: .\PBOC\PBOC_Var.h
+.\rvmdk\obj\offline.o: .\PBOC\MID_PBOC.h
+.\rvmdk\obj\offline.o: .\HAL_7816\HAL_7816.h
+.\rvmdk\obj\offline.o: .\PBOC\EMV_Tag.h
+.\rvmdk\obj\offline.o: .\PBOC\EMV_Parameter.h
+.\rvmdk\obj\offline.o: .\Z8D256\sercrity.h
+.\rvmdk\obj\offline.o: .\Z8D256\Z8D256.h
+.\rvmdk\obj\offline.o: .\RSA\Rsa.h

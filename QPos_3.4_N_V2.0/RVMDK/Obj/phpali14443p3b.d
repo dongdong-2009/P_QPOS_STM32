@@ -1,0 +1,9 @@
+.\rvmdk\obj\phpali14443p3b.o: RF\Bfl\src\phpalI14443p3b.c
+.\rvmdk\obj\phpali14443p3b.o: .\RF\Bfl\inc\phpalI14443p3b.h
+.\rvmdk\obj\phpali14443p3b.o: .\RF\Bfl\inc\ph_Status.h
+.\rvmdk\obj\phpali14443p3b.o: .\RF\Bfl\inc\ph_NxpBuild.h
+.\rvmdk\obj\phpali14443p3b.o: .\RF\Bfl\inc\ph_TypeDefs.h
+.\rvmdk\obj\phpali14443p3b.o: .\RF\Bfl\inc\ph_EmvCoRefs.h
+.\rvmdk\obj\phpali14443p3b.o: d:\Keil_v5\ARM\ARMCC\bin\..\include\string.h
+.\rvmdk\obj\phpali14443p3b.o: .\RF\Bfl\inc\ph_RefDefs.h
+.\rvmdk\obj\phpali14443p3b.o: .\RF\Bfl\inc\phpalI14443p3b_Sw.h

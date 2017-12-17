@@ -1,0 +1,9 @@
+.\rvmdk\release\phbalreg.o: RF\Bfl\src\phbalReg.c
+.\rvmdk\release\phbalreg.o: .\RF\Bfl\inc\ph_Status.h
+.\rvmdk\release\phbalreg.o: .\RF\Bfl\inc\ph_NxpBuild.h
+.\rvmdk\release\phbalreg.o: .\RF\Bfl\inc\ph_TypeDefs.h
+.\rvmdk\release\phbalreg.o: .\RF\Bfl\inc\ph_EmvCoRefs.h
+.\rvmdk\release\phbalreg.o: C:\Keil\ARM\ARMCC\bin\..\include\string.h
+.\rvmdk\release\phbalreg.o: .\RF\Bfl\inc\phbalReg.h
+.\rvmdk\release\phbalreg.o: .\RF\Bfl\inc\ph_RefDefs.h
+.\rvmdk\release\phbalreg.o: .\RF\Bfl\inc\phbalReg_Stub.h

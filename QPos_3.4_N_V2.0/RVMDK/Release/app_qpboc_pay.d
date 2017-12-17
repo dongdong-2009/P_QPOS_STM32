@@ -1,0 +1,13 @@
+.\rvmdk\release\app_qpboc_pay.o: QPBOC\APP_qPBOC_Pay.c
+.\rvmdk\release\app_qpboc_pay.o: C:\Keil\ARM\ARMCC\bin\..\include\string.h
+.\rvmdk\release\app_qpboc_pay.o: QPBOC\APP_qPBOC_Pay.h
+.\rvmdk\release\app_qpboc_pay.o: .\PBOC\APP_PBOC.h
+.\rvmdk\release\app_qpboc_pay.o: .\HAL_7816\HAL_7816.h
+.\rvmdk\release\app_qpboc_pay.o: .\PBOC\MID_PBOC.h
+.\rvmdk\release\app_qpboc_pay.o: .\PBOC\EMV_Parameter.h
+.\rvmdk\release\app_qpboc_pay.o: .\PBOC\PBOC_Var.h
+.\rvmdk\release\app_qpboc_pay.o: .\PBOC\EMV_Tag.h
+.\rvmdk\release\app_qpboc_pay.o: .\RF\App\inc\Nfc_main.h
+.\rvmdk\release\app_qpboc_pay.o: .\PBOC\CCID_VALUE.h
+.\rvmdk\release\app_qpboc_pay.o: .\Z8D256\sercrity.h
+.\rvmdk\release\app_qpboc_pay.o: .\Z8D256\Z8D256.h

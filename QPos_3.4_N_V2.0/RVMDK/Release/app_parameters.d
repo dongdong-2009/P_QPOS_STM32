@@ -1,0 +1,12 @@
+.\rvmdk\release\app_parameters.o: CMD\APP_parameters.c
+.\rvmdk\release\app_parameters.o: C:\Keil\ARM\ARMCC\bin\..\include\string.h
+.\rvmdk\release\app_parameters.o: CMD\APP_parameters.h
+.\rvmdk\release\app_parameters.o: CMD\UP_MPOS_CMD.h
+.\rvmdk\release\app_parameters.o: .\BlueTooth\Bluetooth.h
+.\rvmdk\release\app_parameters.o: .\IROM\IROM.h
+.\rvmdk\release\app_parameters.o: .\Z8D256\Sercrity.h
+.\rvmdk\release\app_parameters.o: .\Z8D256\Z8D256.h
+.\rvmdk\release\app_parameters.o: .\Keyboard\Key.h
+.\rvmdk\release\app_parameters.o: .\Buzzer\Buzzer.h
+.\rvmdk\release\app_parameters.o: .\RSA\IC_interface.h
+.\rvmdk\release\app_parameters.o: .\LCD\lcd_gui.h

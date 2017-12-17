@@ -1,0 +1,13 @@
+.\rvmdk\obj\phcidmanager.o: RF\Bfl\src\phCidManager.c
+.\rvmdk\obj\phcidmanager.o: .\RF\Bfl\inc\ph_Status.h
+.\rvmdk\obj\phcidmanager.o: .\RF\Bfl\inc\ph_NxpBuild.h
+.\rvmdk\obj\phcidmanager.o: .\RF\Bfl\inc\ph_TypeDefs.h
+.\rvmdk\obj\phcidmanager.o: .\RF\Bfl\inc\ph_EmvCoRefs.h
+.\rvmdk\obj\phcidmanager.o: d:\Keil_v5\ARM\ARMCC\bin\..\include\string.h
+.\rvmdk\obj\phcidmanager.o: .\RF\Bfl\inc\phCidManager.h
+.\rvmdk\obj\phcidmanager.o: .\RF\Bfl\inc\phhalHw.h
+.\rvmdk\obj\phcidmanager.o: .\RF\Bfl\inc\phbalReg.h
+.\rvmdk\obj\phcidmanager.o: .\RF\Bfl\inc\phhalHw_Rc523_Reg.h
+.\rvmdk\obj\phcidmanager.o: .\RF\Bfl\inc\phhalHw_Rc523_Cmd.h
+.\rvmdk\obj\phcidmanager.o: .\RF\Bfl\inc\phhalHw.h
+.\rvmdk\obj\phcidmanager.o: .\RF\Bfl\inc\ph_RefDefs.h

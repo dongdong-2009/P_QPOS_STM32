@@ -1,0 +1,15 @@
+.\rvmdk\release\phpali14443p3a_sw.o: RF\Bfl\src\phpalI14443p3a_Sw.c
+.\rvmdk\release\phpali14443p3a_sw.o: .\RF\Bfl\inc\ph_Status.h
+.\rvmdk\release\phpali14443p3a_sw.o: .\RF\Bfl\inc\ph_NxpBuild.h
+.\rvmdk\release\phpali14443p3a_sw.o: .\RF\Bfl\inc\ph_TypeDefs.h
+.\rvmdk\release\phpali14443p3a_sw.o: .\RF\Bfl\inc\ph_EmvCoRefs.h
+.\rvmdk\release\phpali14443p3a_sw.o: C:\Keil\ARM\ARMCC\bin\..\include\string.h
+.\rvmdk\release\phpali14443p3a_sw.o: .\RF\Bfl\inc\phhalHw.h
+.\rvmdk\release\phpali14443p3a_sw.o: .\RF\Bfl\inc\phbalReg.h
+.\rvmdk\release\phpali14443p3a_sw.o: .\RF\Bfl\inc\phhalHw_Rc523_Reg.h
+.\rvmdk\release\phpali14443p3a_sw.o: .\RF\Bfl\inc\phhalHw_Rc523_Cmd.h
+.\rvmdk\release\phpali14443p3a_sw.o: .\RF\Bfl\inc\phhalHw.h
+.\rvmdk\release\phpali14443p3a_sw.o: .\RF\Bfl\inc\phpalI14443p3a.h
+.\rvmdk\release\phpali14443p3a_sw.o: .\RF\Bfl\inc\ph_RefDefs.h
+.\rvmdk\release\phpali14443p3a_sw.o: .\RF\Bfl\inc\phpalI14443p3a_Sw.h
+.\rvmdk\release\phpali14443p3a_sw.o: .\RF\Bfl\inc\phpalI14443p3a_Sw_Int.h

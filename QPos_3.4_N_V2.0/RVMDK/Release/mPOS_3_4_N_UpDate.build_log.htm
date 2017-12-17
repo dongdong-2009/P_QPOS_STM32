@@ -1,0 +1,388 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Project:</h2>
+E:\work\QPOS3.4\版本\QPos_3.4_N_V2.0\QPOSV2.1.uvproj
+Project File Date:  07/01/2015
+
+<h2>Output:</h2>
+Build target 'mPos_3_4_Release'
+compiling UP_MPOS_CMD.c...
+CMD\UP_MPOS_CMD.c(267): warning:  #223-D: function "App_qPBOC_Purchase" declared implicitly
+        iRet = App_qPBOC_Purchase(g_sCardReaderInfo.ucFlagForceOnline);
+CMD\UP_MPOS_CMD.c(1659): warning:  #223-D: function "vLCD_InputPIN" declared implicitly
+        vLCD_InputPIN();
+CMD\UP_MPOS_CMD.c: 2 warnings, 0 errors
+linking...
+Program Size: Code=145580 RO-data=11432 RW-data=2076 ZI-data=29284  
+FromELF: creating hex file...
+After Build - User command #1: c:\Keil\ARM\ARMCC\bin\fromelf.exe  --bin -o ./RVMDK/Release/mPOS_3_4_N_Update.bin ./RVMDK/Release/mPOS_3_4_N_Update.axf
+".\RVMDK\Release\mPOS_3_4_N_UpDate.axf" - 0 Error(s), 2 Warning(s).
+Load "E:\\work\\QPOS3.4\\版本\\QPos_3.4_N_V2.0\\RVMDK\\Release\\mPOS_3_4_N_UpDate.axf" 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+</pre>
+</body>
+</html>
+   ROM Totals for ./RVMDK/Release/mPOS_3_4_N_UpDate.axf
+".\RVMDK\Release\mPOS_3_4_N_UpDate.axf" - 0 Error(s), 0 Warning(s).
+Load "E:\\work\\QPOS3.4\\版本\\QPos_3.4_N_V2.0\\RVMDK\\Release\\mPOS_3_4_N_UpDate.axf" 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+;
+User\VectorTable.c(163): warning:  #223-D: function "iCMD010A__GetDeviceParameter" declared implicitly
+                                iRet = iCMD010A__GetDeviceParameter(pucOutData, &uiLen);
+User\VectorTable.c(253): warning:  #223-D: function "iBluetooth_AnalyzeAndSend" declared implicitly
+                iBluetooth_AnalyzeAndSend();
+User\VectorTable.c(127): warning:  #177-D: variable "status" was declared but never referenced
+        unsigned char status;
+User\VectorTable.c(283): warning:  #117-D: non-void function "vVectorTable_Card" should return a value
+                        return;
+User\VectorTable.c(356): warning:  #223-D: function "NFC_CheckCard" declared implicitly
+                                                if(NFC_CheckCard()==0)
+User\VectorTable.c(571): warning:  #940-D: missing return statement at end of non-void function "vVectorTable_Card"
+  }
+User\VectorTable.c(274): warning:  #177-D: variable "counter" was declared but never referenced
+        static unsigned int counter=0;
+User\VectorTable.c(695): warning:  #223-D: function "Input_DeviceSerialNO" declared implicitly
+                                        Input_DeviceSerialNO();
+User\VectorTable.c(813): warning:  #223-D: function "iBluetooth_AnalyzeAndSend" declared implicitly
+                iBluetooth_AnalyzeAndSend(iRet, g_sBluetoothMessage.uiLen);
+User\VectorTable.c(914): warning:  #223-D: function "SC_PowerCmd" declared implicitly
+        SC_PowerCmd(0);
+User\VectorTable.c(918): warning:  #223-D: function "HAL_7816_PowerOn" declared implicitly
+        if(HAL_7816_PowerOn(buf, &len)!=0)
+User\VectorTable.c(928): warning:  #223-D: function "vRC523_Init" declared implicitly
+                vRC523_Init();
+User\VectorTable.c(963): warning:  #223-D: function "vLCD_ShowTime" declared implicitly
+        vLCD_ShowTime();//时间
+User\VectorTable.c(830): warning:  #177-D: variable "ucbBuf1" was declared but never referenced
+        unsigned char ucbBuf1[16] = "UP-013-00000000";
+User\VectorTable.c(1025): warning:  #223-D: function "GP_UART_CMD" declared implicitly
+                        tmp=GP_UART_CMD();
+User\VectorTable.c(1029): warning:  #223-D: function "HID_CMD" declared implicitly
+                        tmp=HID_CMD();  
+User\VectorTable.c: 17 warnings, 0 errors
+compiling Roc_PersonalFont.c...
+compiling Display.c...
+LCD\Display.c(733): warning:  #223-D: function "vLCD_Draw20X8" declared implicitly
+      vLCD_Draw20X8(0, 106, cucCell + (value * 20));          
+LCD\Display.c: 1 warning, 0 errors
+compiling UP_MPOS_CMD.c...
+CMD\UP_MPOS_CMD.c(267): warning:  #223-D: function "App_qPBOC_Purchase" declared implicitly
+        iRet = App_qPBOC_Purchase(g_sCardReaderInfo.ucFlagForceOnline);
+CMD\UP_MPOS_CMD.c(1656): warning:  #223-D: function "vLCD_InputPIN" declared implicitly
+        vLCD_InputPIN();
+CMD\UP_MPOS_CMD.c: 2 warnings, 0 errors
+linking...
+Program Size: Code=145560 RO-data=11432 RW-data=2076 ZI-data=29284  
+FromELF: creating hex file...
+".\RVMDK\Release\mPOS_3_4_N_UpDate.axf" - 0 Error(s), 27 Warning(s).
+Load "E:\\work\\QPOS3.4\\版本\\QPos_3.4_N_V2.0\\RVMDK\\Release\\mPOS_3_4_N_UpDate.axf" 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+utData, T_APDU.RLE);
+QPBOC\APP_qPBOC_Pay.c(501): warning:  #223-D: function "NFC_Card_APDU" declared implicitly
+                        NFC_Card_APDU(&T_APDU);
+QPBOC\APP_qPBOC_Pay.c(607): warning:  #223-D: function "SaveCardDo" declared implicitly
+                        SaveCardDo(T_APDU.pOutData, T_APDU.RLE);        
+QPBOC\APP_qPBOC_Pay.c(633): warning:  #223-D: function "OfflineDynamicDataAuthentication" declared implicitly
+                status=OfflineDynamicDataAuthentication();
+QPBOC\APP_qPBOC_Pay.c(676): warning:  #177-D: variable "status" was declared but never referenced
+        unsigned short status;
+QPBOC\APP_qPBOC_Pay.c: 9 warnings, 0 errors
+compiling offline.c...
+linking...
+Program Size: Code=145456 RO-data=11432 RW-data=2076 ZI-data=29284  
+FromELF: creating hex file...
+".\RVMDK\Release\mPOS_3_4_N_UpDate.axf" - 0 Error(s), 31 Warning(s).
+Load "E:\\work\\QPOS3.4\\版本\\QPos_3.4_N_V2.0\\RVMDK\\Release\\mPOS_3_4_N_UpDate.axf" 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+                   last_err=-11;
+HAL_7816\HAL_7816.c(1849): warning:  #223-D: function "APP_POS_PAY_Init" declared implicitly
+        APP_POS_PAY_Init();
+HAL_7816\HAL_7816.c: 7 warnings, 0 errors
+compiling APP_PBOC.c...
+PBOC\APP_PBOC.c(1080): warning:  #223-D: function "HAL_7816_GetATR" declared implicitly
+                ucATRLen = HAL_7816_GetATR(0, ucbATR);
+PBOC\APP_PBOC.c: 1 warning, 0 errors
+compiling MID_PBOC.C...
+compiling UP_MPOS_CMD.c...
+CMD\UP_MPOS_CMD.c(267): warning:  #223-D: function "App_qPBOC_Purchase" declared implicitly
+        iRet = App_qPBOC_Purchase(g_sCardReaderInfo.ucFlagForceOnline);
+CMD\UP_MPOS_CMD.c(1646): warning:  #223-D: function "vLCD_InputPIN" declared implicitly
+        vLCD_InputPIN();
+CMD\UP_MPOS_CMD.c: 2 warnings, 0 errors
+compiling APP_parameters.c...
+CMD\APP_parameters.c(113): warning:  #167-D: argument of type "const unsigned char *" is incompatible with parameter of type "const char *"
+        if(strcmp(device_info_init.TermianalAPPVersion,pdevice_version_info->TermianalAPPVersion)!=0)
+CMD\APP_parameters.c(113): warning:  #167-D: argument of type "unsigned char *" is incompatible with parameter of type "const char *"
+        if(strcmp(device_info_init.TermianalAPPVersion,pdevice_version_info->TermianalAPPVersion)!=0)
+CMD\APP_parameters.c: 2 warnings, 0 errors
+compiling rtc.c...
+RTC\rtc.c(21): warning:  #177-D: function "RTC_NVIC_Config" was declared but never referenced
+  static void RTC_NVIC_Config(void)
+RTC\rtc.c: 1 warning, 0 errors
+compiling IC_interface.c...
+".\RVMDK\Release\mPOS_3_4_N_UpDate.axf" - 1 Error(s), 41 Warning(s).
+Target not created
+ings, 0 errors
+compiling APP_PBOC.c...
+PBOC\APP_PBOC.c(1080): warning:  #223-D: function "HAL_7816_GetATR" declared implicitly
+                ucATRLen = HAL_7816_GetATR(0, ucbATR);
+PBOC\APP_PBOC.c: 1 warning, 0 errors
+compiling MID_PBOC.C...
+compiling PBOC_Var.c...
+PBOC\PBOC_Var.c(277): warning:  #223-D: function "HAL_7816_DeepShutdown" declared implicitly
+        HAL_7816_DeepShutdown();
+PBOC\PBOC_Var.c: 1 warning, 0 errors
+compiling Display.c...
+LCD\Display.c(733): warning:  #223-D: function "vLCD_Draw20X8" declared implicitly
+      vLCD_Draw20X8(0, 106, cucCell + (value * 20));          
+LCD\Display.c: 1 warning, 0 errors
+compiling FontFonction.c...
+compiling msd.c...
+compiling ASCII.c...
+compiling lcd_gui.c...
+LCD\lcd_gui.c(37): warning:  #223-D: function "HAL_DISP_WriteByte" declared implicitly
+                        HAL_DISP_WriteByte(g_ucLCDGuiBuf[ucPage * 128 + ucCol],0x02);   //write col
+LCD\lcd_gui.c(63): warning:  #223-D: function "HAL_DISP_WriteByte" declared implicitly
+                        HAL_DISP_WriteByte(g_ucLCDGuiBuf[i*128+j],2);
+LCD\lcd_gui.c(328): warning:  #167-D: argument of type "unsigned char *" is incompatible with parameter of type "char *"
+                        get_hanzi_mu(pucData+ucLoop,ucbBuf);
+LCD\lcd_gui.c(388): warning:  #167-D: argument of type "unsigned char *" is incompatible with parameter of type "const char *"
+        len=strlen(pucData);
+LCD\lcd_gui.c: 4 warnings, 0 errors
+compiling Key.c...
+Keyboard\Key.c(214): warning:  #223-D: function "iBuzzer_On" declared implicitly
+                        iBuzzer_On(0);
+Keyboard\Key.c(216): warning:  #223-D: function "BackLightCmd" declared implicitly
+                 BackLightCmd(ENABLE);
+Keyboard\Key.c(252): warning:  #223-D: function "vLCD_GUI_Show12X12_Col" declared implicitly
+                vLCD_GUI_Show12X12_Col("请按下",3,0);
+Keyboard\Key.c(254): warning:  #186-D: pointless comparison of unsigned integer with zero
+                if(0<=i&&i<=11)
+Keyboard\Key.c(255): warning:  #223-D: function "vLCD_GUI_Show12X12_Ex" declared implicitly
+                        vLCD_GUI_Show12X12_Ex(&buf1[i],1,3,60);
+Keyboard\Key.c: 5 warnings, 0 errors
+compiling AN_ADC.c...
+compiling UP_MPOS_CMD.c...
+CMD\UP_MPOS_CMD.c(267): warning:  #223-D: function "App_qPBOC_Purchase" declared implicitly
+        iRet = App_qPBOC_Purchase(g_sCardReaderInfo.ucFlagForceOnline);
+CMD\UP_MPOS_CMD.c(495): error:  #20: identifier "ucTempBuf" is undefined
+                DES3_App((unsigned char *)BOOT_KEY_ADDR, 1, NULL, pucInData + 6, &uilen1, ucTempBuf);
+CMD\UP_MPOS_CMD.c(512): error:  #20: identifier "ucTempBuf" is undefined
+                DES3_App((unsigned char *)BOOT_KEY_ADDR, 1, NULL, pucInData + 6, &uiLen, ucTempBuf);
+CMD\UP_MPOS_CMD.c(1646): warning:  #223-D: function "vLCD_InputPIN" declared implicitly
+        vLCD_InputPIN();
+CMD\UP_MPOS_CMD.c: 2 warnings, 2 errors
+compiling APP_parameters.c...
+CMD\APP_parameters.c(113): warning:  #167-D: argument of type "const unsigned char *" is incompatible with parameter of type "const char *"
+        if(strcmp(device_info_init.TermianalAPPVersion,pdevice_version_info->TermianalAPPVersion)!=0)
+CMD\APP_parameters.c(113): warning:  #167-D: argument of type "unsigned char *" is incompatible with parameter of type "const char *"
+        if(strcmp(device_info_init.TermianalAPPVersion,pdevice_version_info->TermianalAPPVersion)!=0)
+CMD\APP_parameters.c: 2 warnings, 0 errors
+compiling Pwercheck.c...
+Power\Pwercheck.c(60): warning:  #223-D: function "Delay_ms" declared implicitly
+                        Delay_ms(200);
+Power\Pwercheck.c(63): warning:  #223-D: function "iBuzzer_On" declared implicitly
+                                iBuzzer_On(0);                          
+Power\Pwercheck.c(88): warning:  #223-D: function "iBuzzer_On" declared implicitly
+        iBuzzer_On(0);
+Power\Pwercheck.c(95): warning:  #223-D: function "Reset_Device" declared implicitly
+        Reset_Device();
+Power\Pwercheck.c(106): warning:  #223-D: function "Delay_ms" declared implicitly
+                        Delay_ms(200);
+Power\Pwercheck.c(117): warning:  #111-D: statement is unreachable
+                        i=0;
+Power\Pwercheck.c: 6 warnings, 0 errors
+compiling rtc.c...
+RTC\rtc.c(21): warning:  #177-D: function "RTC_NVIC_Config" was declared but never referenced
+  static void RTC_NVIC_Config(void)
+RTC\rtc.c: 1 warning, 0 errors
+compiling usb_core.c...
+compiling usb_init.c...
+compiling usb_int.c...
+compiling usb_mem.c...
+compiling usb_regs.c...
+compiling usb_sil.c...
+compiling hw_config.c...
+compiling usb_desc.c...
+compiling usb_endp.c...
+compiling usb_istr.c...
+compiling usb_prop.c...
+compiling usb_pwr.c...
+compiling usbhid.c...
+USBHID\src\usbhid.c(45): warning:  #223-D: function "memset" declared implicitly
+        memset(pucBuf+9,0,11);
+USBHID\src\usbhid.c(84): warning:  #223-D: function "vLCD_GUI_ShowMid12X12" declared implicitly
+                                vLCD_GUI_ShowMid12X12("配置中...",4);
+USBHID\src\usbhid.c(85): warning:  #223-D: function "iCMD_Factory_DeviceInit" declared implicitly
+                                iRET=iCMD_Factory_DeviceInit(USB_Receive_Buffer+8,len); 
+USBHID\src\usbhid.c(88): warning:  #223-D: function "IVT_Update" declared implicitly
+                                iRET=IVT_Update(USB_Receive_Buffer+8,len-2);    
+USBHID\src\usbhid.c: 4 warnings, 0 errors
+compiling iwdg.c...
+compiling UART_simulation.C...
+io_uart\UART_simulation.C(93): warning:  #550-D: variable "parity" was set but never used
+        unsigned int parity;  
+io_uart\UART_simulation.C(94): warning:  #177-D: variable "data" was declared but never referenced
+        unsigned char data;             
+io_uart\UART_simulation.C(159): warning:  #177-D: variable "parity" was declared but never referenced
+        unsigned char parity = 0; 
+io_uart\UART_simulation.C(307): warning:  #223-D: function "vLCD_GUI_ShowMid12X12" declared implicitly
+                                vLCD_GUI_ShowMid12X12("配置中...",4);
+io_uart\UART_simulation.C(308): warning:  #223-D: function "iCMD_Factory_DeviceInit" declared implicitly
+                                iRET=iCMD_Factory_DeviceInit(GP_UART_BUF+8,len-2);      
+io_uart\UART_simulation.C: 5 warnings, 0 errors
+compiling phbalReg.c...
+compiling phbalReg_Stub.c...
+RF\Bfl\src\phbalReg_Stub.c(65): warning:  #550-D: parameter "pDataParams" was set but never used
+      phbalReg_Stub_DataParams_t * pDataParams,
+RF\Bfl\src\phbalReg_Stub.c(66): warning:  #550-D: parameter "wPortBufSize" was set but never used
+      uint16_t wPortBufSize,
+RF\Bfl\src\phbalReg_Stub.c(67): warning:  #550-D: parameter "pPortNames" was set but never used
+      uint8_t * pPortNames,
+RF\Bfl\src\phbalReg_Stub.c(81): warning:  #550-D: parameter "pDataParams" was set but never used
+                              phbalReg_Stub_DataParams_t * pDataParams,
+RF\Bfl\src\phbalReg_Stub.c(82): warning:  #550-D: parameter "pPortName" was set but never used
+                              uint8_t * pPortName
+RF\Bfl\src\phbalReg_Stub.c(93): warning:  #550-D: parameter "pDataParams" was set but never used
+                                    phbalReg_Stub_DataParams_t * pDataParams
+RF\Bfl\src\phbalReg_Stub.c(103): warning:  #550-D: parameter "pDataParams" was set but never used
+                                     phbalReg_Stub_DataParams_t * pDataParams
+RF\Bfl\src\phbalReg_Stub.c(114): warning:  #550-D: parameter "wOption" was set but never used
+                                    uint16_t wOption,
+RF\Bfl\src\phbalReg_Stub.c(163): warning:  #550-D: parameter "pDataParams" was set but never used
+                                     phbalReg_Stub_DataParams_t * pDataParams,
+RF\Bfl\src\phbalReg_Stub.c(164): warning:  #550-D: parameter "wConfig" was set but never used
+                                     uint16_t wConfig,
+RF\Bfl\src\phbalReg_Stub.c(165): warning:  #550-D: parameter "wValue" was set but never used
+                                     uint16_t wValue
+RF\Bfl\src\phbalReg_Stub.c(177): warning:  #550-D: parameter "pDataParams" was set but never used
+                                     phbalReg_Stub_DataParams_t * pDataParams,
+RF\Bfl\src\phbalReg_Stub.c(178): warning:  #550-D: parameter "wConfig" was set but never used
+                                     uint16_t wConfig,
+RF\Bfl\src\phbalReg_Stub.c(179): warning:  #550-D: parameter "pValue" was set but never used
+                                     uint16_t * pValue
+RF\Bfl\src\phbalReg_Stub.c: 14 warnings, 0 errors
+compiling phCidManager.c...
+compiling phCidManager_Sw.c...
+compiling phhalHw.c...
+compiling phhalHw_Rc523.c...
+compiling phhalHw_Rc523_Cmd.c...
+compiling phhalHw_Rc523_Int.c...
+RF\Bfl\src\phhalHw_Rc523_Int.c(130): warning:  #177-D: variable "wBytesRead" was declared but never referenced
+      uint16_t    PH_MEMLOC_REM wBytesRead;
+RF\Bfl\src\phhalHw_Rc523_Int.c(131): warning:  #177-D: variable "bBackup" was declared but never referenced
+      uint8_t     PH_MEMLOC_REM bBackup;
+RF\Bfl\src\phhalHw_Rc523_Int.c(228): warning:  #177-D: variable "wBytesRead" was declared but never referenced
+      uint16_t    PH_MEMLOC_REM wBytesRead;
+RF\Bfl\src\phhalHw_Rc523_Int.c(229): warning:  #177-D: variable "aProtocol" was declared but never referenced
+      uint8_t     PH_MEMLOC_REM aProtocol[1];
+RF\Bfl\src\phhalHw_Rc523_Int.c(230): warning:  #177-D: variable "bBackup" was declared but never referenced
+      uint8_t     PH_MEMLOC_REM bBackup;
+RF\Bfl\src\phhalHw_Rc523_Int.c: 5 warnings, 0 errors
+compiling phhalHw_Rc523_Wait.c...
+compiling phpalEpcUid.c...
+compiling phpalEpcUid_Sw.c...
+compiling phpalI14443p3a.c...
+compiling phpalI14443p3a_Sw.c...
+RF\Bfl\src\phpalI14443p3a_Sw.c(464): warning:  #111-D: statement is unreachable
+          *pMoreCardsAvailable = PH_ON;
+RF\Bfl\src\phpalI14443p3a_Sw.c(546): warning:  #111-D: statement is unreachable
+                  *pMoreCardsAvailable = PH_ON;
+RF\Bfl\src\phpalI14443p3a_Sw.c: 2 warnings, 0 errors
+compiling phpalI14443p3b.c...
+compiling phpalI14443p3b_Sw.c...
+compiling phpalI14443p4.c...
+compiling phpalI14443p4_Sw.c...
+RF\Bfl\src\phpalI14443p4_Sw.c(356): warning:  #550-D: variable "wMaxPcdFrameSize" was set but never used
+      uint16_t    PH_MEMLOC_REM wMaxPcdFrameSize;
+RF\Bfl\src\phpalI14443p4_Sw.c(1182): warning:  #111-D: statement is unreachable
+                  if (pDataParams->bMaxRetryCount > 0)
+RF\Bfl\src\phpalI14443p4_Sw.c(1261): warning:  #111-D: statement is unreachable
+                  if (pDataParams->bMaxRetryCount > 0)
+RF\Bfl\src\phpalI14443p4_Sw.c: 3 warnings, 0 errors
+compiling phpalI14443p4a.c...
+compiling phpalI14443p4a_Sw.c...
+compiling phpalMifare.c...
+compiling phpalMifare_Sw.c...
+RF\Bfl\src\phpalMifare_Sw.c(242): warning:  #550-D: parameter "wOption" was set but never used
+                                       uint16_t wOption,
+RF\Bfl\src\phpalMifare_Sw.c: 1 warning, 0 errors
+compiling phTools.c...
+compiling RegCtl_SpiHw.c...
+.\RC523\RC523.h(21): warning:  #1295-D: Deprecated declaration RC523_SPI_ReadByte - give arg types
+  unsigned char RC523_SPI_ReadByte();
+RF\Bfl\src\RegCtl_SpiHw.c(164): warning:  #940-D: missing return statement at end of non-void function "RegCtl_SpiHwGetMultiData"
+  }
+RF\Bfl\src\RegCtl_SpiHw.c: 2 warnings, 0 errors
+compiling nfc_main.c...
+RF\App\src\nfc_main.c(375): warning:  #177-D: variable "test" was declared but never referenced
+        unsigned char test;
+RF\App\src\nfc_main.c(687): warning:  #223-D: function "phpalI14443p3a_Sw_WakeUpA" declared implicitly
+                status = phpalI14443p3a_Sw_WakeUpA(&I14443p3a, bAtqa);
+RF\App\src\nfc_main.c(700): warning:  #223-D: function "phpalI14443p3a_Sw_Anticollision" declared implicitly
+                        status = phpalI14443p3a_Sw_Anticollision(&I14443p3a, bCascadeLevel, bUid, bNvbUid, bUid, &bNvbUid);
+RF\App\src\nfc_main.c(755): warning:  #177-D: variable "statusTmp" was declared but never referenced
+      phStatus_t   statusTmp;
+RF\App\src\nfc_main.c(756): warning:  #177-D: variable "statusFirstError" was declared but never referenced
+      phStatus_t   statusFirstError;
+RF\App\src\nfc_main.c(757): warning:  #177-D: variable "bSlot" was declared but never referenced
+      uint8_t      bSlot;
+RF\App\src\nfc_main.c(758): warning:  #177-D: variable "bPICCsFound" was declared but never referenced
+      uint8_t      bPICCsFound;
+RF\App\src\nfc_main.c(761): warning:  #550-D: variable "pLocalPupi" was set but never used
+      uint8_t      *pLocalPupi;
+RF\App\src\nfc_main.c: 8 warnings, 0 errors
+compiling RC523.c...
+RC523\RC523.h(21): warning:  #1295-D: Deprecated declaration RC523_SPI_ReadByte - give arg types
+  unsigned char RC523_SPI_ReadByte();
+RC523\RC523.c(65): warning:  #223-D: function "RC523_Init" declared implicitly
+        RC523_Init();   
+RC523\RC523.c(96): warning:  #223-D: function "NFC_SendWUPA" declared implicitly
+        if(0x9000 == NFC_SendWUPA())
+RC523\RC523.c(98): warning:  #223-D: function "Activation_TypeA" declared implicitly
+                if(0==Activation_TypeA())
+RC523\RC523.c(100): warning:  #223-D: function "iBuzzer_On" declared implicitly
+                        iBuzzer_On(0);
+RC523\RC523.c(101): warning:  #223-D: function "NFC_Deselect" declared implicitly
+                        NFC_Deselect();
+RC523\RC523.c: 6 warnings, 0 errors
+compiling APP_qPBOC_Pay.c...
+QPBOC\APP_qPBOC_Pay.c(163): warning:  #223-D: function "NFC_Card_APDU" declared implicitly
+        NFC_Card_APDU(&T_APDU);
+QPBOC\APP_qPBOC_Pay.c(259): warning:  #223-D: function "NFC_Card_APDU" declared implicitly
+        NFC_Card_APDU(&T_APDU);
+QPBOC\APP_qPBOC_Pay.c(292): warning:  #223-D: function "CollectDol" declared implicitly
+                pdollen= CollectDol(uchPDOL, *(ptr+2), pdoldata,PDOL_FLAG);                                     
+QPBOC\APP_qPBOC_Pay.c(324): warning:  #223-D: function "NFC_Card_APDU" declared implicitly
+        NFC_Card_APDU(&T_APDU);
+QPBOC\APP_qPBOC_Pay.c(410): warning:  #223-D: function "SaveCardDo" declared implicitly
+                        SaveCardDo(T_APDU.pOutData, T_APDU.RLE);
+QPBOC\APP_qPBOC_Pay.c(501): warning:  #223-D: function "NFC_Card_APDU" declared implicitly
+                        NFC_Card_APDU(&T_APDU);
+QPBOC\APP_qPBOC_Pay.c(607): warning:  #223-D: function "SaveCardDo" declared implicitly
+                        SaveCardDo(T_APDU.pOutData, T_APDU.RLE);        
+QPBOC\APP_qPBOC_Pay.c(633): warning:  #223-D: function "OfflineDynamicDataAuthentication" declared implicitly
+                status=OfflineDynamicDataAuthentication();
+QPBOC\APP_qPBOC_Pay.c(676): warning:  #177-D: variable "status" was declared but never referenced
+        unsigned short status;
+QPBOC\APP_qPBOC_Pay.c: 9 warnings, 0 errors
+compiling offline.c...
+compiling Rsa.c...
+compiling IC_interface.c...
+compiling des.c...
+".\RVMDK\Release\mPOS_3_4_N_UpDate.axf" - 3 Error(s), 121 Warning(s).
+Target not created

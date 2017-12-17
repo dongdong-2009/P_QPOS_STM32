@@ -1,0 +1,15 @@
+.\rvmdk\release\phpalmifare.o: RF\Bfl\src\phpalMifare.c
+.\rvmdk\release\phpalmifare.o: .\RF\Bfl\inc\ph_Status.h
+.\rvmdk\release\phpalmifare.o: .\RF\Bfl\inc\ph_NxpBuild.h
+.\rvmdk\release\phpalmifare.o: .\RF\Bfl\inc\ph_TypeDefs.h
+.\rvmdk\release\phpalmifare.o: .\RF\Bfl\inc\ph_EmvCoRefs.h
+.\rvmdk\release\phpalmifare.o: C:\Keil\ARM\ARMCC\bin\..\include\string.h
+.\rvmdk\release\phpalmifare.o: .\RF\Bfl\inc\phpalMifare.h
+.\rvmdk\release\phpalmifare.o: .\RF\Bfl\inc\phhalHw.h
+.\rvmdk\release\phpalmifare.o: .\RF\Bfl\inc\phbalReg.h
+.\rvmdk\release\phpalmifare.o: .\RF\Bfl\inc\phhalHw_Rc523_Reg.h
+.\rvmdk\release\phpalmifare.o: .\RF\Bfl\inc\phhalHw_Rc523_Cmd.h
+.\rvmdk\release\phpalmifare.o: .\RF\Bfl\inc\phhalHw.h
+.\rvmdk\release\phpalmifare.o: .\RF\Bfl\inc\ph_RefDefs.h
+.\rvmdk\release\phpalmifare.o: .\RF\Bfl\inc\phpalMifare_Int.h
+.\rvmdk\release\phpalmifare.o: .\RF\Bfl\inc\phpalMifare_Sw.h
